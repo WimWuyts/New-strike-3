@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://newace-newstrike.local/schemas/common.json",
+  "title": "Gedeelde definities",
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "minLength": 2,
+      "maxLength": 120
+    },
+    "bookId": {
+      "type": "string",
+      "enum": ["ace3", "strike3"]
+    },
+    "themeId": {
+      "type": "string",
+      "pattern": "^(ace3|strike3)-u[1-9][0-9]?$"
+    },
+    "cefr": {
+      "type": "string",
+      "enum": ["A1", "A1+", "A2", "A2+", "B1", "B1+", "B2"]
+    },
+    "provenance": {
+      "type": "string",
+      "enum": [
+        "source_core",
+        "corrected_source",
+        "original_extension",
+        "original_companion"
+      ]
+    },
+    "reviewStatus": {
+      "type": "string",
+      "enum": ["draft", "machine_checked", "human_approved"]
+    },
+    "rightsStatus": {
+      "type": "string",
+      "enum": ["original_only", "licensed_confirmed", "not_assessed"]
+    },
+    "buildStatus": {
+      "type": "string",
+      "enum": ["not_built", "built", "failed"]
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "contentHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "sourcePageRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["book_id", "source_file", "page"],
+      "properties": {
+        "book_id": { "$ref": "#/$defs/bookId" },
+        "source_file": { "type": "string", "minLength": 1 },
+        "page": { "type": "integer", "minimum": 1 },
+        "region": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["x0", "y0", "x1", "y1"],
+          "properties": {
+            "x0": { "type": "number" },
+            "y0": { "type": "number" },
+            "x1": { "type": "number" },
+            "y1": { "type": "number" }
+          }
+        },
+        "ocr_confidence": { "$ref": "#/$defs/confidence" }
+      }
+    },
+    "learningObjective": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 300
+    },
+    "entityBase": {
+      "type": "object",
+      "required": [
+        "id",
+        "book_id",
+        "theme_id",
+        "kind",
+        "title",
+        "cefr",
+        "learning_objectives",
+        "source_page_refs",
+        "provenance",
+        "rights_status",
+        "review_status",
+        "content_hash"
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "book_id": { "$ref": "#/$defs/bookId" },
+        "theme_id": { "$ref": "#/$defs/themeId" },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "vocabulary_set",
+            "lexeme",
+            "grammar_topic",
+            "reading",
+            "listening",
+            "visual_grammar_model",
+            "exercise_activity"
+          ]
+        },
+        "title": { "type": "string", "minLength": 2, "maxLength": 200 },
+        "cefr": { "$ref": "#/$defs/cefr" },
+        "learning_objectives": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/learningObjective" }
+        },
+        "source_page_refs": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sourcePageRef" }
+        },
+        "provenance": { "$ref": "#/$defs/provenance" },
+        "rights_status": { "$ref": "#/$defs/rightsStatus" },
+        "review_status": { "$ref": "#/$defs/reviewStatus" },
+        "content_hash": { "$ref": "#/$defs/contentHash" }
+      }
+    },
+    "nonEmptyText": {
+      "type": "string",
+      "minLength": 1,
+      "not": {
+        "pattern": "(?i)(lorem ipsum|^todo\\b|\\bTBD\\b|xxx+|placeholder|\\.\\.\\.$)"
+      }
+    }
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://newace-newstrike.local/schemas/listening_module.json",
+  "title": "ListeningModule",
+  "type": "object",
+  "unevaluatedProperties": false,
+  "allOf": [{ "$ref": "common.json#/$defs/entityBase" }],
+  "required": ["variant", "audio_type", "speakers", "transcript", "tasks", "audio"],
+  "properties": {
+    "kind": { "const": "listening" },
+    "provenance": { "const": "original_companion" },
+
+    "variant": { "type": "string", "enum": ["core", "challenge"] },
+    "audio_type": {
+      "type": "string",
+      "enum": ["dialogue", "monologue", "interview", "announcement", "instructions", "voicemail", "podcast_clip"]
+    },
+
+    "speakers": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "unevaluatedProperties": false,
+        "required": ["id", "label", "accent_target", "pace"],
+        "properties": {
+          "id": { "$ref": "common.json#/$defs/slug" },
+          "label": { "type": "string", "minLength": 1 },
+          "accent_target": {
+            "type": "string",
+            "enum": ["en-GB", "en-US", "en-AU", "en-IE", "en-IN", "en-ZA", "non_native_clear"]
+          },
+          "pace": { "type": "string", "enum": ["slow", "natural", "fast"] },
+          "note_nl": { "type": "string" }
+        }
+      }
+    },
+
+    "intended_duration_seconds": { "type": "integer", "minimum": 20, "maximum": 600 },
+
+    "transcript": {
+      "type": "array",
+      "minItems": 2,
+      "description": "Spreektaal, geen voorgelezen essay.",
+      "items": {
+        "type": "object",
+        "unevaluatedProperties": false,
+        "required": ["id", "speaker_id", "text_en"],
+        "properties": {
+          "id": { "$ref": "common.json#/$defs/slug" },
+          "speaker_id": { "$ref": "common.json#/$defs/slug" },
+          "text_en": { "$ref": "common.json#/$defs/nonEmptyText" },
+          "timestamp_seconds": { "type": "number", "minimum": 0 },
+          "pause_after_ms": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+
+    "ssml": { "type": "string" },
+
+    "audio": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": ["status"],
+      "properties": {
+        "status": { "$ref": "common.json#/$defs/buildStatus" },
+        "path": { "type": ["string", "null"] },
+        "duration_seconds": { "type": ["number", "null"] },
+        "provider": { "type": ["string", "null"] },
+        "note_nl": { "type": "string" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "built" } }, "required": ["status"] },
+          "then": {
+            "required": ["path", "duration_seconds"],
+            "properties": {
+              "path": { "type": "string", "minLength": 1 },
+              "duration_seconds": { "type": "number" }
+            }
+          }
+        }
+      ]
+    },
+
+    "tasks": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": ["gist", "detail", "sequence_or_notes", "post_listening"],
+      "properties": {
+        "pre_listening": { "$ref": "#/$defs/taskGroup" },
+        "gist": { "$ref": "#/$defs/taskGroup" },
+        "detail": { "$ref": "#/$defs/taskGroup" },
+        "sequence_or_notes": { "$ref": "#/$defs/taskGroup" },
+        "post_listening": {
+          "type": "object",
+          "unevaluatedProperties": false,
+          "required": ["prompt_nl", "rubric"],
+          "properties": {
+            "prompt_nl": { "type": "string", "minLength": 20 },
+            "rubric": {
+              "type": "array",
+              "minItems": 2,
+              "items": {
+                "type": "object",
+                "unevaluatedProperties": false,
+                "required": ["label_nl", "descriptor_nl"],
+                "properties": {
+                  "label_nl": { "type": "string", "minLength": 2 },
+                  "descriptor_nl": { "type": "string", "minLength": 10 }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "student_version_note_nl": { "type": "string" },
+    "teacher_version_note_nl": { "type": "string" }
+  },
+
+  "$defs": {
+    "taskGroup": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": ["questions"],
+      "properties": {
+        "instructions_nl": { "type": "string", "minLength": 10 },
+        "questions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "unevaluatedProperties": false,
+            "required": ["id", "question", "response_mode", "canonical_answers", "evidence_ref"],
+            "properties": {
+              "id": { "$ref": "common.json#/$defs/slug" },
+              "question": { "$ref": "common.json#/$defs/nonEmptyText" },
+              "response_mode": {
+                "type": "string",
+                "enum": ["typed_short", "typed_sentence", "multiple_choice", "true_false", "matching", "ordering", "note_completion"]
+              },
+              "options": {
+                "type": "array",
+                "minItems": 2,
+                "items": { "$ref": "common.json#/$defs/nonEmptyText" }
+              },
+              "canonical_answers": {
+                "type": "array",
+                "minItems": 1,
+                "items": { "$ref": "common.json#/$defs/nonEmptyText" }
+              },
+              "accepted_variants": {
+                "type": "array",
+                "items": { "$ref": "common.json#/$defs/nonEmptyText" }
+              },
+              "evidence_ref": {
+                "type": "string",
+                "minLength": 1,
+                "description": "ID van het transcriptsegment of een timestamp."
+              },
+              "feedback_nl": { "type": "string", "minLength": 10 }
+            }
+          }
+        }
+      }
+    }
+  }
+}

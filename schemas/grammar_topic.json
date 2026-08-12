@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://newace-newstrike.local/schemas/grammar_topic.json",
+  "title": "GrammarTopic",
+  "type": "object",
+  "unevaluatedProperties": false,
+  "allOf": [{ "$ref": "common.json#/$defs/entityBase" }],
+  "required": [
+    "can_do_statements",
+    "meaning_and_use",
+    "form",
+    "typical_errors_nl",
+    "contrast_with",
+    "examples",
+    "recap",
+    "exit_ticket"
+  ],
+  "properties": {
+    "kind": { "const": "grammar_topic" },
+
+    "can_do_statements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "allOf": [{ "$ref": "common.json#/$defs/nonEmptyText" }],
+        "minLength": 15
+      }
+    },
+
+    "meaning_and_use": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": ["summary_nl", "use_cases"],
+      "description": "Betekenis en gebruik komen vóór de vorm.",
+      "properties": {
+        "summary_nl": {
+          "allOf": [{ "$ref": "common.json#/$defs/nonEmptyText" }],
+          "minLength": 30
+        },
+        "use_cases": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "unevaluatedProperties": false,
+            "required": ["label_nl", "explanation_nl", "example_en"],
+            "properties": {
+              "label_nl": { "type": "string", "minLength": 3 },
+              "explanation_nl": { "type": "string", "minLength": 15 },
+              "example_en": { "type": "string", "minLength": 8 }
+            }
+          }
+        }
+      }
+    },
+
+    "form": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": ["affirmative"],
+      "properties": {
+        "affirmative": { "$ref": "#/$defs/formPattern" },
+        "negative": { "$ref": "#/$defs/formPattern" },
+        "interrogative": { "$ref": "#/$defs/formPattern" },
+        "short_answers": { "$ref": "#/$defs/formPattern" },
+        "spelling_rules": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "unevaluatedProperties": false,
+            "required": ["rule_nl", "examples"],
+            "properties": {
+              "rule_nl": { "type": "string", "minLength": 10 },
+              "examples": {
+                "type": "array",
+                "minItems": 1,
+                "items": { "type": "string", "minLength": 2 }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "signal_words": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 2 },
+      "description": "Presenteer nooit als onfeilbare truc."
+    },
+    "signal_words_caveat_nl": { "type": "string", "minLength": 20 },
+
+    "typical_errors_nl": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Fouten die Nederlandstalige leerders typisch maken.",
+      "items": {
+        "type": "object",
+        "unevaluatedProperties": false,
+        "required": ["wrong", "right", "why_nl"],
+        "properties": {
+          "wrong": { "type": "string", "minLength": 3 },
+          "right": { "type": "string", "minLength": 3 },
+          "why_nl": { "type": "string", "minLength": 15 }
+        }
+      }
+    },
+
+    "contrast_with": {
+      "type": "array",
+      "description": "Contrast met naburige grammatica.",
+      "items": {
+        "type": "object",
+        "unevaluatedProperties": false,
+        "required": ["other_topic", "difference_nl", "minimal_pair"],
+        "properties": {
+          "other_topic": { "type": "string", "minLength": 2 },
+          "difference_nl": { "type": "string", "minLength": 20 },
+          "minimal_pair": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": { "type": "string", "minLength": 5 }
+          }
+        }
+      }
+    },
+
+    "examples": {
+      "type": "array",
+      "minItems": 6,
+      "description": "Minimaal zes originele contextuele voorbeelden.",
+      "items": {
+        "type": "object",
+        "unevaluatedProperties": false,
+        "required": ["sentence_en", "context_nl"],
+        "properties": {
+          "sentence_en": { "type": "string", "minLength": 10 },
+          "context_nl": { "type": "string", "minLength": 10 },
+          "highlights": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "unevaluatedProperties": false,
+              "required": ["text", "role"],
+              "properties": {
+                "text": { "type": "string", "minLength": 1 },
+                "role": { "$ref": "#/$defs/semanticRole" }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "visual_model_id": { "$ref": "common.json#/$defs/slug" },
+
+    "recap": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Korte retrieval recap.",
+      "items": { "type": "string", "minLength": 10 }
+    },
+
+    "exit_ticket": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": ["prompt_nl", "expected_evidence_nl"],
+      "properties": {
+        "prompt_nl": { "type": "string", "minLength": 15 },
+        "expected_evidence_nl": { "type": "string", "minLength": 15 }
+      }
+    },
+
+    "reference_informed_points": {
+      "type": "array",
+      "description": "Interne notitie: welke didactische aandachtspunten uit een externe referentie zijn afgeleid. Verschijnt nooit in leerlingmateriaal.",
+      "items": { "type": "string" }
+    }
+  },
+
+  "$defs": {
+    "semanticRole": {
+      "type": "string",
+      "enum": ["subject", "aux", "verb", "time", "negation", "object", "complement"]
+    },
+    "formPattern": {
+      "type": "object",
+      "unevaluatedProperties": false,
+      "required": ["pattern", "examples"],
+      "properties": {
+        "pattern": {
+          "type": "string",
+          "minLength": 3,
+          "description": "Bijvoorbeeld: SUBJECT + AUX(do/does) + not + VERB(base)"
+        },
+        "examples": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 5 }
+        }
+      }
+    }
+  }
+}

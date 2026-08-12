@@ -60,6 +60,24 @@ interactievormen terugkomt. Verwachte omvang: ± 1 875 activiteiten.
 opdrachtsturing verschillen per boek. Dit wordt afgedwongen in de
 niveaucontrole van `scripts/validate.py`.
 
+### D5. New Strike 3 telt acht units, unit 8 heeft lage prioriteit
+
+**Bevestigd door gebruiker.** Het boek heeft een unit 8, maar de leerkracht
+geraakt er in de praktijk bijna nooit. De pdf is niet aangeleverd.
+
+**Gevolg:**
+- `strike3.unit_count` staat op 8 en `strike3-u8` staat in de kaart, zodat het
+  boek correct beschreven is;
+- het thema draagt `source_available: false` en `priority: low`;
+- preflight meldt het als "bekend maar niet aangeleverd" en blokkeert er niet
+  op; extract, catalog en batch slaan het over zonder het als fout te tellen;
+- zodra de pdf in `sources/books/strike3/` staat en `source_available` op
+  `true` gaat, loopt het thema gewoon mee.
+
+Omdat de unit zelden aan bod komt, komt hij hoe dan ook als laatste aan de
+beurt. Er wordt geen werk aan besteed zolang de zeven andere units niet af
+zijn.
+
 ---
 
 ## Standaardwaarden, toegepast bij gebrek aan expliciete keuze
@@ -95,6 +113,14 @@ Conform sectie 3 van de masterprompt vastgelegd zonder aparte vraag.
 
 | # | Vraag | Blokkeert |
 |---|---|---|
-| O1 | Bestaat New Strike 3 UNIT 8? | Volledigheid van de curriculumkaart voor strike3 |
 | O2 | Klopt `en-GB` als variant? | Spellingnormalisatie in de antwoordcontrole |
 | O3 | Is `ace3-u1` een volwaardige unit of een instapunit? | Definitieve pilootkeuze; wordt beantwoord door Fase A |
+
+### Opgelost
+
+**O1 — Bestaat New Strike 3 UNIT 8?** Ja. De gebruiker bevestigt dat het boek
+acht units telt, maar dat unit 8 in de praktijk zelden bereikt wordt.
+
+De pdf is niet aangeleverd. `strike3` staat daarom op `unit_count: 8` met
+`strike3-u8` in de kaart, gemarkeerd als `source_available: false` en
+`priority: low`. Zie D5.

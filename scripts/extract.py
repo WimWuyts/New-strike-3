@@ -330,9 +330,19 @@ def main() -> int:
     book = config.book(args.book)
     state = State()
 
-    themes = book.themes
     if args.theme:
         themes = [book.theme(args.theme)]
+        if not themes[0].get("source_available", True):
+            print(
+                f"{args.theme}: geen bron-pdf aangeleverd. "
+                f"Zet source_available op true in config/project.yaml zodra die er is.",
+                file=sys.stderr,
+            )
+            return 1
+    else:
+        themes = book.available_themes
+        for skipped in book.unavailable_themes:
+            print(f"  {skipped['id']}: overgeslagen, geen bron-pdf aangeleverd")
 
     print(f"Extractie voor {book.title} ({len(themes)} thema's)")
 

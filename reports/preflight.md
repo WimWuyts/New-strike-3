@@ -38,7 +38,7 @@ De bronbestanden staan **niet lokaal**, maar in Google Drive van `wuw.sjb@gmail.
 | 6 | Digiboek - New Strike 3 UNIT 6.pdf | 50,5 MB | `1uRItWfwIoqi7wNiaDFYcyS0WwLDMTEAV` |
 | 7 | Digiboek - New Strike 3 UNIT 7.pdf | 34,7 MB | `1LhnXjlhGpx3ggZIzCLUCFBuSHEgWPjXt` |
 
-**Subtotaal: 7 units, ± 235 MB.**
+**Subtotaal: 7 van de 8 units aangeleverd, ± 235 MB.** Unit 8 bestaat maar ontbreekt; zie hieronder.
 
 **Totaal: 15 pdf's, ± 551 MB.** De mappen bevatten uitsluitend deze pdf's — geen audio, geen fonts, geen licentiebestanden.
 
@@ -47,7 +47,7 @@ De bronbestanden staan **niet lokaal**, maar in Google Drive van `wuw.sjb@gmail.
 - ❌ `sources/grammar-reference/english-grammar-in-use.pdf` — niet in Drive, niet lokaal.
 - ❌ `sources/licenses/RIGHTS_CONFIRMATION.md` — bestaat niet.
 - ❌ `sources/audio/`, `sources/fonts/` — bestaan niet.
-- ❓ **New Strike 3 UNIT 8** — niet aanwezig. Onbekend of het boek 7 units telt of unit 8 ontbreekt.
+- ⚠️ **New Strike 3 UNIT 8** — bestaat wel (bevestigd door de gebruiker), maar is niet aangeleverd. Het boek telt dus acht units, waarvan er zeven verwerkt kunnen worden. Unit 8 wordt in de praktijk zelden bereikt en staat op lage prioriteit.
 
 ---
 
@@ -143,7 +143,7 @@ Er is dus **geen toolblocker**. De volledige beoogde stack is opzetbaar zodra de
 
 ## 5. Schaalberekening voor "25 oefeningen per item"
 
-**Harde basis:** 15 thema's (8 New Ace 3 + 7 New Strike 3), uitgaande van één unit = één thema.
+**Harde basis:** 15 verwerkbare thema's (8 New Ace 3 + 7 van de 8 New Strike 3), uitgaande van één unit = één thema. New Strike 3 unit 8 bestaat wel maar is niet aangeleverd en telt hier dus niet mee; komt die pdf er later bij, dan schuiven de aantallen met één eenheid op.
 
 **Geschatte basis (nog niet uit de bron afgeleid — vereist OCR):** onderstaande aantallen per thema zijn een gemotiveerde schatting voor een Vlaams derdejaars-EFL-handboek en **moeten na Fase A vervangen worden door echte tellingen**.
 

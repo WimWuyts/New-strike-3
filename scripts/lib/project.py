@@ -62,6 +62,19 @@ class BookConfig:
     def theme_ids(self) -> list[str]:
         return [t["id"] for t in self.themes]
 
+    @property
+    def available_themes(self) -> list[dict[str, Any]]:
+        """Thema's waarvan de bron-pdf aangeleverd is.
+
+        Een thema kan bestaan in het boek zonder dat de pdf er is. Zo'n thema
+        blijft in de kaart staan, maar mag de extractie niet blokkeren.
+        """
+        return [t for t in self.themes if t.get("source_available", True)]
+
+    @property
+    def unavailable_themes(self) -> list[dict[str, Any]]:
+        return [t for t in self.themes if not t.get("source_available", True)]
+
     def theme(self, theme_id: str) -> dict[str, Any]:
         for entry in self.themes:
             if entry["id"] == theme_id:

@@ -34,10 +34,9 @@ books:
     title: "New Strike 3"
     edition: "2024"                  # uit de documenttitel van de bron
     source_glob: "sources/books/strike3/*.pdf"
-    unit_count: 7
+    unit_count: 8
     cefr_target: "A2"
     audience: "3e jaar, dubbele of arbeidsmarktfinaliteit"
-    open_question: "Bestaat er een UNIT 8? Niet aangeleverd."
     themes:
       - { id: strike3-u1, unit: 1, source_file: "Digiboek - New Strike 3 UNIT 1.pdf" }
       - { id: strike3-u2, unit: 2, source_file: "Digiboek - New Strike 3 UNIT 2.pdf" }
@@ -46,6 +45,15 @@ books:
       - { id: strike3-u5, unit: 5, source_file: "Digiboek - New Strike 3 UNIT 5.pdf" }
       - { id: strike3-u6, unit: 6, source_file: "Digiboek - New Strike 3 UNIT 6.pdf" }
       - { id: strike3-u7, unit: 7, source_file: "Digiboek - New Strike 3 UNIT 7.pdf" }
+      # Unit 8 bestaat wel in het boek, maar is niet aangeleverd. De leerkracht
+      # geraakt er in de praktijk zelden, dus lage prioriteit. Zet
+      # source_available op true zodra de pdf in sources/books/strike3/ staat.
+      - id: strike3-u8
+        unit: 8
+        source_file: "Digiboek - New Strike 3 UNIT 8.pdf"
+        source_available: false
+        priority: low
+        note: "Bestaat, maar wordt in de praktijk zelden bereikt."
 
 # ---------------------------------------------------------------------------
 # Rechten

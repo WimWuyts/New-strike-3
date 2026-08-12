@@ -128,9 +128,15 @@ def main() -> int:
 
     reports: list[PdfReport] = []
     missing_files: list[str] = []
+    not_supplied: list[str] = []
 
     for book in config.books:
-        for theme in book.themes:
+        for theme in book.unavailable_themes:
+            note = theme.get("note", "")
+            not_supplied.append(
+                f"{theme['id']} — {theme['source_file']}" + (f" ({note})" if note else "")
+            )
+        for theme in book.available_themes:
             path = book.source_dir / theme["source_file"]
             if not path.exists():
                 missing_files.append(f"{book.id}: {relative(path)}")
@@ -148,7 +154,9 @@ def main() -> int:
             if candidate.resolve() not in expected:
                 stray.append(relative(candidate))
 
-    _write_reports(config, reports, missing_files, stray, missing_required, missing_optional)
+    _write_reports(
+        config, reports, missing_files, not_supplied, stray, missing_required, missing_optional
+    )
     write_json_atomic(
         DATA_DIR / "source-inventory.json",
         {"pdfs": [asdict(r) for r in reports], "missing": missing_files},
@@ -166,6 +174,8 @@ def main() -> int:
     # -- samenvatting op stdout -------------------------------------------
     print(f"Bronbestanden gevonden : {len(reports)}")
     print(f"Bronbestanden ontbrekend: {len(missing_files)}")
+    if not_supplied:
+        print(f"Bekend, niet aangeleverd: {len(not_supplied)} (blokkeert niet)")
     if reports:
         needs_ocr = sum(1 for r in reports if r.ocr_required)
         watermarked = sum(1 for r in reports if r.watermark_detected)
@@ -196,11 +206,23 @@ def _write_reports(
     config: Config,
     reports: list[PdfReport],
     missing_files: list[str],
+    not_supplied: list[str],
     stray: list[str],
     missing_required: dict[str, str],
     missing_optional: dict[str, str],
 ) -> None:
     lines: list[str] = ["# Intake — technische staat van de bronnen", ""]
+
+    if not_supplied:
+        lines += [
+            "## Bekend maar niet aangeleverd",
+            "",
+            "Deze thema's staan in de curriculumkaart maar hebben geen bron-pdf.",
+            "Ze blokkeren de pipeline niet en worden overgeslagen bij extractie.",
+            "",
+        ]
+        lines += [f"- {item}" for item in not_supplied]
+        lines.append("")
 
     if missing_files:
         lines += [

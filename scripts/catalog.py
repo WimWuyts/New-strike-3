@@ -339,11 +339,13 @@ def main() -> int:
     missing: list[str] = []
 
     for book in books:
-        for theme_cfg in book.themes:
+        for theme_cfg in book.available_themes:
             try:
                 themes.append(build_theme(config, book.id, theme_cfg))
             except ProjectError as exc:
                 missing.append(str(exc).splitlines()[0])
+        for skipped in book.unavailable_themes:
+            print(f"  {skipped['id']}: overgeslagen, geen bron-pdf aangeleverd")
 
     if missing:
         for item in missing:

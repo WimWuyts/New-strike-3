@@ -42,8 +42,17 @@ def main() -> int:
     failed: list[tuple[str, int]] = []
     missing: list[str] = []
 
+    unavailable: list[str] = []
+
     for theme in book.themes:
         theme_id = theme["id"]
+
+        # Een thema zonder aangeleverde bron telt niet als fout: het bestaat in
+        # het boek, maar er valt niets te bouwen.
+        if not theme.get("source_available", True):
+            unavailable.append(theme_id)
+            print(f"{theme_id}: geen bron aangeleverd, overgeslagen")
+            continue
 
         if not (CONTENT_DIR / theme_id).exists():
             missing.append(theme_id)
@@ -74,12 +83,14 @@ def main() -> int:
     )
     state.save()
 
-    total = len(book.themes)
-    print(f"\n{book.title}: {len(passed)}/{total} thema's geldig")
+    total = len(book.themes) - len(unavailable)
+    print(f"\n{book.title}: {len(passed)}/{total} bouwbare thema's geldig")
     if failed:
         print("Gefaald: " + ", ".join(f"{theme} ({count})" for theme, count in failed))
     if missing:
         print("Zonder content: " + ", ".join(missing))
+    if unavailable:
+        print("Zonder bron: " + ", ".join(unavailable))
     print(f"Details: {relative(Path('reports') / 'validation.md')}")
 
     if failed:

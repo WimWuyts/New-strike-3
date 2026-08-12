@@ -23,6 +23,9 @@ sources/
     strike3/
       Digiboek - New Strike 3 UNIT 1.pdf
       ... t/m UNIT 7
+      # UNIT 8 bestaat maar is niet aangeleverd. Zet je hem er later bij,
+      # dan moet source_available voor strike3-u8 in config/project.yaml
+      # op true.
   licenses/
     RIGHTS_CONFIRMATION.md     # optioneel, zie §6
 ```

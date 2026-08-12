@@ -55,7 +55,7 @@
       "items": {
         "type": "object",
         "unevaluatedProperties": false,
-        "required": ["id", "number", "page", "items"],
+        "required": ["id", "number", "page"],
         "properties": {
           "id": { "$ref": "common.json#/$defs/slug" },
           "number": {
@@ -65,6 +65,10 @@
           },
           "label_nl": { "type": "string" },
           "page": { "type": "integer", "minimum": 1 },
+          "part": {
+            "type": "string",
+            "description": "Deel van de unit, bijvoorbeeld '1 Friends With Boys'. Stuurt de tussenslides."
+          },
           "section": {
             "type": "string",
             "enum": [
@@ -107,16 +111,51 @@
                 }
               }
             }
+          },
+          "table": {
+            "type": "object",
+            "unevaluatedProperties": false,
+            "required": ["headers", "rows"],
+            "description": "Voor opdrachten die als raster ingevuld worden. Wordt per rij onthuld.",
+            "properties": {
+              "headers": {
+                "type": "array",
+                "minItems": 2,
+                "items": { "$ref": "common.json#/$defs/nonEmptyText" }
+              },
+              "rows": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "array",
+                  "minItems": 2,
+                  "items": { "type": "string" }
+                }
+              }
+            }
           }
         },
+
         "allOf": [
           {
-            "comment": "Een open opdracht heeft een modelantwoord nodig, geen sleutel die als enig juist geldt.",
+            "comment": "Een open opdracht heeft een leerkrachtnotitie nodig, geen sleutel die als enig juist geldt.",
             "if": {
               "properties": { "open_ended": { "const": true } },
               "required": ["open_ended"]
             },
             "then": { "required": ["note_nl"] }
+          },
+          {
+            "comment": "Een gesloten opdracht moet iets te onthullen hebben: items of een tabel.",
+            "if": {
+              "not": {
+                "properties": { "open_ended": { "const": true } },
+                "required": ["open_ended"]
+              }
+            },
+            "then": {
+              "anyOf": [{ "required": ["items"] }, { "required": ["table"] }]
+            }
           }
         ]
       }

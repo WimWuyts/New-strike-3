@@ -1,0 +1,979 @@
+{
+  "id": "ace3-u1-answers",
+  "book_id": "ace3",
+  "theme_id": "ace3-u1",
+  "title": "New Ace 3 — Unit 1 First day",
+  "provenance": "source_core",
+  "rights_status": "licensed_confirmed",
+  "use_scope": "own_lesson_groups",
+  "teacher_only": true,
+  "derivation": "manual_inventory",
+  "derivation_note_nl": "Overgenomen uit het ingevulde digiboek via een handmatige inventaris, niet via de OCR-pijplijn. Paginanummers zijn boekpagina's.",
+  "source_page_offset": 8,
+  "exercises": [
+    {
+      "id": "ace3-u1-ex-01",
+      "number": "1",
+      "part": "1 Friends With Boys",
+      "page": 10,
+      "section": "reading",
+      "open_ended": true,
+      "note_nl": "Leerlingen leiden af wat ze uit de eerste drie stripbladzijden opmaken. Let erop dat ze zich baseren op wat ze effectief zien (kamer, wekker, meisje dat zich klaarmaakt, \"FIRST DAY\") en niet op gissingen over het verdere verhaal."
+    },
+    {
+      "id": "ace3-u1-ex-02",
+      "number": "2",
+      "part": "1 Friends With Boys",
+      "page": 13,
+      "section": "reading",
+      "items": [
+        { "number": "1", "answer": "unhappy, nervous, scared …", "note_nl": "De puntjes geven aan dat andere gevoelswoorden ook mogen." },
+        { "number": "2", "answer": "No, because she meets a girl who smiles and is friendly. She makes a friend." },
+        { "number": "3", "answer": "She often thinks about her mother." },
+        { "number": "4", "answer": "He is a police officer." },
+        { "number": "5", "answer": "Magsby" },
+        { "number": "6", "answer": "Because Zander is four minutes older than Lloyd." },
+        { "number": "7", "answer": "They live in Sandford." },
+        { "number": "8", "answer": "Daniel and his drama club friends" },
+        { "number": "9", "answer": "Daniel" },
+        { "number": "10", "answer": "three: Daniel, Zander and Lloyd" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-03",
+      "number": "3",
+      "label_nl": "Present continuous",
+      "part": "1 Friends With Boys",
+      "page": 17,
+      "section": "grammar",
+      "items": [
+        { "number": "1", "answer": "is hanging" },
+        { "number": "2", "answer": "is shining" },
+        { "number": "3", "answer": "is ringing" },
+        { "number": "4", "answer": "is making" },
+        { "number": "5", "answer": "is hitting" },
+        { "number": "6", "answer": "is repeating" },
+        { "number": "7", "answer": "is having" },
+        { "number": "8", "answer": "is brushing" },
+        { "number": "9", "answer": "is drying" },
+        { "number": "10", "answer": "is staring" },
+        { "number": "11", "answer": "isn't feeling", "alternatives": ["is not feeling"] },
+        { "number": "12", "answer": "are smiling" },
+        { "number": "13", "answer": "is running" },
+        { "number": "14", "answer": "is happening" },
+        { "number": "15", "answer": "is he frowning" },
+        { "number": "16", "answer": "Is he thinking" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-04",
+      "number": "4",
+      "label_nl": "Gevoelens",
+      "part": "1 Friends With Boys",
+      "page": 18,
+      "section": "vocabulary",
+      "items": [
+        { "number": "annoyed", "answer": "3" },
+        { "number": "confused", "answer": "1" },
+        { "number": "sad", "answer": "4" },
+        { "number": "scared", "answer": "5" },
+        { "number": "surprised", "answer": "2" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-05",
+      "number": "5",
+      "label_nl": "Persoonlijkheid",
+      "part": "1 Friends With Boys",
+      "page": 18,
+      "section": "vocabulary",
+      "items": [
+        { "number": "1", "answer": "Maggie", "note_nl": "nervous, worried, lonely, insecure, shy" },
+        { "number": "2", "answer": "Daniel", "note_nl": "excited, enthusiastic, popular, modest, outgoing" },
+        { "number": "3", "answer": "father", "note_nl": "caring, helpful, quiet, calm" },
+        { "number": "4", "answer": "Zander", "note_nl": "bitter, angry, moody, sarcastic" },
+        { "number": "5", "answer": "Lloyd", "note_nl": "energetic, loud, playful, naughty" },
+        { "number": "6", "answer": "Lucy", "note_nl": "curious, friendly, cheerful, sociable" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-06",
+      "number": "6",
+      "label_nl": "Persoonlijkheid in context",
+      "part": "1 Friends With Boys",
+      "page": 19,
+      "section": "vocabulary",
+      "instruction_nl": "Alleen de aangevulde woorddelen; het boek geeft telkens de beginletter.",
+      "note_nl": "De koppelingen naar de Simpsons-personages (\"In Springfield, you would be …\") zijn met lijnen aangeduid. Die lijnen zijn op de scan niet betrouwbaar te volgen, dus staan hier geen antwoorden voor.",
+      "items": [
+        { "number": "1", "answer": "popular / sociable" },
+        { "number": "2", "answer": "enthusiastic" },
+        { "number": "3", "answer": "calm / quiet" },
+        { "number": "4", "answer": "caring / helpful" },
+        { "number": "5", "answer": "lonely" },
+        { "number": "6", "answer": "curious" },
+        { "number": "7", "answer": "friendly / modest" },
+        { "number": "8", "answer": "sarcastic" },
+        { "number": "9", "answer": "energetic / outgoing" },
+        { "number": "10", "answer": "shy / insecure / nervous" },
+        { "number": "11", "answer": "loud / naughty" },
+        { "number": "12", "answer": "bitter / moody" },
+        { "number": "13", "answer": "cheerful / playful" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-07",
+      "number": "7",
+      "part": "1 Friends With Boys",
+      "page": 20,
+      "section": "speaking",
+      "open_ended": true,
+      "note_nl": "Leerlingen beschrijven gevoelens bij vijf Rockwell-fragmenten. Let erop dat ze hun interpretatie koppelen aan concrete beeldelementen (blik, houding, context)."
+    },
+    {
+      "id": "ace3-u1-ex-08",
+      "number": "8",
+      "part": "1 Friends With Boys",
+      "page": 20,
+      "section": "speaking",
+      "open_ended": true,
+      "note_nl": "Try this: een uitsnede posten met bijschrift, daarna de volledige foto. Let op het contrast tussen het bijschrift en wat er echt gebeurt."
+    },
+    {
+      "id": "ace3-u1-ex-09",
+      "number": "9",
+      "label_nl": "Present simple, korte vormen",
+      "part": "1 Friends With Boys",
+      "page": 21,
+      "section": "grammar",
+      "items": [
+        { "number": "1", "answer": "becomes" },
+        { "number": "2", "answer": "stays" },
+        { "number": "3", "answer": "doesn't get up" },
+        { "number": "4", "answer": "aren't" },
+        { "number": "5", "answer": "doesn't have" },
+        { "number": "6", "answer": "has" },
+        { "number": "7", "answer": "rushes" },
+        { "number": "8", "answer": "doesn't want" },
+        { "number": "9", "answer": "cries" },
+        { "number": "10", "answer": "does" },
+        { "number": "11", "answer": "joins" },
+        { "number": "12", "answer": "don't talk" },
+        { "number": "13", "answer": "realises" },
+        { "number": "14", "answer": "doesn't have", "alternatives": ["hasn't got"], "uncertain": true },
+        { "number": "15", "answer": "tries" },
+        { "number": "16", "answer": "watches" },
+        { "number": "17", "answer": "goes" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-10",
+      "number": "10",
+      "part": "1 Friends With Boys",
+      "page": 21,
+      "section": "speaking",
+      "open_ended": true,
+      "note_nl": "Klasactiviteit \"find out how much you have in common\". Let op correcte vraagvorming in de present simple."
+    },
+    {
+      "id": "ace3-u1-ex-11",
+      "number": "11",
+      "part": "1 Friends With Boys",
+      "page": 21,
+      "section": "listening",
+      "items": [
+        { "number": "1", "answer": "She makes graphic novels. She wrote Friends With Boys." },
+        { "number": "2", "answer": "There is a ghost." },
+        { "number": "3", "answer": "teenage girls" },
+        { "number": "4", "answer": "false" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-12",
+      "number": "12",
+      "label_nl": "Word order in questions",
+      "part": "1 Friends With Boys",
+      "page": 22,
+      "section": "grammar",
+      "instruction_nl": "Kopvraag \"What kind of personality does Faith have?\" is open: laat leerlingen adjectieven uit opdracht 5 en 6 gebruiken en met de FAQ staven.",
+      "items": [
+        { "number": "a", "answer": "you — Why do you like comics? / Do you want to work together …? / How much money do you ask …? / Can you give any advice …? / Are you a manga fan?", "note_nl": "Het onderwerp is in elke vraag gemarkeerd." },
+        { "number": "a", "answer": "Who — helps you with the drawings? / is the target audience …?" },
+        { "number": "a", "answer": "Which characters — in Friends with Boys are autobiographical?" },
+        { "number": "b", "answer": "to be", "note_nl": "Questions with … as a main verb do not use the auxiliary to do." },
+        { "number": "b", "answer": "subject", "note_nl": "When the question word is (part of) the … of the sentence, you do not use the auxiliary to do." }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-13",
+      "number": "13",
+      "label_nl": "Vragen vormen",
+      "part": "1 Friends With Boys",
+      "page": 23,
+      "section": "grammar",
+      "items": [
+        { "number": "1", "answer": "What kind of comics does Faith like?" },
+        { "number": "2", "answer": "Does Faith read other types of comics?" },
+        { "number": "3", "answer": "How much time does Faith need to draw one page?" },
+        { "number": "4", "answer": "What does Faith find the most difficult part of making comics?" },
+        { "number": "5", "answer": "How do you feel about manga comics?" },
+        { "number": "6", "answer": "What happens in Monster?" },
+        { "number": "7", "answer": "Are there any Japanese characters in this manga?" },
+        { "number": "8", "answer": "Which characters play an important part in the story?" },
+        { "number": "9", "answer": "Who plays the role of the serial killer?" },
+        { "number": "10", "answer": "Can the police catch the serial killer?" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-14",
+      "number": "14",
+      "label_nl": "Vragen bij onderstreepte zinsdelen",
+      "part": "1 Friends With Boys",
+      "page": 24,
+      "section": "grammar",
+      "items": [
+        { "number": "1", "answer": "Where do you buy your comics?" },
+        { "number": "2", "answer": "What are you researching right now?" },
+        { "number": "3", "answer": "Which character do you love to draw most?" },
+        { "number": "4", "answer": "What inspires you the most for your comics?" },
+        { "number": "5", "answer": "Who helps you with your work?" },
+        { "number": "6", "answer": "Who lives next door to you?" },
+        { "number": "7", "answer": "What is your favourite TV show?" },
+        { "number": "8", "answer": "Where does the story Monster take place?" },
+        { "number": "9", "answer": "Who does Johan Liebert kill?" },
+        { "number": "10", "answer": "Who investigates the Johan Liebert case?" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-15",
+      "number": "15",
+      "part": "1 Friends With Boys",
+      "page": 25,
+      "section": "reading",
+      "open_ended": true,
+      "note_nl": "Leerlingen formuleren zelf vraagwoordvragen bij Brain camp. Let op de woordvolgorde uit het kader op blz. 22 en op variatie in vraagwoorden."
+    },
+    {
+      "id": "ace3-u1-ex-16",
+      "number": "16",
+      "part": "1 Friends With Boys",
+      "page": 25,
+      "section": "speaking",
+      "open_ended": true,
+      "note_nl": "Try this: vragen voorbereiden voor een online interview met Susan Kim. Let op relevantie en op vragen die niet met ja of nee te beantwoorden zijn."
+    },
+
+    {
+      "id": "ace3-u1-ex-17",
+      "number": "17",
+      "part": "2 Welcome to the freshmen!",
+      "page": 26,
+      "section": "reading",
+      "open_ended": true,
+      "note_nl": "\"Which elements from the text do you recognise in your school?\" Let erop dat leerlingen expliciet vergelijken met de eigen schoolcontext."
+    },
+    {
+      "id": "ace3-u1-ex-18",
+      "number": "18",
+      "label_nl": "Termen markeren",
+      "part": "2 Welcome to the freshmen!",
+      "page": 28,
+      "section": "vocabulary",
+      "note_nl": "De markeringen staan al in de tekst op blz. 26-27. Bij enkele korte termen is de markeringsgrens niet scherp; de lijst kan één of twee termen missen.",
+      "items": [
+        { "number": "1", "answer": "grades · kindergarten · primary school · high school · teachers · math · science", "uncertain": true },
+        { "number": "2", "answer": "college · university · school bus · freshman · locker room · gym class · computer room", "uncertain": true },
+        { "number": "3", "answer": "cheerleaders · student detention · principal · expel · drop out · graduating · failing", "uncertain": true },
+        { "number": "4", "answer": "guidance counselors · class · grade · prom · exams · papers · homework assignments", "uncertain": true },
+        { "number": "5", "answer": "seniors · graduates · college degree", "uncertain": true }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-19",
+      "number": "19",
+      "label_nl": "K-12-diagram",
+      "part": "2 Welcome to the freshmen!",
+      "page": 28,
+      "section": "vocabulary",
+      "items": [
+        { "number": "A", "answer": "kindergarten" },
+        { "number": "B", "answer": "high school" },
+        { "number": "C", "answer": "freshmen" },
+        { "number": "D", "answer": "seniors" },
+        { "number": "E", "answer": "college" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-20",
+      "number": "20",
+      "label_nl": "Definities",
+      "part": "2 Welcome to the freshmen!",
+      "page": 29,
+      "section": "vocabulary",
+      "items": [
+        { "number": "1", "answer": "to fail" },
+        { "number": "2", "answer": "cheerleaders" },
+        { "number": "3", "answer": "detention" },
+        { "number": "4", "answer": "to expel" },
+        { "number": "5", "answer": "to drop out" },
+        { "number": "6", "answer": "a driver's license", "alternatives": ["a driving licence"] },
+        { "number": "7", "answer": "independence" },
+        { "number": "8", "answer": "a prom" },
+        { "number": "9", "answer": "a tuxedo" },
+        { "number": "10", "answer": "a graduate" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-21",
+      "number": "21",
+      "label_nl": "Zinnen aanvullen",
+      "part": "2 Welcome to the freshmen!",
+      "page": 29,
+      "section": "vocabulary",
+      "items": [
+        { "number": "1", "answer": "grade" },
+        { "number": "2", "answer": "kindergarten" },
+        { "number": "3", "answer": "colleges" },
+        { "number": "4", "answer": "freshman" },
+        { "number": "5", "answer": "principal" },
+        { "number": "6", "answer": "guidance counselor", "alternatives": ["counsellor"] },
+        { "number": "7", "answer": "grade" },
+        { "number": "8", "answer": "graduation" },
+        { "number": "9", "answer": "seniors" },
+        { "number": "10", "answer": "degree" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-22",
+      "number": "22",
+      "label_nl": "Woordweb school vocabulary",
+      "part": "2 Welcome to the freshmen!",
+      "page": 30,
+      "section": "vocabulary",
+      "note_nl": "De opdracht vraagt daarnaast om eigen schoolwoordenschat toe te voegen. Dat deel is open.",
+      "items": [
+        { "number": "people", "answer": "a cheerleader · a graduate · a freshman · a sophomore · a junior · a senior · a student · a principal/head · a headmaster/headmistress · a guidance counsel(l)or · a teacher · clubs" },
+        { "number": "schools", "answer": "kindergarten · high school · primary school/elementary school · college/university · boarding school" },
+        { "number": "places", "answer": "a class · a classroom · a corridor · a gym · a computer room · a library · a playground · a school canteen · a science lab · a sports ground · a sports hall · a locker room" },
+        { "number": "objects", "answer": "an atlas · a backpack · a binder · a calculator · a diary · a dictionary · a highlighter · a map · a pen/pencil · a timetable · an exam · a paper · a homework assignment" },
+        { "number": "classical languages", "answer": "Latin · Greek" },
+        { "number": "modern languages", "answer": "Dutch · English · French · German · Spanish" },
+        { "number": "science", "answer": "chemistry · physics · Information and Communication Technology (ICT) · geography · mathematics · biology · engineering" },
+        { "number": "other subjects", "answer": "art · Physical Education (PE) · Religious Education (RE) · music · history · economics" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-23",
+      "number": "23",
+      "label_nl": "Lip-dub video",
+      "part": "2 Welcome to the freshmen!",
+      "page": 31,
+      "section": "listening",
+      "instruction_nl": "De kopvraag \"Which typical elements of high school life do you see?\" is open.",
+      "items": [
+        { "number": "1", "answer": "guidance counsellor", "alternatives": ["counselor"] },
+        { "number": "2", "answer": "drop out" },
+        { "number": "3", "answer": "library" },
+        { "number": "4", "answer": "drama club" },
+        { "number": "5", "answer": "driving licence", "alternatives": ["driver's license"] },
+        { "number": "6", "answer": "corridors" },
+        { "number": "7", "answer": "cheerleaders" },
+        { "number": "8", "answer": "stay in school" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-24",
+      "number": "24",
+      "part": "2 Welcome to the freshmen!",
+      "page": 31,
+      "section": "writing",
+      "open_ended": true,
+      "note_nl": "Twee korte alinea's over eigen fears and fantasies. Let op het model van de tekst uit opdracht 17: kopje plus korte alinea, en op correct gebruik van de nieuwe schoolwoordenschat."
+    },
+    {
+      "id": "ace3-u1-ex-25",
+      "number": "25",
+      "part": "2 Welcome to the freshmen!",
+      "page": 31,
+      "section": "listening",
+      "open_ended": true,
+      "note_nl": "\"What makes life at this school different from your school?\" Let op minstens enkele concrete verschillen uit de video."
+    },
+    {
+      "id": "ace3-u1-ex-26",
+      "number": "26",
+      "label_nl": "Present simple of present continuous",
+      "part": "2 Welcome to the freshmen!",
+      "page": 32,
+      "section": "grammar",
+      "items": [
+        { "number": "a", "answer": "has · continue · has · teaches · is · starts · gets · don't care · doesn't look · don't … understand · like · do · thinks · is · reserve", "note_nl": "Present simple, één kleur." },
+        { "number": "a", "answer": "is getting · is helping · are standing · are reciting · are saying", "note_nl": "Present continuous, andere kleur." },
+        { "number": "b", "answer": "present simple", "note_nl": "We use the …" },
+        { "number": "b", "answer": "routines", "note_nl": "• to talk about …" },
+        { "number": "b", "answer": "present continuous", "note_nl": "We use the …" },
+        { "number": "b", "answer": "right now", "note_nl": "• to talk about actions going on …" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-27",
+      "number": "27",
+      "label_nl": "Welcome to the Amish school",
+      "part": "2 Welcome to the freshmen!",
+      "page": 34,
+      "section": "grammar",
+      "items": [
+        { "number": "1", "answer": "think" },
+        { "number": "2", "answer": "have" },
+        { "number": "3", "answer": "don't use" },
+        { "number": "4", "answer": "doesn't own" },
+        { "number": "5", "answer": "don't shave" },
+        { "number": "6", "answer": "is walking" },
+        { "number": "7", "answer": "are wearing" },
+        { "number": "8", "answer": "have" },
+        { "number": "9", "answer": "have" },
+        { "number": "10", "answer": "control" },
+        { "number": "11", "answer": "have" },
+        { "number": "12", "answer": "begins" },
+        { "number": "13", "answer": "includes" },
+        { "number": "14", "answer": "want" },
+        { "number": "15", "answer": "associate" },
+        { "number": "16", "answer": "are exiting" },
+        { "number": "17", "answer": "are carrying" },
+        { "number": "18", "answer": "look" },
+        { "number": "19", "answer": "think" },
+        { "number": "20", "answer": "cares" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-28",
+      "number": "28",
+      "part": "2 Welcome to the freshmen!",
+      "page": 35,
+      "section": "speaking",
+      "open_ended": true,
+      "note_nl": "Beschrijven wat je ziet op de beelden van de Pass Creek School, met de woorden van het scherm. Let erop dat de present continuous gebruikt wordt voor wat er op dat moment gebeurt."
+    },
+    {
+      "id": "ace3-u1-ex-29",
+      "number": "29",
+      "part": "2 Welcome to the freshmen!",
+      "page": 35,
+      "section": "speaking",
+      "open_ended": true,
+      "note_nl": "Eigen school vergelijken met minstens twee gelijkenissen en twee verschillen. Let op het gebruik van de zinsbouwsteunen (\"At my school … But at the Amish school they …\")."
+    },
+
+    {
+      "id": "ace3-u1-ex-30",
+      "number": "30",
+      "part": "3 The flipped classroom",
+      "page": 36,
+      "section": "speaking",
+      "open_ended": true,
+      "note_nl": "Wat de drie klaslokalen gemeen hebben. Let op het benoemen van technologie en afstandsonderwijs als rode draad."
+    },
+    {
+      "id": "ace3-u1-ex-31",
+      "number": "31",
+      "label_nl": "Clintondale High School",
+      "part": "3 The flipped classroom",
+      "page": 36,
+      "section": "listening",
+      "table": {
+        "headers": ["Vraag", "Antwoord"],
+        "rows": [
+          ["Who/What are they talking about? Where is it?", "Clintondale High School — near Detroit"],
+          ["Why did the school change?", "not doing very well; many students failing English, science and maths"],
+          ["What was the biggest change for teachers?", "recording their lessons; posting them online; learning to work with (social) media and technology"],
+          ["What was the biggest change for students?", "watching the videos as homework; doing exercises in class"],
+          ["How successful was the change?", "expert is optimistic; but lectures and worksheets must be interesting"]
+        ]
+      }
+    },
+    {
+      "id": "ace3-u1-ex-32",
+      "number": "32",
+      "part": "3 The flipped classroom",
+      "page": 37,
+      "section": "speaking",
+      "open_ended": true,
+      "note_nl": "Discussie over de flipped classroom. Let op het gebruik van de meningsuitdrukkingen (\"In my opinion …\", \"If you ask me …\")."
+    },
+    {
+      "id": "ace3-u1-ex-33",
+      "number": "33",
+      "label_nl": "Drie e-mails aan Greg Green",
+      "part": "3 The flipped classroom",
+      "page": 37,
+      "section": "reading",
+      "table": {
+        "headers": ["Vraag", "Antwoord"],
+        "rows": [
+          ["1 Which email was written by a parent?", "Valentina's email"],
+          ["2 Which email was written by a student?", "Chris's email"],
+          ["3 Which email was written by a teacher?", "Tina's email"],
+          ["4 Which writer is most enthusiastic about the flipped classroom?", "Valentina's email"],
+          ["5 In which email does the writer not know the reader?", "Valentina's email"],
+          ["6 To which email does the writer expect a reply?", "Chris's email en Valentina's email"],
+          ["7 Which email is the most formal?", "Valentina's email"],
+          ["8 Which email is the most informal?", "Tina's email"]
+        ]
+      }
+    },
+    {
+      "id": "ace3-u1-ex-34",
+      "number": "34",
+      "label_nl": "Rollen koppelen",
+      "part": "3 The flipped classroom",
+      "page": 39,
+      "section": "reading",
+      "items": [
+        { "number": "1 Greg Green", "answer": "A, G" },
+        { "number": "2 Mr Vanderbilt", "answer": "B" },
+        { "number": "3 Tina Jones", "answer": "B, D" },
+        { "number": "4 Ms d'Angelo", "answer": "E" },
+        { "number": "5 Chris Becker", "answer": "C" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-35",
+      "number": "35",
+      "label_nl": "Genitief — Lost & Found",
+      "part": "3 The flipped classroom",
+      "page": 39,
+      "section": "grammar",
+      "instruction_nl": "On the table, we can see …",
+      "items": [
+        { "number": "1", "answer": "Timmy's lunchboxes" },
+        { "number": "2", "answer": "Jess's watch", "alternatives": ["Jess' watch"] },
+        { "number": "3", "answer": "Mr Philips' sunglasses", "alternatives": ["Mr Philips's sunglasses"] },
+        { "number": "4", "answer": "Johnny's toy airplanes" },
+        { "number": "5", "answer": "Emily's gloves" },
+        { "number": "6", "answer": "my dog's tennis ball" },
+        { "number": "7", "answer": "four boys' hats" },
+        { "number": "8", "answer": "Ms Brown's towel" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-36",
+      "number": "36",
+      "label_nl": "Possessive pronouns",
+      "part": "3 The flipped classroom",
+      "page": 40,
+      "section": "grammar",
+      "items": [
+        { "number": "1", "answer": "mine", "note_nl": "This boy is a buddy of …" },
+        { "number": "2", "answer": "yours", "note_nl": "This calculator is …" },
+        { "number": "3", "answer": "hers", "note_nl": "This girl is a friend of …" },
+        { "number": "4", "answer": "theirs", "note_nl": "These atlases are …" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-37",
+      "number": "37",
+      "label_nl": "Twee nieuwsreportages over diefstal",
+      "part": "3 The flipped classroom",
+      "page": 41,
+      "section": "listening",
+      "instruction_nl": "De kopvraag \"What surprised you about each report?\" is open.",
+      "table": {
+        "headers": ["Vraag", "Reportage 1", "Reportage 2"],
+        "rows": [
+          ["Where did the theft happen?", "Jane Long Academy", "Desert Sands Middle School"],
+          ["What was stolen?", "a cell phone", "50 Apple computers and more"],
+          ["How much was it worth?", "$549.99", "$50,000-60,000"],
+          ["Do we know who did it?", "no", "4 teenagers"],
+          ["Was the stolen stuff returned?", "no", "yes, almost all except what was already sold"]
+        ]
+      }
+    },
+    {
+      "id": "ace3-u1-ex-38",
+      "number": "38",
+      "label_nl": "Possessive pronouns",
+      "part": "3 The flipped classroom",
+      "page": 41,
+      "section": "grammar",
+      "items": [
+        { "number": "1", "answer": "mine" },
+        { "number": "2", "answer": "theirs" },
+        { "number": "3", "answer": "hers" },
+        { "number": "4", "answer": "yours" },
+        { "number": "5", "answer": "ours" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-39",
+      "number": "39",
+      "label_nl": "Stealing in the Classroom",
+      "part": "3 The flipped classroom",
+      "page": 42,
+      "section": "grammar",
+      "items": [
+        { "number": "1", "answer": "they're" },
+        { "number": "2", "answer": "their" },
+        { "number": "3", "answer": "its" },
+        { "number": "4", "answer": "there's" },
+        { "number": "5", "answer": "it's" },
+        { "number": "6", "answer": "their" },
+        { "number": "7", "answer": "your" },
+        { "number": "8", "answer": "its" },
+        { "number": "9", "answer": "you're" },
+        { "number": "10", "answer": "their" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-40",
+      "number": "40",
+      "part": "3 The flipped classroom",
+      "page": 42,
+      "section": "speaking",
+      "open_ended": true,
+      "note_nl": "Vragenlijst invullen, buur interviewen, identieke antwoorden tellen en rapporteren. Let erop dat het rapporteren met possessive pronouns gebeurt (\"Mine is yellow, hers is green\")."
+    },
+    {
+      "id": "ace3-u1-ex-41",
+      "number": "41",
+      "part": "3 The flipped classroom",
+      "page": 43,
+      "section": "writing",
+      "open_ended": true,
+      "note_nl": "E-mail aan Ted Oberg. Let op de vier conventies uit het kader (salutation, opening, request, closing), op spellingcontrole én herlezen, en op de verwarde spellingsparen uit de strategie."
+    },
+    {
+      "id": "ace3-u1-ex-uty",
+      "number": "Up to you!",
+      "label_nl": "Eindtaak",
+      "part": "3 The flipped classroom",
+      "page": 44,
+      "section": "writing",
+      "open_ended": true,
+      "note_nl": "E-mail aan een Amerikaanse leerling over gelijkenissen en verschillen tussen de scholen. Let op de zeven punten van de portfoliochecklist: schoolwoordenschat, present simple en continuous, e-mailconventies, possessive pronouns en adjectives, gebruik van de eigen notities bij de video, interessante vragen, spellingcontrole."
+    },
+
+    {
+      "id": "ace3-u1-ex-ty01",
+      "number": "Test yourself 1",
+      "part": "Test yourself",
+      "page": 50,
+      "section": "review",
+      "items": [
+        { "number": "1", "answer": "cheerleaders" },
+        { "number": "2", "answer": "grades" },
+        { "number": "3", "answer": "fail" },
+        { "number": "4", "answer": "guidance counsellor" },
+        { "number": "5", "answer": "drop out" },
+        { "number": "6", "answer": "detention" },
+        { "number": "7", "answer": "prom" },
+        { "number": "8", "answer": "driving licence" },
+        { "number": "9", "answer": "grade" },
+        { "number": "10", "answer": "expel" },
+        { "number": "11", "answer": "senior" },
+        { "number": "12", "answer": "graduate" },
+        { "number": "13", "answer": "degree" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-ty02",
+      "number": "Test yourself 2",
+      "part": "Test yourself",
+      "page": 51,
+      "section": "review",
+      "items": [
+        { "number": "1", "answer": "backpacks" },
+        { "number": "2", "answer": "playground" },
+        { "number": "3", "answer": "school canteen", "alternatives": ["cafetaria"] },
+        { "number": "4", "answer": "classroom" },
+        { "number": "5", "answer": "homework assignment" },
+        { "number": "6", "answer": "binders" },
+        { "number": "7", "answer": "subjects", "alternatives": ["classes"] },
+        { "number": "8", "answer": "geography" },
+        { "number": "9", "answer": "math", "alternatives": ["maths", "mathematics"] },
+        { "number": "10", "answer": "dictionary" },
+        { "number": "11", "answer": "RE", "alternatives": ["Religious Education"] }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-ty03",
+      "number": "Test yourself 3",
+      "part": "Test yourself",
+      "page": 52,
+      "section": "review",
+      "items": [
+        { "number": "1", "answer": "insecure" },
+        { "number": "2", "answer": "shy" },
+        { "number": "3", "answer": "sad", "alternatives": ["upset"] },
+        { "number": "4", "answer": "worried" },
+        { "number": "5", "answer": "popular" },
+        { "number": "6", "answer": "caring" },
+        { "number": "7", "answer": "moody" },
+        { "number": "8", "answer": "sarcastic" },
+        { "number": "9", "answer": "quiet" },
+        { "number": "10", "answer": "friendly" },
+        { "number": "11", "answer": "energetic" },
+        { "number": "12", "answer": "loud" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-ty04",
+      "number": "Test yourself 4",
+      "label_nl": "Present continuous",
+      "part": "Test yourself",
+      "page": 53,
+      "section": "review",
+      "items": [
+        { "number": "1", "answer": "are standing" },
+        { "number": "2", "answer": "are having" },
+        { "number": "3", "answer": "aren't talking" },
+        { "number": "4", "answer": "is wearing" },
+        { "number": "5", "answer": "is sitting" },
+        { "number": "6", "answer": "is holding" },
+        { "number": "7", "answer": "is staring" },
+        { "number": "8", "answer": "is looking" },
+        { "number": "9", "answer": "isn't he drinking" },
+        { "number": "10", "answer": "is visiting" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-ty05",
+      "number": "Test yourself 5",
+      "label_nl": "Present simple",
+      "part": "Test yourself",
+      "page": 53,
+      "section": "review",
+      "items": [
+        { "number": "1", "answer": "sleeps" },
+        { "number": "2", "answer": "wakes" },
+        { "number": "3", "answer": "takes" },
+        { "number": "4", "answer": "doesn't have" },
+        { "number": "5", "answer": "has" },
+        { "number": "6", "answer": "pushes" },
+        { "number": "7", "answer": "doesn't mind" },
+        { "number": "8", "answer": "takes" },
+        { "number": "9", "answer": "share" },
+        { "number": "10", "answer": "ride" },
+        { "number": "11", "answer": "buys" },
+        { "number": "12", "answer": "enjoys" },
+        { "number": "13", "answer": "kisses" },
+        { "number": "14", "answer": "writes" },
+        { "number": "15", "answer": "says" },
+        { "number": "16", "answer": "Do you think" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-ty06",
+      "number": "Test yourself 6",
+      "label_nl": "Vragen formuleren",
+      "part": "Test yourself",
+      "page": 54,
+      "section": "review",
+      "items": [
+        { "number": "1A", "answer": "What is in Orlando, Florida?" },
+        { "number": "1B", "answer": "Where is the Universal Studios theme park?" },
+        { "number": "2A", "answer": "What costs more than $100?" },
+        { "number": "2B", "answer": "How much does a visit to the park cost?" },
+        { "number": "3A", "answer": "Who like the Simpsons ride best?", "alternatives": ["Who likes the Simpsons ride best?"] },
+        { "number": "3B", "answer": "What do young visitors like best?" },
+        { "number": "4A", "answer": "Who sells Simpsons merchandise such as toys and backpacks?", "alternatives": ["What sells Simpsons merchandise such as toys and backpacks?"] },
+        { "number": "4B", "answer": "What does the Kwik-E-Mart sell?" },
+        { "number": "5A", "answer": "Who sells beer and hamburgers at his bar?" },
+        { "number": "5B", "answer": "What does Moe sell at his bar?" },
+        { "number": "5C", "answer": "Where does Moe sell beer and hamburgers?" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-ty07",
+      "number": "Test yourself 7",
+      "label_nl": "Present simple of continuous",
+      "part": "Test yourself",
+      "page": 55,
+      "section": "review",
+      "items": [
+        { "number": "1", "answer": "isn't" },
+        { "number": "2", "answer": "want" },
+        { "number": "3", "answer": "see" },
+        { "number": "4", "answer": "are walking" },
+        { "number": "5", "answer": "look" },
+        { "number": "6", "answer": "think" },
+        { "number": "7", "answer": "don't like" },
+        { "number": "8", "answer": "is texting" },
+        { "number": "9", "answer": "sounds" },
+        { "number": "10", "answer": "don't understand" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-ty08",
+      "number": "Test yourself 8",
+      "label_nl": "Genitief",
+      "part": "Test yourself",
+      "page": 56,
+      "section": "review",
+      "items": [
+        { "number": "Desk 1", "answer": "Olav's" },
+        { "number": "Desk 2", "answer": "Charles'", "alternatives": ["Charles's"] },
+        { "number": "Desk 3", "answer": "Veronica's" },
+        { "number": "Desk 4", "answer": "Jim's" },
+        { "number": "Desk 5", "answer": "Tina's" },
+        { "number": "Desk 6", "answer": "Faith's" },
+        { "number": "Desk 7", "answer": "Alan's" },
+        { "number": "Desk 8", "answer": "Abdul's" },
+        { "number": "Desk 9", "answer": "Tess'", "alternatives": ["Tess's"] },
+        { "number": "Desk 10", "answer": "Ms Jones'", "alternatives": ["Ms Jones's"] }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-ty09",
+      "number": "Test yourself 9",
+      "label_nl": "Pronouns",
+      "part": "Test yourself",
+      "page": 57,
+      "section": "review",
+      "items": [
+        { "number": "1", "answer": "mine" },
+        { "number": "2", "answer": "hers" },
+        { "number": "3", "answer": "my" },
+        { "number": "4", "answer": "them" },
+        { "number": "5", "answer": "He's" },
+        { "number": "6", "answer": "his" },
+        { "number": "7", "answer": "her" },
+        { "number": "8", "answer": "them" },
+        { "number": "9", "answer": "yours" },
+        { "number": "10", "answer": "theirs" },
+        { "number": "11", "answer": "ours" },
+        { "number": "12", "answer": "them" },
+        { "number": "13", "answer": "their" },
+        { "number": "14", "answer": "ours" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-ty10",
+      "number": "Test yourself 10",
+      "label_nl": "E-mails in de juiste volgorde",
+      "part": "Test yourself",
+      "page": 57,
+      "section": "review",
+      "items": [
+        { "number": "formal email", "answer": "6 → 8 → 7 → 1 → 5 → 9" },
+        { "number": "informal email", "answer": "10 → 3 → 2 → 4" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-ty11",
+      "number": "Test yourself 11",
+      "label_nl": "The Breakfast Club",
+      "part": "Test yourself",
+      "page": 58,
+      "section": "review",
+      "items": [
+        { "number": "1", "answer": "detention" },
+        { "number": "2", "answer": "Principal" },
+        { "number": "3", "answer": "sarcastic" },
+        { "number": "4", "answer": "popular" },
+        { "number": "5", "answer": "angry" },
+        { "number": "6", "answer": "college", "alternatives": ["university"], "uncertain": true },
+        { "number": "7", "answer": "grades" },
+        { "number": "8", "answer": "subjects", "alternatives": ["classes"] },
+        { "number": "9", "answer": "expel" },
+        { "number": "a", "answer": "wants" },
+        { "number": "b", "answer": "spends" },
+        { "number": "c", "answer": "gets" },
+        { "number": "d", "answer": "eats" },
+        { "number": "e", "answer": "is leaning" },
+        { "number": "f", "answer": "isn't standing" },
+        { "number": "g", "answer": "is sitting" }
+      ]
+    },
+
+    {
+      "id": "ace3-u1-ex-cto1",
+      "number": "Check this out! 1",
+      "label_nl": "De stijl van Norman Rockwell",
+      "part": "Check this out!",
+      "page": 59,
+      "section": "listening",
+      "instruction_nl": "Deel b is open: beschrijven wat de vier schilderijen typisch Rockwell maakt, met de link naar de vier kenmerken uit deel a.",
+      "items": [
+        { "number": "1", "answer": "C — … version of family life.", "note_nl": "He showed an idealised …" },
+        { "number": "2", "answer": "A — … your face.", "note_nl": "He put a smile on …" },
+        { "number": "3", "answer": "D — … illustrations.", "note_nl": "He painted optimistic …" },
+        { "number": "4", "answer": "B — … American life.", "note_nl": "He chose scenes from everyday …" }
+      ]
+    },
+    {
+      "id": "ace3-u1-ex-cto2",
+      "number": "Check this out! 2",
+      "label_nl": "Freedom from Fear tegenover Freedom from What?",
+      "part": "Check this out!",
+      "page": 60,
+      "section": "listening",
+      "instruction_nl": "Deel c is open: een favoriet Rockwell-schilderij naspelen en beide versies delen.",
+      "table": {
+        "headers": ["Rubriek", "Freedom from Fear", "Freedom from What?"],
+        "rows": [
+          ["sender", "Norman Rockwell", "Pops Peterson"],
+          ["medium", "paintings that show everyday life for white people in America", "works of art that combine painting and photography"],
+          ["receiver", "millions of Americans who bought The Saturday Evening Post", "people who go to an exhibition with his work"],
+          ["message", "Americans must fight for these important freedoms in Europe", "many people in America still do not have these essential freedoms"],
+          ["context", "America in the 1940s, when the US was thinking of joining World War 2", "America today, where black people still regularly die at the hands of the police"]
+        ]
+      }
+    },
+    {
+      "id": "ace3-u1-ex-cto3",
+      "number": "Check this out! 3",
+      "label_nl": "Tijdlijn — a short history of black people in America",
+      "part": "Check this out!",
+      "page": 61,
+      "section": "listening",
+      "note_nl": "De kopjes SLAVERY, SEGREGATION en CIVIL RIGHTS MOVEMENT zijn eveneens ingevuld; THE STRUGGLE CONTINUES stond al voorgedrukt.",
+      "table": {
+        "headers": ["Periode", "Antwoord"],
+        "rows": [
+          ["1619 — Slavery", "South"],
+          ["1865 — Segregation", "Jim Crow laws"],
+          ["1865 — Segregation", "'separate but equal'"],
+          ["1954 — Civil rights movement", "Martin Luther King"],
+          ["1970s — The struggle continues", "Barack Obama"],
+          ["1970s — The struggle continues", "Black Lives Matter"]
+        ]
+      }
+    },
+    {
+      "id": "ace3-u1-ex-cto4",
+      "number": "Check this out! 4",
+      "part": "Check this out!",
+      "page": 62,
+      "section": "reading",
+      "open_ended": true,
+      "note_nl": "\"Is this painting typical of Norman Rockwell's work?\" Let erop dat leerlingen terugkoppelen naar de vier kenmerken uit opdracht 1a en het contrast benoemen."
+    },
+    {
+      "id": "ace3-u1-ex-cto5",
+      "number": "Check this out! 5",
+      "part": "Check this out!",
+      "page": 62,
+      "section": "listening",
+      "open_ended": true,
+      "note_nl": "Twee vragen over de video met Ruby Bridges. Let erop dat leerlingen elementen uit de video expliciet terugvinden in het schilderij."
+    },
+    {
+      "id": "ace3-u1-ex-cto6",
+      "number": "Check this out! 6",
+      "part": "Check this out!",
+      "page": 62,
+      "section": "speaking",
+      "open_ended": true,
+      "note_nl": "Vragen bedenken voor Ruby Bridges en haar lerares. Let op correcte vraagvorming en op vragen die verder gaan dan ja of nee."
+    },
+    {
+      "id": "ace3-u1-ex-cto7",
+      "number": "Check this out! 7",
+      "part": "Check this out!",
+      "page": 62,
+      "section": "speaking",
+      "open_ended": true,
+      "note_nl": "Try this: research over de Little Rock Nine en verslag aan de klas. Let op betrouwbare bronnen en op de link met segregatie op school."
+    }
+  ]
+}

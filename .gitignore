@@ -1,0 +1,26 @@
+# Bronbestanden: nooit committen (auteursrechtelijk beschermd, gewatermerkt)
+sources/
+
+# Build- en cache-artefacten
+build/
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.playwright/
+
+# Gegenereerde tussenproducten
+data/extracted/
+assets/extracted/
+assets/generated/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db

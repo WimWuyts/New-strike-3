@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>New Ace 3 &amp; New Strike 3 — oefenomgeving</title>
+    <meta
+      name="description"
+      content="Oefenomgeving met grammatica, woordenschat, reading en listening bij New Ace 3 en New Strike 3."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Naar de hoofdinhoud</a>
+
+    <header class="app-header">
+      <div class="app-header__brand">
+        <h1>Oefenomgeving</h1>
+        <p class="app-header__subtitle">New Ace 3 &amp; New Strike 3</p>
+      </div>
+
+      <div class="app-header__controls">
+        <div class="mode-switch" role="group" aria-label="Weergavemodus">
+          <button type="button" data-mode="student" class="is-active" aria-pressed="true">
+            Leerling
+          </button>
+          <button type="button" data-mode="teacher" aria-pressed="false">Leerkracht</button>
+        </div>
+        <button type="button" id="export-progress" class="btn btn--ghost">
+          Voortgang exporteren
+        </button>
+        <label class="btn btn--ghost" for="import-progress">
+          Voortgang importeren
+          <input type="file" id="import-progress" accept="application/json" hidden />
+        </label>
+        <button type="button" id="reset-progress" class="btn btn--ghost">Voortgang wissen</button>
+      </div>
+    </header>
+
+    <div class="app-body">
+      <nav class="sidebar" aria-label="Inhoud">
+        <div class="filters">
+          <label for="filter-kind">Onderdeel</label>
+          <select id="filter-kind">
+            <option value="all">Alles</option>
+            <option value="grammar_topic">Grammatica</option>
+            <option value="vocabulary_set">Woordenschat</option>
+            <option value="reading">Reading</option>
+            <option value="listening">Listening</option>
+          </select>
+
+          <label for="filter-status">Status</label>
+          <select id="filter-status">
+            <option value="all">Alles</option>
+            <option value="todo">Nog te doen</option>
+            <option value="started">Bezig</option>
+            <option value="done">Afgewerkt</option>
+          </select>
+        </div>
+
+        <div id="nav-tree" class="nav-tree"></div>
+      </nav>
+
+      <main id="main" class="main" tabindex="-1">
+        <div id="view"></div>
+      </main>
+    </div>
+
+    <div id="live-region" class="visually-hidden" role="status" aria-live="polite"></div>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

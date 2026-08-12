@@ -3,18 +3,31 @@ sources/
 
 # Build- en cache-artefacten
 build/
+dist/
 node_modules/
 .venv/
 venv/
 __pycache__/
 *.pyc
 .pytest_cache/
+test-results/
+playwright-report/
 .playwright/
 
-# Gegenereerde tussenproducten
+# Gegenereerde tussenproducten. data/content/ bevat wél geschreven leerinhoud
+# en hoort dus wel in versiebeheer.
 data/extracted/
+data/catalog/
+data/source-inventory.json
 assets/extracted/
 assets/generated/
+state/
+
+# Testfixture, opgebouwd door scripts/make_test_fixture.py
+data/content/ace3-u1/grammar/ace3-u1-gr-test.json
+data/content/ace3-u1/activities/ace3-u1-gr-test.json
+data/content/*/WORK-ORDER.md
+data/content/*/activities/*.blueprint.json
 
 # Secrets
 .env

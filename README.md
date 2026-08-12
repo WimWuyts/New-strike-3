@@ -24,7 +24,7 @@ sources/
       Digiboek - New Strike 3 UNIT 1.pdf
       ... t/m UNIT 7
   licenses/
-    RIGHTS_CONFIRMATION.md     # optioneel, zie §5
+    RIGHTS_CONFIRMATION.md     # optioneel, zie §6
 ```
 
 ## 2. Installatie
@@ -89,7 +89,24 @@ Elk commando is idempotent: wat al gebouwd en ongewijzigd is, wordt
 overgeslagen op basis van `state/content-hashes.json`. Forceer opnieuw bouwen
 met `FORCE=1`.
 
-## 4. Wat de pipeline oplevert
+## 4. Tests
+
+```bash
+make test        # Python: blueprintquota en validator, 39 tests
+make test-web    # browser- en toegankelijkheidstests, 18 tests op desktop en mobiel
+make lint        # TypeScript typecheck
+```
+
+`make test-web` bouwt eerst een synthetisch testthema (`scripts/make_test_fixture.py`),
+daarna de webbuild, en draait dan Playwright met axe-core. Dat testthema is
+testmateriaal, geen leerinhoud, en staat niet in versiebeheer.
+
+`make render-pptx` heeft een werkende headless LibreOffice nodig. Controleer dat
+met `soffice --headless --convert-to pdf <bestand>`; in sommige containers is
+die conversie stuk, en dan faalt de visuele deck-QA terwijl de decks zelf prima
+zijn.
+
+## 5. Wat de pipeline oplevert
 
 | Pad | Inhoud |
 |---|---|
@@ -101,7 +118,7 @@ met `FORCE=1`.
 | `dist/printable/` | Printbare kerninhoud en answer keys |
 | `reports/` | Rapporten en QA |
 
-## 5. Rechten
+## 6. Rechten
 
 De bron-pdf's dragen een gepersonaliseerd watermerk en zijn persoonlijke
 licentiekopieën van commercieel uitgeversmateriaal.
@@ -118,7 +135,7 @@ Wil je die laatste categorie inschakelen, dan moet
 `rights.confirmed: true` in `config/project.yaml` staan. De pipeline
 weigert anders elke paginagetrouwe build.
 
-## 6. Belangrijk over de bronkwaliteit
+## 7. Belangrijk over de bronkwaliteit
 
 De pdf's hebben **geen tekstlaag** — het zijn paginascans met een watermerk
 over elke pagina. Gevolgen voor je verwachtingen:
@@ -131,7 +148,7 @@ over elke pagina. Gevolgen voor je verwachtingen:
 - Reken op een handmatige correctieronde na `make catalog`. Dat is bewust:
   liever een expliciete reviewwachtrij dan stilzwijgend verzonnen inhoud.
 
-## 7. Projectstructuur
+## 8. Projectstructuur
 
 ```
 config/project.yaml     centrale instellingen, bindend voor de pipeline

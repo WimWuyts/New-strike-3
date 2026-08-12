@@ -140,8 +140,14 @@ release: ## Publiceer alleen gevalideerde artefacten naar dist/
 # Kwaliteit
 # ---------------------------------------------------------------------------
 
-test: $(VENV)/bin/activate ## Draai de testsuite
+test: $(VENV)/bin/activate ## Draai de Python-testsuite
 	$(PYTEST) tests -q
+
+test-web: $(VENV)/bin/activate ## Draai de browser- en toegankelijkheidstests
+	npm run test:e2e
+
+lint: $(VENV)/bin/activate ## Typecheck de TypeScript
+	npx tsc --noEmit
 
 clean-build: ## Wis build/ (reproduceerbaar)
 	rm -rf build/

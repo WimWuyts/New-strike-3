@@ -18,7 +18,10 @@ help: ## Toon de beschikbare commando's
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
 	  | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-16s\033[0m %s\n", $$1, $$2}'
 	@echo
-	@echo "Variabelen: BOOK=ace3|strike3  THEME=<theme-id>  FORCE=1 (negeer cache)"
+	@echo "Variabelen:"
+	@echo "  BOOK=ace3|strike3   THEME=<theme-id>   FORCE=1 (negeer de cache)"
+	@echo "  SKIP_MISSING=1      batch: thema's zonder content overslaan"
+	@echo "  ALLOW_PARTIAL=1     release: publiceer ondanks falende thema's"
 
 # ---------------------------------------------------------------------------
 # Installatie
@@ -87,7 +90,7 @@ validate: $(VENV)/bin/activate ## Valideer content tegen schema's en quota
 # ---------------------------------------------------------------------------
 
 web: validate ## Bouw de statische leeromgeving
-	npm run build:web -- $(if $(THEME),--theme $(THEME),)
+	npm run build:web
 
 pptx: validate ## Genereer leerling- en leerkrachtdeck. Vereist BOOK= en THEME=
 	@if [ -z "$(BOOK)" ] || [ -z "$(THEME)" ]; then \
@@ -111,30 +114,12 @@ render-pptx: ## Render decks naar afbeeldingen voor visuele QA
 	done
 	@echo "Renders in build/pptx-render/$(BOOK)/$(THEME)/"
 
-batch: $(VENV)/bin/activate ## Verwerk alle thema's van een boek. Vereist BOOK=
+batch: $(VENV)/bin/activate ## Valideer alle thema's van een boek. Vereist BOOK=
 	@if [ -z "$(BOOK)" ]; then echo "Gebruik: make batch BOOK=ace3"; exit 2; fi
-	@$(PY) - "$(BOOK)" <<-'PYCODE'
-		import subprocess, sys
-		sys.path.insert(0, "scripts")
-		from lib.project import Config
-		book = Config.load().book(sys.argv[1])
-		failed = []
-		for theme in book.themes:
-		    theme_id = theme["id"]
-		    print(f"\n=== {theme_id} ===")
-		    result = subprocess.run(
-		        ["make", "validate", f"THEME={theme_id}"], check=False
-		    )
-		    if result.returncode != 0:
-		        failed.append(theme_id)
-		print(f"\nGeslaagd: {len(book.themes) - len(failed)}/{len(book.themes)}")
-		if failed:
-		    print("Gefaald: " + ", ".join(failed))
-		    sys.exit(1)
-	PYCODE
+	$(PY) scripts/batch.py --book $(BOOK) $(if $(SKIP_MISSING),--skip-missing,)
 
-release: ## Publiceer alleen gevalideerde artefacten naar dist/
-	$(PY) scripts/release.py
+release: $(VENV)/bin/activate ## Publiceer alleen gevalideerde artefacten naar dist/
+	$(PY) scripts/release.py $(if $(ALLOW_PARTIAL),--allow-partial,)
 
 # ---------------------------------------------------------------------------
 # Kwaliteit

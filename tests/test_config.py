@@ -69,3 +69,16 @@ def test_rights_gate_blocks_page_faithful_reproduction(config):
 def test_scope_unit_is_topic_scope(config):
     assert config.exercises["scope_unit"] == "topic_scope"
     assert config.exercises["per_scope_unit"] == 25
+
+
+def test_english_variant_is_confirmed_british(config):
+    project = config["project"]
+    assert project["english_variant"] == "en-GB"
+    assert project["english_variant_confirmed"] is True
+
+
+def test_pilot_is_confirmed_and_has_no_fallback(config):
+    pilot = config["pilot"]
+    assert pilot["theme_id"] == "ace3-u1"
+    assert pilot["confirmed"] is True
+    assert "fallback_theme_id" not in pilot

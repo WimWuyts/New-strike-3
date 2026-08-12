@@ -7,7 +7,8 @@ project:
   schema_version: "v1"
   interface_language: "nl"          # instructies, feedback, UI
   target_language: "en"
-  english_variant: "en-GB"          # standaard; herbevestigen na OCR van de bron
+  english_variant: "en-GB"          # bevestigd door de gebruiker, geldt voor beide boeken
+  english_variant_confirmed: true
 
 # ---------------------------------------------------------------------------
 # Boeken
@@ -187,10 +188,10 @@ accessibility:
 pilot:
   book_id: ace3
   theme_id: ace3-u1
-  fallback_theme_id: ace3-u4
-  fallback_reason: >
-    Als unit 1 na OCR een instap- of herhalingsunit blijkt en dus niet
-    representatief is, wordt unit 4 de piloot.
+  confirmed: true
+  note: >
+    De gebruiker bevestigt dat ace3-u1 een volwaardige unit is, geen
+    instap- of herhalingsunit. De terugvaloptie ace3-u4 is niet meer nodig.
 
 batching:
   transaction_size: "theme"

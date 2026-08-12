@@ -90,8 +90,8 @@ Conform sectie 3 van de masterprompt vastgelegd zonder aparte vraag.
 | S2 | Listenings per thema | 2, elk met kern- en uitdagingsvariant |
 | S3 | Audio | Alleen scripts en SSML; browser-spraaksynthese als fallback. Geen TTS-provider geconfigureerd, dus audio krijgt status `not_built` — nooit `voltooid`. |
 | S4 | Leerling- en leerkrachtversie | Beide, voor web en voor PPTX |
-| S5 | Pilootthema | New Ace 3 UNIT 1 (`ace3-u1`), met `ace3-u4` als terugvaloptie |
-| S6 | Engelse variant | `en-GB`, te herbevestigen zodra OCR de bron leesbaar maakt |
+| S5 | Pilootthema | New Ace 3 UNIT 1 (`ace3-u1`) — bevestigd, zie O3 |
+| S6 | Engelse variant | `en-GB` — bevestigd voor beide boeken, zie O2 |
 | S7 | Interfacetaal | Nederlands |
 
 ---
@@ -111,10 +111,7 @@ Conform sectie 3 van de masterprompt vastgelegd zonder aparte vraag.
 
 ## Openstaande punten
 
-| # | Vraag | Blokkeert |
-|---|---|---|
-| O2 | Klopt `en-GB` als variant? | Spellingnormalisatie in de antwoordcontrole |
-| O3 | Is `ace3-u1` een volwaardige unit of een instapunit? | Definitieve pilootkeuze; wordt beantwoord door Fase A |
+Geen. Alle intakevragen zijn beantwoord.
 
 ### Opgelost
 
@@ -124,3 +121,17 @@ acht units telt, maar dat unit 8 in de praktijk zelden bereikt wordt.
 De pdf is niet aangeleverd. `strike3` staat daarom op `unit_count: 8` met
 `strike3-u8` in de kaart, gemarkeerd als `source_available: false` en
 `priority: low`. Zie D5.
+
+**O2 — Klopt `en-GB` als variant?** Ja, bevestigd voor **beide** boeken.
+`project.english_variant_confirmed` staat op `true`. De antwoordcontrole
+normaliseert dus naar Britse spelling; Amerikaanse varianten worden niet
+stilzwijgend goedgekeurd, tenzij een activiteit ze expliciet in
+`accepted_variants` opneemt.
+
+**O3 — Is `ace3-u1` een volwaardige unit?** Ja, net als `strike3-u1`. De
+piloot blijft dus `ace3-u1` en de terugvaloptie `ace3-u4` vervalt.
+`pilot.confirmed` staat op `true`.
+
+Dat `strike3-u1` ook volwaardig is, betekent dat het tweede boek op zijn
+eigen unit 1 kan starten zodra de piloot goedgekeurd is. Er is geen
+instapunit die overgeslagen of anders behandeld moet worden.

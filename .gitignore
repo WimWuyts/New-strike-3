@@ -16,8 +16,11 @@ playwright-report/
 
 # Gegenereerde tussenproducten. data/content/ bevat wél geschreven leerinhoud
 # en hoort dus wel in versiebeheer.
+#
+# data/catalog/ staat bewust niet in deze lijst: de curriculumkaart is niet
+# altijd uit de OCR te reproduceren. Waar ze uit een handmatige inventaris
+# komt, is ze brongegeven en hoort ze in versiebeheer.
 data/extracted/
-data/catalog/
 data/source-inventory.json
 assets/extracted/
 assets/generated/

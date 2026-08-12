@@ -28,6 +28,11 @@ TARGET_ID = f"{THEME_ID}-gr-test"
 CONTENT_DIR = ROOT / "data" / "content" / THEME_ID
 CATALOG_DIR = ROOT / "data" / "catalog"
 
+# De antwoordsleutel-fixture staat bewust op een ander thema, zodat ze nooit
+# botst met een echte sleutel voor het pilootthema.
+ANSWERS_DIR = ROOT / "data" / "answers"
+ANSWERS_THEME_ID = "ace3-u2"
+
 
 def grammar_topic() -> dict:
     topic = {
@@ -102,6 +107,64 @@ def grammar_topic() -> dict:
     return topic
 
 
+def answer_key() -> dict:
+    """Een kleine, schemageldige sleutel om de correctiedeck-generator te testen."""
+    return {
+        "id": f"{ANSWERS_THEME_ID}-answers",
+        "book_id": BOOK_ID,
+        "theme_id": ANSWERS_THEME_ID,
+        "title": "Testsleutel (fixture)",
+        "provenance": "source_core",
+        "rights_status": "licensed_confirmed",
+        "use_scope": "own_lesson_groups",
+        "teacher_only": True,
+        "derivation": "manual_inventory",
+        "derivation_note_nl": "Testmateriaal. Geen echte oplossingen uit het handboek.",
+        "source_page_offset": 8,
+        "exercises": [
+            {
+                "id": f"{ANSWERS_THEME_ID}-ex-01",
+                "number": "1",
+                "label_nl": "Testoefening met korte antwoorden",
+                "page": 12,
+                "section": "grammar",
+                "instruction_nl": "Vul de juiste vorm in.",
+                "items": [
+                    {"number": str(index), "answer": f"testantwoord {index}"}
+                    for index in range(1, 6)
+                ],
+            },
+            {
+                "id": f"{ANSWERS_THEME_ID}-ex-02",
+                "number": "2",
+                "label_nl": "Testoefening met varianten en een onzeker item",
+                "page": 13,
+                "section": "vocabulary",
+                "items": [
+                    {
+                        "number": "1",
+                        "answer": "doesn't have",
+                        "alternatives": ["hasn't got"],
+                        "note_nl": "Beide vormen zijn correct.",
+                    },
+                    {"number": "2", "answer": "onzeker gelezen", "uncertain": True},
+                    {"number": "3", "answer": "derde antwoord"},
+                ],
+            },
+            {
+                "id": f"{ANSWERS_THEME_ID}-ex-03",
+                "number": "3",
+                "label_nl": "Open schrijfopdracht",
+                "page": 14,
+                "section": "writing",
+                "open_ended": True,
+                "note_nl": "Geen vast antwoord. Beoordeel op structuur, aanspreking en afsluiting.",
+                "items": [{"number": "1", "answer": "Zie de beoordelingscriteria."}],
+            },
+        ],
+    }
+
+
 def main() -> int:
     config = Config.load()
 
@@ -110,16 +173,23 @@ def main() -> int:
         *(CONTENT_DIR / name for name in ("grammar", "vocabulary", "visuals", "activities")),
     )
 
-    write_json_atomic(
-        CATALOG_DIR / f"{THEME_ID}.json",
-        {
-            "id": THEME_ID,
-            "book_id": BOOK_ID,
-            "unit": 1,
-            "title": "Testthema (fixture)",
-            "cefr": "A2+",
-        },
-    )
+    # De curriculumkaart kan brongegeven zijn: waar ze uit een handmatige
+    # inventaris komt, is ze niet opnieuw te genereren. Nooit overschrijven.
+    catalog_path = CATALOG_DIR / f"{THEME_ID}.json"
+    if catalog_path.exists():
+        print(f"Curriculumkaart {THEME_ID} bestaat al — ongemoeid gelaten.")
+    else:
+        write_json_atomic(
+            catalog_path,
+            {
+                "id": THEME_ID,
+                "book_id": BOOK_ID,
+                "unit": 1,
+                "title": "Testthema (fixture)",
+                "cefr": "A2+",
+            },
+        )
+
     write_json_atomic(CONTENT_DIR / "grammar" / f"{TARGET_ID}.json", grammar_topic())
 
     activities = build_activity_set("grammar_topic", config)
@@ -132,7 +202,13 @@ def main() -> int:
         },
     )
 
+    ensure_dirs(ANSWERS_DIR)
+    key = answer_key()
+    key["content_hash"] = content_hash(key)
+    write_json_atomic(ANSWERS_DIR / f"{ANSWERS_THEME_ID}.json", key)
+
     print(f"Testfixture klaar: {THEME_ID} met {len(activities)} activiteiten")
+    print(f"Testsleutel klaar: {ANSWERS_THEME_ID} met {len(key['exercises'])} oefeningen")
     return 0
 
 

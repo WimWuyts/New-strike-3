@@ -58,12 +58,51 @@ def test_unknown_theme_raises(config):
         config.book_for_theme("ace3-u99")
 
 
-def test_rights_gate_blocks_page_faithful_reproduction(config):
-    """Zolang de rechten niet bevestigd zijn, moet de poort dicht blijven."""
-    assert config.rights["status"] == "original_only"
-    assert config.rights["confirmed"] is False
-    with pytest.raises(ProjectError):
+def test_answer_key_gate_is_open_and_scoped(config):
+    """De bevestiging voor antwoordsleutels geldt, en draagt een gebruiksbereik."""
+    assert config.rights["allow_source_answer_keys"] is True
+    assert config.rights["answer_keys_teacher_only"] is True
+    assert config.assert_may_use_source_answer_keys() == "own_lesson_groups"
+
+
+def test_answer_key_confirmation_does_not_unlock_page_reproduction(config):
+    """De kern van de poort: twee toestemmingen die niet meebewegen.
+
+    Antwoordsleutels mogen, maar dat mag paginagetrouwe reproductie niet
+    stilzwijgend vrijgeven, ook al staat rights.confirmed op true.
+    """
+    assert config.rights["confirmed"] is True
+    assert config.rights["allow_page_faithful_reproduction"] is False
+
+    with pytest.raises(ProjectError, match="Paginagetrouwe reproductie"):
         config.assert_may_reproduce_pages()
+
+
+def test_source_image_reuse_stays_blocked(config):
+    assert config.rights["allow_source_image_reuse"] is False
+    assert config.rights["allow_raster_slide_backgrounds"] is False
+
+
+def test_rights_confirmation_file_exists(config):
+    """De poort controleert het bestaan van dit bestand, dus het moet er zijn."""
+    from lib.project import ROOT
+
+    assert (ROOT / config.rights["confirmation_file"]).exists()
+
+
+def test_gate_closes_when_the_flag_is_withdrawn(config):
+    """Herroepen moet werken zonder dat er elders iets aangepast wordt."""
+    withdrawn = dict(config.rights)
+    withdrawn["allow_source_answer_keys"] = False
+
+    class _Stub(type(config)):
+        @property
+        def rights(self):
+            return withdrawn
+
+    stub = _Stub({"rights": withdrawn})
+    with pytest.raises(ProjectError, match="antwoordsleutels"):
+        stub.assert_may_use_source_answer_keys()
 
 
 def test_scope_unit_is_topic_scope(config):

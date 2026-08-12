@@ -11,7 +11,7 @@
  * bouwen gecontroleerd op lekken.
  */
 
-import { mkdirSync, readFileSync, existsSync } from 'node:fs';
+import { mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { parseArgs } from 'node:util';
 
@@ -27,31 +27,11 @@ import {
 } from '../design/tokens.js';
 import { loadTheme } from '../shared/content.js';
 import type { Activity, GrammarTopic, ThemeContent, VisualGrammarModel } from '../shared/types.js';
+import { assertNoSourceImagery, loadConfig } from './rights.js';
 
 type Audience = 'student' | 'teacher';
 
 const OUTPUT_ROOT = 'dist/pptx';
-
-interface Rights {
-  status: string;
-  confirmed: boolean;
-  allow_page_faithful_reproduction: boolean;
-  allow_raster_slide_backgrounds: boolean;
-}
-
-/** Leest de rechtenpoort uit config/project.yaml zonder YAML-parser. */
-function readRights(): Rights {
-  const raw = readFileSync('config/project.yaml', 'utf-8');
-  const read = (key: string): string | undefined =>
-    raw.match(new RegExp(`^\\s{2}${key}:\\s*(\\S+)`, 'm'))?.[1];
-
-  return {
-    status: read('status')?.replace(/["']/g, '') ?? 'not_assessed',
-    confirmed: read('confirmed') === 'true',
-    allow_page_faithful_reproduction: read('allow_page_faithful_reproduction') === 'true',
-    allow_raster_slide_backgrounds: read('allow_raster_slide_backgrounds') === 'true',
-  };
-}
 
 // ---------------------------------------------------------------------------
 // Deckopbouw
@@ -546,17 +526,10 @@ async function main(): Promise<void> {
     return;
   }
 
-  const rights = readRights();
-  if (rights.allow_page_faithful_reproduction || rights.allow_raster_slide_backgrounds) {
-    if (!rights.confirmed || !existsSync('sources/licenses/RIGHTS_CONFIRMATION.md')) {
-      console.error(
-        'Geblokkeerd: paginagetrouwe reproductie staat aan zonder bevestigde rechten.',
-      );
-      process.exitCode = 2;
-      return;
-    }
-  }
-
+  // Dit deck bouwt uitsluitend uit eigen designtokens. De poort staat hier om
+  // te voorkomen dat een latere configuratiewijziging stilzwijgend broninhoud
+  // binnenlaat zonder dat de rechten dat dekken.
+  assertNoSourceImagery(loadConfig().rights);
   assertContrast();
 
   const theme = loadTheme(values.theme);

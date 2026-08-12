@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://newace-newstrike.local/schemas/answer_key.json",
+  "title": "AnswerKey",
+  "description": "Oplossingen bij de oefeningen uit het handboek. Dit is uitgeversinhoud, geen origineel werk: het valt onder de rechtenbevestiging en mag uitsluitend in leerkrachtmateriaal terechtkomen.",
+  "type": "object",
+  "unevaluatedProperties": false,
+  "required": [
+    "id",
+    "book_id",
+    "theme_id",
+    "title",
+    "provenance",
+    "rights_status",
+    "use_scope",
+    "teacher_only",
+    "derivation",
+    "exercises"
+  ],
+  "properties": {
+    "id": { "$ref": "common.json#/$defs/slug" },
+    "book_id": { "$ref": "common.json#/$defs/bookId" },
+    "theme_id": { "$ref": "common.json#/$defs/themeId" },
+    "title": { "$ref": "common.json#/$defs/nonEmptyText" },
+
+    "provenance": {
+      "const": "source_core",
+      "description": "Altijd broninhoud. Een antwoordsleutel is per definitie niet origineel."
+    },
+    "rights_status": {
+      "const": "licensed_confirmed",
+      "description": "Mag alleen bestaan onder een vastgelegde rechtenbevestiging."
+    },
+    "use_scope": {
+      "type": "string",
+      "enum": ["own_lesson_groups", "department", "school"],
+      "description": "Moet overeenkomen met rights.use_scope in config/project.yaml."
+    },
+    "teacher_only": {
+      "const": true,
+      "description": "Blokkeert per schema elk gebruik in leerlingoutput."
+    },
+
+    "derivation": {
+      "type": "string",
+      "enum": ["ocr_pipeline", "manual_inventory"]
+    },
+    "derivation_note_nl": { "type": "string" },
+    "source_page_offset": { "type": "integer" },
+    "content_hash": { "$ref": "common.json#/$defs/contentHash" },
+
+    "exercises": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "unevaluatedProperties": false,
+        "required": ["id", "number", "page", "items"],
+        "properties": {
+          "id": { "$ref": "common.json#/$defs/slug" },
+          "number": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Zoals het boek de oefening nummert, bijvoorbeeld '9' of 'TY 4'."
+          },
+          "label_nl": { "type": "string" },
+          "page": { "type": "integer", "minimum": 1 },
+          "section": {
+            "type": "string",
+            "enum": [
+              "theme_opener", "vocabulary", "grammar", "reading",
+              "listening", "speaking", "writing", "exercises",
+              "review", "reference", "unknown"
+            ]
+          },
+          "instruction_nl": { "type": "string" },
+          "note_nl": {
+            "type": "string",
+            "description": "Didactische aantekening voor de leerkracht, bijvoorbeeld een veelgemaakte fout."
+          },
+          "open_ended": {
+            "type": "boolean",
+            "description": "True bij opdrachten zonder vast antwoord, zoals spreek- of schrijftaken.",
+            "default": false
+          },
+
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "unevaluatedProperties": false,
+              "required": ["number", "answer"],
+              "properties": {
+                "number": { "type": "string", "minLength": 1 },
+                "answer": { "$ref": "common.json#/$defs/nonEmptyText" },
+                "alternatives": {
+                  "type": "array",
+                  "items": { "$ref": "common.json#/$defs/nonEmptyText" },
+                  "description": "Even goede antwoorden, bijvoorbeeld \"doesn't have\" naast \"hasn't got\"."
+                },
+                "note_nl": { "type": "string" },
+                "uncertain": {
+                  "type": "boolean",
+                  "description": "True als de scan het antwoord niet zeker prijsgaf. Komt met een waarschuwing op de slide.",
+                  "default": false
+                }
+              }
+            }
+          }
+        },
+        "allOf": [
+          {
+            "comment": "Een open opdracht heeft een modelantwoord nodig, geen sleutel die als enig juist geldt.",
+            "if": {
+              "properties": { "open_ended": { "const": true } },
+              "required": ["open_ended"]
+            },
+            "then": { "required": ["note_nl"] }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -60,20 +60,33 @@ books:
 # Rechten
 # ---------------------------------------------------------------------------
 rights:
-  status: "original_only"
-  confirmation_file: "sources/licenses/RIGHTS_CONFIRMATION.md"
-  confirmed: false
-  # Wat wel mag zonder bevestiging:
+  status: "licensed_classroom"
+  confirmation_file: "docs/rights-confirmation.md"
+  confirmed: true
+  use_scope: "own_lesson_groups"
+
+  # Altijd toegestaan
   allow_inventory: true
   allow_original_companion: true
-  # Wat geblokkeerd blijft tot bevestiging:
+
+  # Bevestigd door de leerkracht, uitsluitend voor eigen lesgroepen.
+  # Antwoordsleutels zijn uitgeversinhoud: ze mogen nooit in leerlingmateriaal.
+  allow_source_answer_keys: true
+  answer_keys_teacher_only: true
+
+  # Blijft dicht. Dit gaat over pagina- en beeldreproductie, en dat is iets
+  # anders dan het projecteren van antwoorden. Niet meebewegen met het
+  # bovenstaande.
   allow_page_faithful_reproduction: false
   allow_source_image_reuse: false
   allow_raster_slide_backgrounds: false
+
   note: >
     De bron-pdf's dragen een gepersonaliseerd watermerk ("Wim Wuyts") en zijn
-    persoonlijke licentiekopieen van commercieel uitgeversmateriaal. Zolang
-    RIGHTS_CONFIRMATION.md ontbreekt blijft paginagetrouwe reproductie uit.
+    persoonlijke licentiekopieen van commercieel uitgeversmateriaal. De
+    leerkracht bevestigt gebruik binnen de eigen lesgroepen; zie
+    docs/rights-confirmation.md. Verspreiding buiten die groepen valt daar
+    niet onder.
 
 # ---------------------------------------------------------------------------
 # Bronextractie
@@ -164,6 +177,13 @@ pptx:
   teacher_deck: true
   combined_book_deck: false
   source_refs_location: "speaker_notes"
+
+  # Correctiedeck bij de oefeningen van het boek.
+  answer_deck:
+    enabled: true
+    reveal: "progressive"        # progressive | per_exercise
+    max_items_per_slide: 8
+    footer_nl: "Leerkrachtmateriaal — eigen lesgroepen"
 
 # ---------------------------------------------------------------------------
 # Web

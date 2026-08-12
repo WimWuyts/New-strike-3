@@ -158,18 +158,51 @@ class Config:
 
     # -- rechten -----------------------------------------------------------
 
+    def _assert_confirmation_on_file(self) -> Path:
+        confirmation = ROOT / self.rights["confirmation_file"]
+        if not self.rights.get("confirmed") or not confirmation.exists():
+            raise ProjectError(
+                "Er is geen geldige rechtenbevestiging.\n"
+                f"  rights.confirmed = {self.rights.get('confirmed')}\n"
+                f"  bevestigingsbestand aanwezig = {confirmation.exists()} ({confirmation})"
+            )
+        return confirmation
+
     def assert_may_reproduce_pages(self) -> None:
-        """Bewaakt de rechtenpoort rond paginagetrouwe reproductie."""
-        rights = self.rights
-        confirmation = ROOT / rights["confirmation_file"]
-        if rights.get("confirmed") and confirmation.exists():
-            return
-        raise ProjectError(
-            "Paginagetrouwe reproductie is geblokkeerd.\n"
-            f"  rights.confirmed = {rights.get('confirmed')}\n"
-            f"  bevestigingsbestand aanwezig = {confirmation.exists()} ({confirmation})\n"
-            "Zet beide op orde, of gebruik de modus hybrid_classroom_16x9."
-        )
+        """Bewaakt de poort rond paginagetrouwe reproductie.
+
+        Deze poort hangt aan een eigen vlag en niet alleen aan `confirmed`.
+        Een bevestiging voor antwoordsleutels mag hier niet doorheen lekken:
+        dat zijn twee verschillende toestemmingen.
+        """
+        self._assert_confirmation_on_file()
+        if not self.rights.get("allow_page_faithful_reproduction"):
+            raise ProjectError(
+                "Paginagetrouwe reproductie is geblokkeerd.\n"
+                "  rights.allow_page_faithful_reproduction = false\n"
+                "Een bevestiging voor antwoordsleutels dekt dit niet. Gebruik de "
+                "modus hybrid_classroom_16x9, of leg een aparte bevestiging vast."
+            )
+
+    def assert_may_use_source_answer_keys(self) -> str:
+        """Bewaakt de poort rond de antwoordsleutels van het boek.
+
+        Geeft het bevestigde gebruiksbereik terug, zodat de bouwstap dat op het
+        artefact kan zetten.
+        """
+        self._assert_confirmation_on_file()
+        if not self.rights.get("allow_source_answer_keys"):
+            raise ProjectError(
+                "Verwerken van antwoordsleutels uit de bron is geblokkeerd.\n"
+                "  rights.allow_source_answer_keys = false"
+            )
+        scope = self.rights.get("use_scope")
+        if not scope:
+            raise ProjectError(
+                "rights.use_scope ontbreekt. Leg vast hoe ver het materiaal mag "
+                "reizen voordat er broninhoud verwerkt wordt."
+            )
+        return str(scope)
 
 
 # ---------------------------------------------------------------------------

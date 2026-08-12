@@ -126,17 +126,33 @@ zijn.
 De bron-pdf's dragen een gepersonaliseerd watermerk en zijn persoonlijke
 licentiekopieën van commercieel uitgeversmateriaal.
 
-Standaard staat het project op `rights.status: original_only`:
+Het project staat op `rights.status: licensed_classroom`, vastgelegd in
+`docs/rights-confirmation.md`. Er zijn **twee losse toestemmingen**, en die
+bewegen niet mee met elkaar:
 
-- ✅ inventariseren, curriculumkaart, volledig originele companion materials,
-  PowerPoints met eigen designtokens (`hybrid_classroom_16x9`);
-- ❌ paginagetrouwe reproductie, hergebruik van bronbeelden,
-  rasterachtergronden uit de bron.
+| | Stand | Wat het dekt |
+|---|---|---|
+| `allow_source_answer_keys` | ✅ | Oplossingen bij de boekoefeningen, uitsluitend in leerkrachtmateriaal, voor de eigen lesgroepen |
+| `allow_page_faithful_reproduction` | ❌ | Paginagetrouwe nabouw van het handboek |
+| `allow_source_image_reuse` | ❌ | Bronbeelden overnemen |
+| `allow_raster_slide_backgrounds` | ❌ | Scans als slideachtergrond |
 
-Wil je die laatste categorie inschakelen, dan moet
-`sources/licenses/RIGHTS_CONFIRMATION.md` bestaan én
-`rights.confirmed: true` in `config/project.yaml` staan. De pipeline
-weigert anders elke paginagetrouwe build.
+Dat onderscheid is met opzet: een bevestiging voor antwoordsleutels geeft
+paginareproductie niet vrij. `assert_may_reproduce_pages()` kijkt naar de
+specifieke vlag, niet naar `confirmed`, en er is een test die dat bewaakt.
+
+Alle overige materialen — woordenschatbanken, grammaticamodules, readings,
+listenings, de 25 activiteiten — zijn en blijven volledig origineel.
+
+### Correctiedeck
+
+```bash
+make answers THEME=ace3-u1
+```
+
+Bouwt `dist/pptx/<boek>/<thema>-answers.pptx` uit `data/answers/<thema>.json`:
+één antwoord per klik, bronpagina in beeld, aantekeningen in de speaker notes.
+Zie `data/answers/LEESMIJ.md` voor wat daar wel en niet in hoort.
 
 ## 7. Belangrijk over de bronkwaliteit
 

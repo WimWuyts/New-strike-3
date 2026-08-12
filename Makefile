@@ -97,6 +97,10 @@ pptx: validate ## Genereer leerling- en leerkrachtdeck. Vereist BOOK= en THEME=
 	  echo "Gebruik: make pptx BOOK=ace3 THEME=ace3-u1"; exit 2; fi
 	npm run build:pptx -- --book $(BOOK) --theme $(THEME)
 
+answers: ## Bouw het correctiedeck bij de boekoefeningen. Vereist THEME=
+	@if [ -z "$(THEME)" ]; then echo "Gebruik: make answers THEME=ace3-u1"; exit 2; fi
+	npm run build:answers -- --theme $(THEME)
+
 render-pptx: ## Render decks naar afbeeldingen voor visuele QA
 	@if [ -z "$(BOOK)" ] || [ -z "$(THEME)" ]; then \
 	  echo "Gebruik: make render-pptx BOOK=ace3 THEME=ace3-u1"; exit 2; fi

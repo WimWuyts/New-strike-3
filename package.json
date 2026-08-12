@@ -11,7 +11,8 @@
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "fixture": ".venv/bin/python scripts/make_test_fixture.py",
-    "test:e2e": "npm run fixture && npm run build:web && playwright test"
+    "test:e2e": "npm run fixture && npm run build:web && playwright test",
+    "build:answers": "tsx src/pptx/answers.ts"
   },
   "devDependencies": {
     "@playwright/test": "1.56.1",
@@ -22,6 +23,7 @@
     "vite": "7.3.6"
   },
   "dependencies": {
-    "pptxgenjs": "4.0.1"
+    "pptxgenjs": "4.0.1",
+    "yaml": "^2.9.0"
   }
 }

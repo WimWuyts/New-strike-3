@@ -408,16 +408,41 @@ function addActivitySlides(
 // Lekcontrole
 // ---------------------------------------------------------------------------
 
+/**
+ * Verzamelt de antwoorden die op de leerlingslides niet mogen staan.
+ *
+ * Een antwoord dat de leerling sowieso al ziet — omdat het in de stimulus
+ * staat of tussen de keuzeopties — is geen lek. Bij "welke zin hoort er niet
+ * bij" is het antwoord juist één van de zichtbare zinnen. Wat telt, is of het
+ * deck iets prijsgeeft dat de leerling anders zelf had moeten vinden.
+ */
 function collectAnswers(theme: ThemeContent): string[] {
   const answers: string[] = [];
+
   for (const set of theme.activitySets) {
     for (const activity of set.activities) {
+      const visible = [
+        activity.stimulus.content,
+        ...activity.prompts.flatMap((prompt) => [prompt.prompt, ...(prompt.options ?? [])]),
+      ]
+        .join('\n')
+        .toLowerCase();
+
       for (const prompt of activity.prompts) {
-        answers.push(...(prompt.canonical_answers ?? []));
+        for (const answer of prompt.canonical_answers ?? []) {
+          if (!visible.includes(answer.toLowerCase())) answers.push(answer);
+        }
       }
     }
   }
-  return answers.filter((answer) => answer.trim().length >= 8);
+
+  // Alleen antwoorden van meerdere woorden tellen mee. Eén los woord komt in
+  // een unit nu eenmaal overal voor — 'understand' staat ook gewoon in een
+  // stimulus — en verraadt op zichzelf niet welk antwoord ergens anders
+  // verwacht wordt. Meerwoordige antwoorden doen dat wel.
+  return answers.filter(
+    (answer) => answer.trim().length >= 8 && answer.trim().split(/\s+/).length >= 2,
+  );
 }
 
 /**

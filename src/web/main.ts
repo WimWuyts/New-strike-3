@@ -65,6 +65,15 @@ function setStatus(set: ActivitySet): 'todo' | 'started' | 'done' {
   );
 }
 
+/** De leesbare titel van een scope-eenheid; de ID is voor de machine. */
+function titleFor(theme: LoadedTheme, set: ActivitySet): string {
+  const topic = theme.grammar.find((entry) => entry.id === set.target_id);
+  if (topic) return topic.title;
+  const vocabulary = theme.vocabulary.find((entry) => entry.id === set.target_id);
+  if (vocabulary) return vocabulary.title;
+  return set.target_id;
+}
+
 const STATUS_LABEL: Record<string, string> = {
   todo: 'Nog te doen',
   started: 'Bezig',
@@ -124,7 +133,7 @@ function renderNav(): void {
 
         const kindLabel = set.target_kind === 'grammar_topic' ? 'Grammatica' : 'Woordenschat';
         button.appendChild(el('span', 'nav-item__kind', kindLabel));
-        button.appendChild(el('span', 'nav-item__name', set.target_id));
+        button.appendChild(el('span', 'nav-item__name', titleFor(theme, set)));
 
         const status = setStatus(set);
         const badge = el('span', `nav-item__status is-${status}`, STATUS_LABEL[status]);
@@ -204,7 +213,7 @@ function renderView(): void {
 
   const header = el('header', 'view-header');
   header.appendChild(el('p', 'view-header__eyebrow', `Unit ${theme.unit} — ${theme.title}`));
-  header.appendChild(el('h2', undefined, set.target_id));
+  header.appendChild(el('h2', undefined, titleFor(theme, set)));
   header.appendChild(
     el(
       'p',

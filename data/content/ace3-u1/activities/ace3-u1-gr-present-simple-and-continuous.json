@@ -1099,7 +1099,7 @@
       "instructions_nl": "Elke zin bevat precies één fout. Typ de verbeterde zin.",
       "stimulus": {
         "type": "list",
-        "content": "1. He work in the school canteen on Fridays.\n2. Look! The bus comes.\n3. I am knowing the answer.\n4. She is runing to the sports hall."
+        "content": "1. My sister study French on Wednesdays.\n2. Look! The bus comes.\n3. I am knowing the answer.\n4. She is runing to the sports hall."
       },
       "prompts": [
         {
@@ -1107,20 +1107,22 @@
           "prompt": "Verbeter zin 1.",
           "response_mode": "typed_sentence",
           "canonical_answers": [
-            "He works in the school canteen on Fridays."
+            "My sister studies French on Wednesdays."
           ],
           "normalization_rules": [
             "trim",
             "collapse_whitespace"
           ],
-          "evidence_ref": "He work in the school canteen on Fridays.",
+          "evidence_ref": "My sister study French on Wednesdays.",
           "hints": [
-            "Kijk naar het onderwerp en naar de uitgang van het werkwoord."
+            "Kijk naar het onderwerp en naar de uitgang van het werkwoord.",
+            "Een werkwoord op medeklinker plus -y krijgt -ies."
           ],
           "error_feedback": [
             {
-              "matches": "He is working in the school canteen on Fridays.",
-              "feedback_nl": "Die vorm bestaat, maar hij past hier niet: 'on Fridays' zegt dat het zich elke week herhaalt."
+              "matches": "My sister is studying French on Wednesdays.",
+              "match_kind": "exact",
+              "feedback_nl": "Die vorm bestaat, maar hij past hier niet: 'on Wednesdays' zegt dat het zich elke week herhaalt."
             }
           ]
         },
@@ -1173,7 +1175,7 @@
           ]
         }
       ],
-      "content_hash": "42260ce61a37ea67c71561ba382924fff7e9e33620bfcf194fadf0fada05e6de"
+      "content_hash": "4f82e24ef289d96e95c036f77e361e58b1e694089378fc08f9831bdf34482247"
     },
     {
       "id": "ace3-u1-gr-present-simple-and-continuous-act-13",

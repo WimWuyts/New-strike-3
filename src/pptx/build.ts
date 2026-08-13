@@ -436,14 +436,37 @@ function collectAnswers(theme: ThemeContent): string[] {
     }
   }
 
-  // Alleen antwoorden van meerdere woorden tellen mee. Eén los woord komt in
-  // een unit nu eenmaal overal voor — 'understand' staat ook gewoon in een
-  // stimulus — en verraadt op zichzelf niet welk antwoord ergens anders
-  // verwacht wordt. Meerwoordige antwoorden doen dat wel.
-  return answers.filter(
-    (answer) => answer.trim().length >= 8 && answer.trim().split(/\s+/).length >= 2,
-  );
+  // Alleen antwoorden met genoeg eigen inhoud tellen mee. Een kale
+  // werkwoordsvorm — 'is sitting', 'are waiting' — is precies wat een
+  // grammaticaunit overal herhaalt: die staat in vijf andere stimuli en
+  // verraadt niets over welk antwoord ergens anders verwacht wordt. Een
+  // antwoord met twee inhoudswoorden of meer is wel herkenbaar.
+  const checked: string[] = [];
+  const tooGeneric: string[] = [];
+  for (const answer of answers) {
+    const words = answer.trim().split(/\s+/);
+    const content = words.filter((word) => !FUNCTION_WORDS.has(word.toLowerCase().replace(/\W/g, '')));
+    if (words.length >= 4 || content.length >= 2) checked.push(answer);
+    else tooGeneric.push(answer);
+  }
+
+  // Nooit stil overslaan: wat buiten de controle valt, hoort zichtbaar te zijn.
+  if (tooGeneric.length > 0) {
+    console.log(
+      `Lekcontrole slaat ${tooGeneric.length} te algemene antwoord(en) over, ` +
+        `bijvoorbeeld: ${[...new Set(tooGeneric)].slice(0, 5).join(', ')}`,
+    );
+  }
+  return checked;
 }
+
+/** Woorden die op zichzelf niets prijsgeven over een specifiek antwoord. */
+const FUNCTION_WORDS = new Set([
+  'a', 'an', 'the', 'am', 'is', 'are', 'do', 'does', 'not', "don't", "doesn't",
+  "isn't", "aren't", 'i', 'you', 'he', 'she', 'it', 'we', 'they', 'my', 'your',
+  'his', 'her', 'its', 'our', 'their', 'to', 'of', 'in', 'on', 'at', 'and',
+  'but', 'or', 'so', 'this', 'that', 'these', 'those', '',
+]);
 
 /**
  * Controleert dat er geen oplossingen in het leerlingdeck staan. Er wordt

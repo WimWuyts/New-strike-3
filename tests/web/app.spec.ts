@@ -15,7 +15,7 @@ async function openFirstSet(page: Page): Promise<void> {
 
 test('de app laadt en toont de navigatie', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('heading', { name: 'Oefenomgeving' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Practice' })).toBeVisible();
   await expect(page.locator('.nav-item').first()).toBeVisible();
 });
 
@@ -28,7 +28,7 @@ test('een correct antwoord wordt goedgekeurd', async ({ page }) => {
 
   // De fixture gebruikt voorspelbare antwoorden van de vorm answer-a01p1.
   await input.fill('answer-a01p1');
-  await firstActivity.getByRole('button', { name: 'Nakijken' }).first().click();
+  await firstActivity.getByRole('button', { name: 'Check' }).first().click();
 
   await expect(firstActivity.locator('.prompt__feedback').first()).toHaveClass(/is-correct/);
 });
@@ -39,7 +39,7 @@ test('een fout antwoord krijgt gerichte feedback zonder het antwoord te tonen', 
   const firstActivity = page.locator('.activity').first();
   const input = firstActivity.locator('.prompt__input').first();
   await input.fill('duidelijk-verkeerd');
-  await firstActivity.getByRole('button', { name: 'Nakijken' }).first().click();
+  await firstActivity.getByRole('button', { name: 'Check' }).first().click();
 
   const feedback = firstActivity.locator('.prompt__feedback').first();
   await expect(feedback).toHaveClass(/is-incorrect/);
@@ -51,7 +51,7 @@ test('het modelantwoord verschijnt pas na het maximum aantal pogingen', async ({
 
   const firstActivity = page.locator('.activity').first();
   const input = firstActivity.locator('.prompt__input').first();
-  const check = firstActivity.getByRole('button', { name: 'Nakijken' }).first();
+  const check = firstActivity.getByRole('button', { name: 'Check' }).first();
   const feedback = firstActivity.locator('.prompt__feedback').first();
 
   for (let attempt = 1; attempt <= 2; attempt += 1) {
@@ -71,7 +71,7 @@ test('leerlingmodus verbergt de antwoorden, leerkrachtmodus toont ze', async ({ 
   const answerBox = page.locator('.prompt__answer').first();
   await expect(answerBox).toBeHidden();
 
-  await page.getByRole('button', { name: 'Leerkracht' }).click();
+  await page.getByRole('button', { name: 'Teacher' }).click();
   await expect(page.locator('.prompt__answer').first()).toBeVisible();
 });
 
@@ -96,7 +96,7 @@ test('voortgang blijft bewaard na herladen', async ({ page }) => {
 
   const firstActivity = page.locator('.activity').first();
   await firstActivity.locator('.prompt__input').first().fill('answer-a01p1');
-  await firstActivity.getByRole('button', { name: 'Nakijken' }).first().click();
+  await firstActivity.getByRole('button', { name: 'Check' }).first().click();
   await expect(firstActivity.locator('.prompt__feedback').first()).toHaveClass(/is-correct/);
 
   await page.reload();
@@ -115,7 +115,7 @@ test('de oefening is met het toetsenbord te bedienen', async ({ page }) => {
 
   await page.keyboard.type('answer-a01p1');
   await page.keyboard.press('Tab');
-  await expect(page.getByRole('button', { name: 'Nakijken' }).first()).toBeFocused();
+  await expect(page.getByRole('button', { name: 'Check' }).first()).toBeFocused();
 
   await page.keyboard.press('Enter');
   await expect(page.locator('.prompt__feedback').first()).toHaveClass(/is-correct/);

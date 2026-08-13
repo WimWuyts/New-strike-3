@@ -368,6 +368,18 @@ def _check_answerability(activities: list[dict[str, Any]], report: Report) -> No
             if mode in CHOICE_MODES:
                 if not options:
                     report.error("no-options", f"response_mode {mode} vereist options.", ploc)
+                elif mode == "ordering":
+                    # Bij ordenen is het antwoord de volgorde van álle tegels
+                    # samen, niet één van de tegels.
+                    expected = sorted(_norm(o) for o in options)
+                    for answer in answers:
+                        given = sorted(_norm(part) for part in _split_ordering(answer, options))
+                        if given != expected:
+                            report.error(
+                                "ordering-mismatch",
+                                f"Antwoord {answer!r} gebruikt niet exact alle opties één keer.",
+                                ploc,
+                            )
                 else:
                     normalised = {_norm(o) for o in options}
                     for answer in answers:
@@ -404,10 +416,12 @@ def _check_answerability(activities: list[dict[str, Any]], report: Report) -> No
                         )
 
             rules = set(prompt.get("normalization_rules") or [])
-            if "ignore_case" in rules and mode in interactions.TYPED_RESPONSE_MODES:
+            # Bij losse woorden is hoofdlettergebruik zelden het leerdoel; bij
+            # hele zinnen wel, want daar hoort een hoofdletter aan het begin.
+            if "ignore_case" in rules and mode in {"typed_sentence", "typed_paragraph"}:
                 report.warn(
                     "normalisation-broad",
-                    "ignore_case staat aan; controleer dat hoofdletters hier niet het leerdoel zijn.",
+                    "ignore_case staat aan bij een volledige zin; daar hoort een hoofdletter bij.",
                     ploc,
                 )
 
@@ -418,13 +432,20 @@ def _check_duplication(activities: list[dict[str, Any]], report: Report, loc: st
     option_sets: Counter[tuple[str, ...]] = Counter()
 
     for activity in activities:
+        # Binnen één sorteer- of koppelactiviteit is dezelfde set opties juist
+        # de bedoeling: dat ís de opdracht. Alleen hergebruik tússen
+        # activiteiten wijst op luie herhaling, dus per activiteit één keer
+        # tellen.
+        seen_here: set[tuple[str, ...]] = set()
         for prompt in activity.get("prompts", []):
             text = _norm(prompt.get("prompt", ""))
             if text:
                 prompt_texts[text] += 1
             options = prompt.get("options") or []
             if len(options) >= 2:
-                option_sets[tuple(sorted(_norm(o) for o in options))] += 1
+                seen_here.add(tuple(sorted(_norm(o) for o in options)))
+        for option_set in seen_here:
+            option_sets[option_set] += 1
 
     for text, count in prompt_texts.items():
         if count > 1:
@@ -539,6 +560,23 @@ def validate_student_leak(student_payload: Any, answers: Iterable[str]) -> Repor
 # ---------------------------------------------------------------------------
 # Hulp
 # ---------------------------------------------------------------------------
+
+
+def _split_ordering(answer: str, options: list[str]) -> list[str]:
+    """Hakt een geordend antwoord terug in de tegels waaruit het bestaat.
+
+    De tegels kunnen uit meerdere woorden bestaan, dus splitsen op spaties
+    volstaat niet. Langste tegels eerst, anders eet een korte tegel een stuk
+    van een lange op.
+    """
+    remaining = _norm(answer)
+    parts: list[str] = []
+    for option in sorted(options, key=lambda o: -len(o)):
+        needle = _norm(option)
+        if needle and needle in remaining:
+            remaining = remaining.replace(needle, " ", 1)
+            parts.append(needle)
+    return parts
 
 
 _WS = re.compile(r"\s+")

@@ -153,8 +153,11 @@ exercises:
 # Reading en listening
 # ---------------------------------------------------------------------------
 modules:
-  readings_per_theme: 2
-  listenings_per_theme: 2
+  # Twee onderwerpen, elk op twee niveaus. Dat geeft echte differentiatie:
+  # dezelfde inhoud, dezelfde les, twee moeilijkheidsgraden naast elkaar.
+  topics_per_theme: 2
+  readings_per_theme: 4
+  listenings_per_theme: 4
   variants: ["core", "challenge"]
 
 audio:

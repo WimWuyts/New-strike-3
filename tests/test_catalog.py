@@ -8,6 +8,7 @@ ze schemageldig blijven en intern consistent zijn met config/project.yaml.
 from __future__ import annotations
 
 import json
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -15,8 +16,21 @@ import pytest
 from lib.project import CATALOG_DIR, ROOT
 from lib.validation import validate_schema
 
+def _is_tracked(path: Path) -> bool:
+    """Alleen vastgelegde kaarten toetsen, niet wat een fixture genereert."""
+    result = subprocess.run(
+        ["git", "check-ignore", "-q", str(path)],
+        cwd=ROOT,
+        capture_output=True,
+        check=False,
+    )
+    return result.returncode != 0
+
+
 CATALOG_FILES = sorted(
-    path for path in CATALOG_DIR.glob("*.json") if path.name != "curriculum-map.json"
+    path
+    for path in CATALOG_DIR.glob("*.json")
+    if path.name != "curriculum-map.json" and _is_tracked(path)
 )
 
 

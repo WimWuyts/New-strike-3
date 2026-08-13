@@ -25,7 +25,7 @@ niet overnemen. Ze staan hier omdat ze niet stilzwijgend mogen verdwijnen.
 
 | Blz. | Vraag | Waarom het uitmaakt |
 |---|---|---|
-| 46–49 | **Het boek vermeldt nergens de woordsoort.** De woordsoorten in de inventaris zijn een externe classificatie | `Lexeme.part_of_speech` is verplicht. Zonder bevestiging is dat veld afgeleid, geen brongegeven |
+| ~~46–49~~ | ~~**Het boek vermeldt nergens de woordsoort.**~~ **Afgehandeld:** woordsoorten komen in Engelse termen in de bank, met `part_of_speech_source: derived`. Zie D6 | — |
 | 30 vs 46–49 | Schrijfwijzen verschillen tussen woordweb en woordenlijst, bv. `a guidance counsel(l)or` tegenover `a guidance counsellor (Br. E.) / counselor (Am. E.)` | Welke vorm is de bronvorm? De andere gaat naar de changelog |
 | 29, 30 | Zestien woorden staan in het woordweb en de definitie-oefening **zonder vertaling** | Horen ze in `source_core`, of vallen ze buiten de bank? |
 | 61 | `slavery`, `segregation`, `Jim Crow laws`, `separate but equal`, `civil rights movement`, `sit-ins`, `boycotts` staan in geen enkele woordenlijst | Eigen woordenschatset, of buiten scope? Het zijn inhoudelijke begrippen, geen taalleerdoel |

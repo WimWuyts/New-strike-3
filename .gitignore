@@ -27,8 +27,8 @@ assets/generated/
 state/
 
 # Testfixture, opgebouwd door scripts/make_test_fixture.py
-data/content/ace3-u1/grammar/ace3-u1-gr-test.json
-data/content/ace3-u1/activities/ace3-u1-gr-test.json
+data/content/ace3-u2/
+data/catalog/ace3-u2.json
 data/answers/ace3-u2.json
 data/content/*/WORK-ORDER.md
 data/content/*/activities/*.blueprint.json

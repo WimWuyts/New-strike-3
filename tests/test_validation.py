@@ -34,7 +34,7 @@ def test_generated_set_passes_schema(config, target_kind):
 def test_generated_set_passes_all_quotas(config, target_kind):
     activities = build_activity_set(target_kind, config)
     report = validate_activity_set(
-        activities, "ace3-u1-gr-test", target_kind, config
+        activities, "ace3-u2-gr-test", target_kind, config
     )
     assert report.ok, [str(f) for f in report.errors]
 
@@ -50,14 +50,14 @@ def _codes(report) -> set[str]:
 
 def test_rejects_wrong_activity_count(config):
     activities = build_activity_set("grammar_topic", config)[:24]
-    report = validate_activity_set(activities, "ace3-u1-gr-test", "grammar_topic", config)
+    report = validate_activity_set(activities, "ace3-u2-gr-test", "grammar_topic", config)
     assert "count" in _codes(report)
 
 
 def test_rejects_duplicate_ids(config):
     activities = build_activity_set("grammar_topic", config)
     activities[3]["id"] = activities[2]["id"]
-    report = validate_activity_set(activities, "ace3-u1-gr-test", "grammar_topic", config)
+    report = validate_activity_set(activities, "ace3-u2-gr-test", "grammar_topic", config)
     assert "duplicate-id" in _codes(report)
 
 
@@ -66,14 +66,14 @@ def test_rejects_overused_interaction_type(config):
     ceiling = config.exercises["quotas"]["grammar_topic"]["max_uses_per_interaction_type"]
     for activity in activities[: ceiling + 2]:
         activity["interaction_type"] = "error-detective"
-    report = validate_activity_set(activities, "ace3-u1-gr-test", "grammar_topic", config)
+    report = validate_activity_set(activities, "ace3-u2-gr-test", "grammar_topic", config)
     assert "interaction-overuse" in _codes(report)
 
 
 def test_rejects_unknown_interaction_type(config):
     activities = build_activity_set("grammar_topic", config)
     activities[0]["interaction_type"] = "niet-bestaand-patroon"
-    report = validate_activity_set(activities, "ace3-u1-gr-test", "grammar_topic", config)
+    report = validate_activity_set(activities, "ace3-u2-gr-test", "grammar_topic", config)
     assert "unknown-interaction" in _codes(report)
 
 
@@ -87,7 +87,7 @@ def test_rejects_empty_canonical_answer(config):
         else:
             continue
         break
-    report = validate_activity_set(activities, "ace3-u1-gr-test", "grammar_topic", config)
+    report = validate_activity_set(activities, "ace3-u2-gr-test", "grammar_topic", config)
     assert "empty-answer" in _codes(report)
 
 
@@ -98,7 +98,7 @@ def test_rejects_answer_missing_from_options(config):
             if prompt.get("options"):
                 prompt["canonical_answers"] = ["staat-er-niet-tussen"]
                 report = validate_activity_set(
-                    activities, "ace3-u1-gr-test", "grammar_topic", config
+                    activities, "ace3-u2-gr-test", "grammar_topic", config
                 )
                 assert "answer-not-in-options" in _codes(report)
                 return
@@ -112,7 +112,7 @@ def test_rejects_hint_that_reveals_answer(config):
             if prompt.get("canonical_answers"):
                 prompt["hints"] = [f"Het antwoord is {prompt['canonical_answers'][0]}."]
                 report = validate_activity_set(
-                    activities, "ace3-u1-gr-test", "grammar_topic", config
+                    activities, "ace3-u2-gr-test", "grammar_topic", config
                 )
                 assert "hint-reveals-answer" in _codes(report)
                 return
@@ -122,21 +122,21 @@ def test_rejects_hint_that_reveals_answer(config):
 def test_rejects_duplicate_prompts(config):
     activities = build_activity_set("grammar_topic", config)
     activities[5]["prompts"][0]["prompt"] = activities[4]["prompts"][0]["prompt"]
-    report = validate_activity_set(activities, "ace3-u1-gr-test", "grammar_topic", config)
+    report = validate_activity_set(activities, "ace3-u2-gr-test", "grammar_topic", config)
     assert "duplicate-prompt" in _codes(report)
 
 
 def test_rejects_broken_stage_distribution(config):
     activities = build_activity_set("grammar_topic", config)
     activities[0]["stage"] = 5
-    report = validate_activity_set(activities, "ace3-u1-gr-test", "grammar_topic", config)
+    report = validate_activity_set(activities, "ace3-u2-gr-test", "grammar_topic", config)
     assert "stage-distribution" in _codes(report)
 
 
 def test_rejects_target_mismatch(config):
     activities = build_activity_set("grammar_topic", config)
     activities[7]["target_id"] = "een-ander-doel"
-    report = validate_activity_set(activities, "ace3-u1-gr-test", "grammar_topic", config)
+    report = validate_activity_set(activities, "ace3-u2-gr-test", "grammar_topic", config)
     assert "target-mismatch" in _codes(report)
 
 
@@ -147,7 +147,7 @@ def test_open_production_without_rubric_is_rejected(config):
             if prompt["response_mode"] == "typed_paragraph":
                 prompt.pop("manual_review_rubric")
                 report = validate_activity_set(
-                    activities, "ace3-u1-gr-test", "grammar_topic", config
+                    activities, "ace3-u2-gr-test", "grammar_topic", config
                 )
                 assert "open-without-rubric" in _codes(report)
                 return

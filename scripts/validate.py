@@ -73,16 +73,17 @@ def validate_theme(theme_id: str, config: Config) -> Report:
             if kind:
                 report.extend(validate_module_evidence(payload, kind))
 
-    # -- verwachte aantallen readings en listenings ------------------------
+    # -- readings en listenings: aantal én niveaukoppels --------------------
     for subdir, key in (("readings", "readings_per_theme"), ("listenings", "listenings_per_theme")):
         expected = config.modules[key]
-        found = len(list((theme_dir / subdir).glob("*.json")))
-        if found != expected:
+        paths = sorted((theme_dir / subdir).glob("*.json"))
+        if len(paths) != expected:
             report.error(
                 "module-count",
-                f"{found} bestanden in {subdir}/, verwacht {expected}.",
+                f"{len(paths)} bestanden in {subdir}/, verwacht {expected}.",
                 theme_id,
             )
+        _check_variant_pairs(paths, subdir, config, report, theme_id)
 
     # -- oefenreeksen ------------------------------------------------------
     activity_dir = theme_dir / "activities"
@@ -122,6 +123,45 @@ def validate_theme(theme_id: str, config: Config) -> Report:
         )
 
     return report
+
+
+def _check_variant_pairs(
+    paths: list[Path], subdir: str, config: Config, report: Report, theme_id: str
+) -> None:
+    """Elk onderwerp moet op beide niveaus bestaan.
+
+    Differentiatie werkt alleen als de leerkracht dezelfde inhoud in twee
+    moeilijkheidsgraden naast elkaar kan leggen. Eén losse `challenge` zonder
+    `core` is dus geen differentiatie maar een gat.
+    """
+    if not paths:
+        return
+
+    by_topic: dict[str, set[str]] = {}
+    for path in paths:
+        payload = _load(path)
+        topic = payload.get("topic_id")
+        if not topic:
+            report.error("module-topic", "Module zonder topic_id.", relative(path))
+            continue
+        by_topic.setdefault(topic, set()).add(payload.get("variant", "?"))
+
+    expected_topics = config.modules.get("topics_per_theme")
+    if expected_topics and len(by_topic) != expected_topics:
+        report.error(
+            "module-topics",
+            f"{len(by_topic)} onderwerpen in {subdir}/, verwacht {expected_topics}.",
+            theme_id,
+        )
+
+    for topic, variants in sorted(by_topic.items()):
+        missing = set(config.modules["variants"]) - variants
+        if missing:
+            report.error(
+                "module-variant-missing",
+                f"Onderwerp {topic!r} in {subdir}/ mist de variant(en): {', '.join(sorted(missing))}.",
+                theme_id,
+            )
 
 
 def _check_hash(payload: Any, report: Report, loc: str) -> None:

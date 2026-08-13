@@ -1,0 +1,368 @@
+{
+  "id": "ace3-u1-vis-present-simple-and-continuous",
+  "book_id": "ace3",
+  "theme_id": "ace3-u1",
+  "kind": "visual_grammar_model",
+  "title": "Van gewoonte naar dit moment",
+  "cefr": "A2+",
+  "learning_objectives": [
+    "Ik zie welke twee bouwstenen erbij komen wanneer een zin van gewoonte naar dit moment schuift."
+  ],
+  "source_page_refs": [
+    {
+      "book_id": "ace3",
+      "source_file": "Digiboek - New Ace 3 UNIT 1.pdf",
+      "page": 33
+    }
+  ],
+  "provenance": "original_companion",
+  "rights_status": "original_only",
+  "review_status": "draft",
+  "grammar_topic_id": "ace3-u1-gr-present-simple-and-continuous",
+  "model_type": "word_tiles",
+  "pptx_progressive_slides": 6,
+  "steps": [
+    {
+      "index": 1,
+      "caption_nl": "We beginnen bij een gewoonte: dit gebeurt elke dag opnieuw.",
+      "change_description_nl": "De uitgangszin verschijnt in de present simple.",
+      "elements": [
+        {
+          "id": "s1-subj",
+          "text": "Nora",
+          "role": "subject",
+          "state": "present",
+          "position": {
+            "order": 0
+          }
+        },
+        {
+          "id": "s1-verb",
+          "text": "walks",
+          "role": "verb",
+          "state": "present",
+          "position": {
+            "order": 1
+          }
+        },
+        {
+          "id": "s1-obj",
+          "text": "to school",
+          "role": "object",
+          "state": "present",
+          "position": {
+            "order": 2
+          }
+        },
+        {
+          "id": "s1-time",
+          "text": "every day",
+          "role": "time",
+          "state": "present",
+          "position": {
+            "order": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "caption_nl": "Let op de -s. Die hoort bij he, she en it, en verdwijnt zo weer.",
+      "change_description_nl": "De uitgang -s op het werkwoord licht op.",
+      "elements": [
+        {
+          "id": "s1-subj",
+          "text": "Nora",
+          "role": "subject",
+          "state": "present",
+          "position": {
+            "order": 0
+          }
+        },
+        {
+          "id": "s1-verb",
+          "text": "walks",
+          "role": "verb",
+          "state": "highlighted",
+          "position": {
+            "order": 1
+          }
+        },
+        {
+          "id": "s1-obj",
+          "text": "to school",
+          "role": "object",
+          "state": "present",
+          "position": {
+            "order": 2
+          }
+        },
+        {
+          "id": "s1-time",
+          "text": "every day",
+          "role": "time",
+          "state": "present",
+          "position": {
+            "order": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "caption_nl": "Nu verandert de tijd: niet elke dag meer, maar op dit moment.",
+      "change_description_nl": "De tijdstegel wisselt van 'every day' naar 'right now'.",
+      "elements": [
+        {
+          "id": "s1-subj",
+          "text": "Nora",
+          "role": "subject",
+          "state": "present",
+          "position": {
+            "order": 0
+          }
+        },
+        {
+          "id": "s1-verb",
+          "text": "walks",
+          "role": "verb",
+          "state": "dimmed",
+          "position": {
+            "order": 1
+          }
+        },
+        {
+          "id": "s1-obj",
+          "text": "to school",
+          "role": "object",
+          "state": "present",
+          "position": {
+            "order": 2
+          }
+        },
+        {
+          "id": "s1-time",
+          "text": "right now",
+          "role": "time",
+          "state": "entering",
+          "position": {
+            "order": 3
+          }
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "caption_nl": "Er komt een hulpwerkwoord bij dat bij het onderwerp past: am, is of are.",
+      "change_description_nl": "De AUX-tegel 'is' schuift tussen onderwerp en werkwoord.",
+      "elements": [
+        {
+          "id": "s1-subj",
+          "text": "Nora",
+          "role": "subject",
+          "state": "present",
+          "position": {
+            "order": 0
+          }
+        },
+        {
+          "id": "s1-aux",
+          "text": "is",
+          "role": "aux",
+          "state": "entering",
+          "position": {
+            "order": 1
+          }
+        },
+        {
+          "id": "s1-verb",
+          "text": "walks",
+          "role": "verb",
+          "state": "dimmed",
+          "position": {
+            "order": 2
+          }
+        },
+        {
+          "id": "s1-obj",
+          "text": "to school",
+          "role": "object",
+          "state": "present",
+          "position": {
+            "order": 3
+          }
+        },
+        {
+          "id": "s1-time",
+          "text": "right now",
+          "role": "time",
+          "state": "present",
+          "position": {
+            "order": 4
+          }
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "caption_nl": "De -s verdwijnt en het werkwoord krijgt -ing. Het hulpwerkwoord draagt nu de persoon.",
+      "change_description_nl": "'walks' wordt 'walking'.",
+      "elements": [
+        {
+          "id": "s1-subj",
+          "text": "Nora",
+          "role": "subject",
+          "state": "present",
+          "position": {
+            "order": 0
+          }
+        },
+        {
+          "id": "s1-aux",
+          "text": "is",
+          "role": "aux",
+          "state": "present",
+          "position": {
+            "order": 1
+          }
+        },
+        {
+          "id": "s1-verb",
+          "text": "walking",
+          "role": "verb",
+          "state": "highlighted",
+          "position": {
+            "order": 2
+          }
+        },
+        {
+          "id": "s1-obj",
+          "text": "to school",
+          "role": "object",
+          "state": "present",
+          "position": {
+            "order": 3
+          }
+        },
+        {
+          "id": "s1-time",
+          "text": "right now",
+          "role": "time",
+          "state": "present",
+          "position": {
+            "order": 4
+          }
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "caption_nl": "Ontkennen doe je op het hulpwerkwoord, niet op het hoofdwerkwoord.",
+      "change_description_nl": "'not' verschijnt achter het hulpwerkwoord.",
+      "elements": [
+        {
+          "id": "s1-subj",
+          "text": "Nora",
+          "role": "subject",
+          "state": "present",
+          "position": {
+            "order": 0
+          }
+        },
+        {
+          "id": "s1-aux",
+          "text": "is",
+          "role": "aux",
+          "state": "present",
+          "position": {
+            "order": 1
+          }
+        },
+        {
+          "id": "s1-neg",
+          "text": "not",
+          "role": "negation",
+          "state": "entering",
+          "position": {
+            "order": 2
+          }
+        },
+        {
+          "id": "s1-verb",
+          "text": "walking",
+          "role": "verb",
+          "state": "present",
+          "position": {
+            "order": 3
+          }
+        },
+        {
+          "id": "s1-obj",
+          "text": "to school",
+          "role": "object",
+          "state": "present",
+          "position": {
+            "order": 4
+          }
+        },
+        {
+          "id": "s1-time",
+          "text": "right now",
+          "role": "time",
+          "state": "present",
+          "position": {
+            "order": 5
+          }
+        }
+      ]
+    }
+  ],
+  "accessibility": {
+    "static_alternative_nl": "De zin 'Nora walks to school every day' verandert stap voor stap in 'Nora is not walking to school right now'. Eerst licht de uitgang -s op, want die hoort bij de present simple. Daarna wisselt de tijdsaanduiding van 'every day' naar 'right now'. Dan schuift het hulpwerkwoord 'is' tussen het onderwerp en het werkwoord. Vervolgens verliest het werkwoord zijn -s en krijgt het -ing: de persoon zit voortaan in het hulpwerkwoord. Tot slot komt 'not' achter dat hulpwerkwoord te staan, want in het Engels ontken je op het hulpwerkwoord.",
+    "role_legend": [
+      {
+        "role": "subject",
+        "label": "SUBJECT",
+        "shape": "rounded_rect",
+        "pattern": "effen"
+      },
+      {
+        "role": "aux",
+        "label": "AUX",
+        "shape": "pill",
+        "pattern": "schuine strepen"
+      },
+      {
+        "role": "verb",
+        "label": "VERB",
+        "shape": "rect",
+        "pattern": "effen"
+      },
+      {
+        "role": "time",
+        "label": "TIME",
+        "shape": "clock",
+        "pattern": "stippen"
+      },
+      {
+        "role": "negation",
+        "label": "NOT",
+        "shape": "strikethrough_badge",
+        "pattern": "kruisarcering"
+      },
+      {
+        "role": "object",
+        "label": "OBJECT",
+        "shape": "hexagon",
+        "pattern": "effen"
+      }
+    ]
+  },
+  "embedded_motion": {
+    "status": "not_built",
+    "format": null,
+    "path": null,
+    "loops_correctly": null
+  },
+  "content_hash": "9916c2a3a6bc850900e334914017582ae091e10d63070a20bdab80c78e4011bc"
+}

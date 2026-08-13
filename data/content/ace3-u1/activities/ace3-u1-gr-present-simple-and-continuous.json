@@ -1,0 +1,2383 @@
+{
+  "target_id": "ace3-u1-gr-present-simple-and-continuous",
+  "target_kind": "grammar_topic",
+  "activities": [
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-01",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Welke zin hoort er niet bij?",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik merk op welke zin over dit moment gaat en welke over een gewoonte."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 1,
+      "stage": 1,
+      "difficulty": "support",
+      "interaction_type": "odd-one-out",
+      "instructions_nl": "In elke reeks gaan drie zinnen over hetzelfde soort tijd. Eén zin hoort er niet bij. Typ die zin over.",
+      "stimulus": {
+        "type": "list",
+        "content": "A. Ravi is waiting outside the gym.\nB. Two girls are laughing near the lockers.\nC. The bell rings at half past eight.\nD. Mr Dale is looking for his keys.\n\nE. We have chemistry on Monday.\nF. She takes the bus to school.\nG. He is carrying a heavy backpack.\nH. The library opens at eight.\n\nI. I am reading the timetable.\nJ. They are standing in the corridor.\nK. Our teacher always arrives early.\nL. Nora is tying her shoelaces."
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Reeks 1: welke zin hoort er niet bij? Typ de letter en de zin.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "C. The bell rings at half past eight."
+          ],
+          "accepted_variants": [
+            "C The bell rings at half past eight.",
+            "C. The bell rings at half past eight"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "The bell rings at half past eight.",
+          "hints": [
+            "Drie zinnen beschrijven iets dat je nu zou kunnen zien gebeuren.",
+            "Eén zin gaat over een vast tijdstip dat elke dag terugkeert."
+          ],
+          "error_feedback": [
+            {
+              "matches": "D. Mr Dale is looking for his keys.",
+              "match_kind": "contains",
+              "feedback_nl": "Deze zin past juist wél bij de andere twee: hij beschrijft iets dat op dit moment bezig is."
+            }
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "Reeks 2: welke zin hoort er niet bij? Typ de letter en de zin.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "G. He is carrying a heavy backpack."
+          ],
+          "accepted_variants": [
+            "G He is carrying a heavy backpack.",
+            "G. He is carrying a heavy backpack"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "He is carrying a heavy backpack.",
+          "hints": [
+            "Drie zinnen gaan over iets dat zich herhaalt of altijd zo is.",
+            "Zoek de zin met am, is of are erin."
+          ]
+        },
+        {
+          "id": "p3",
+          "prompt": "Reeks 3: welke zin hoort er niet bij? Typ de letter en de zin.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "K. Our teacher always arrives early."
+          ],
+          "accepted_variants": [
+            "K Our teacher always arrives early.",
+            "K. Our teacher always arrives early"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "Our teacher always arrives early.",
+          "hints": [
+            "Let op het woordje dat aangeeft hoe vaak iets gebeurt."
+          ]
+        },
+        {
+          "id": "p4",
+          "prompt": "Schrijf in één zin wat de drie bij elkaar horende zinnen van reeks 1 gemeen hebben.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "Ze beschrijven iets dat op dit moment gebeurt."
+          ],
+          "accepted_variants": [
+            "Ze gaan over iets dat nu bezig is.",
+            "Ze beschrijven wat er nu gebeurt.",
+            "Ze gaan over dit moment."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_terminal_punctuation"
+          ],
+          "hints": [
+            "Denk aan het verschil tussen 'nu' en 'elke dag'."
+          ]
+        }
+      ],
+      "content_hash": "08aafa553c80d999fa680ba81f1bdf816c3f70307d2cfb5096af6b47d78e2daf"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-02",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Waar of niet waar, en bewijs het",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik haal uit een tekst welke informatie over dit moment gaat en welke over een gewoonte."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 2,
+      "stage": 1,
+      "difficulty": "support",
+      "interaction_type": "true-false-evidence",
+      "instructions_nl": "Lees het bericht. Beslis of de uitspraak klopt en typ daarna de woorden uit de tekst die je gelijk geven.",
+      "stimulus": {
+        "type": "text",
+        "content": "Hi Sam! I'm sitting in the corridor with my new timetable. Our class has English on Monday, Wednesday and Friday. Right now everyone is looking for the science lab, because nobody knows where it is. I usually walk to school with my brother, but this week he is staying at our grandmother's."
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "'De klas heeft elke dag Engels.' Waar of niet waar? Typ daarna de woorden uit de tekst die dat bewijzen.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "niet waar - has English on Monday, Wednesday and Friday"
+          ],
+          "accepted_variants": [
+            "niet waar: has English on Monday, Wednesday and Friday",
+            "false - has English on Monday, Wednesday and Friday"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_case"
+          ],
+          "evidence_ref": "Our class has English on Monday, Wednesday and Friday.",
+          "hints": [
+            "Tel de dagen die in de tekst genoemd worden."
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "'Op dit moment zoekt iedereen het scheikundelokaal.' Waar of niet waar? Typ het bewijs.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "waar - Right now everyone is looking for the science lab"
+          ],
+          "accepted_variants": [
+            "waar: Right now everyone is looking for the science lab",
+            "true - Right now everyone is looking for the science lab"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_case"
+          ],
+          "evidence_ref": "Right now everyone is looking for the science lab",
+          "hints": [
+            "Zoek de zin met 'right now'."
+          ]
+        },
+        {
+          "id": "p3",
+          "prompt": "'De schrijver gaat altijd alleen naar school.' Waar of niet waar? Typ het bewijs.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "niet waar - I usually walk to school with my brother"
+          ],
+          "accepted_variants": [
+            "niet waar: I usually walk to school with my brother",
+            "false - I usually walk to school with my brother"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_case"
+          ],
+          "evidence_ref": "I usually walk to school with my brother",
+          "hints": [
+            "Let op het woord dat aangeeft wat gewoonlijk gebeurt."
+          ]
+        }
+      ],
+      "content_hash": "e3a806403614909fd61494544c8dd7ba661a56a7a4b979e1c048c4a15e35aa5a"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-03",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Markeer de tijdsaanduiding",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik herken de woorden die aangeven of iets nu gebeurt of zich herhaalt."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 3,
+      "stage": 1,
+      "difficulty": "core",
+      "interaction_type": "highlight-the-signal",
+      "instructions_nl": "Klik in elke zin de tijdsaanduiding aan. Let op: die zegt niet altijd wat je verwacht.",
+      "stimulus": {
+        "type": "list",
+        "content": "1. At the moment she is helping a new student.\n2. We go to the sports hall twice a week.\n3. Today the canteen is serving soup.\n4. Today we have four lessons and a test."
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Zin 1: klik de tijdsaanduiding aan.",
+          "response_mode": "click_to_mark",
+          "options": [
+            "At the moment",
+            "she",
+            "is helping",
+            "a new student"
+          ],
+          "canonical_answers": [
+            "At the moment"
+          ],
+          "evidence_ref": "At the moment she is helping a new student.",
+          "hints": [
+            "Zoek de woorden die zeggen wánneer het gebeurt."
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "Zin 2: klik de tijdsaanduiding aan.",
+          "response_mode": "click_to_mark",
+          "options": [
+            "We",
+            "go",
+            "to the sports hall",
+            "twice a week"
+          ],
+          "canonical_answers": [
+            "twice a week"
+          ],
+          "evidence_ref": "We go to the sports hall twice a week.",
+          "hints": [
+            "Deze zin zegt hoe váák iets gebeurt."
+          ]
+        },
+        {
+          "id": "p3",
+          "prompt": "Zin 3: klik de tijdsaanduiding aan.",
+          "response_mode": "click_to_mark",
+          "options": [
+            "Today",
+            "the canteen",
+            "is serving",
+            "soup"
+          ],
+          "canonical_answers": [
+            "Today"
+          ],
+          "evidence_ref": "Today the canteen is serving soup."
+        },
+        {
+          "id": "p4",
+          "prompt": "Zin 3 en 4 beginnen allebei met hetzelfde woord, maar de werkwoordsvorm verschilt. Waarom?",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "In zin 3 gebeurt het nu, in zin 4 is het een rooster."
+          ],
+          "accepted_variants": [
+            "Zin 3 gaat over dit moment, zin 4 over het rooster van vandaag.",
+            "In zin 3 is het bezig, in zin 4 is het een vast rooster."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_terminal_punctuation"
+          ],
+          "hints": [
+            "Een signaalwoord beslist niet; de betekenis wel.",
+            "Kun je in zin 4 het lesrooster aanwijzen?"
+          ]
+        }
+      ],
+      "content_hash": "8a59c486773385bcdaf24b63f6221240410195b313f842ae88d8b32444b2b56b"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-04",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Koppel begin en eind",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik koppel een zinsbegin aan het zinseinde dat qua tijd klopt."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 4,
+      "stage": 1,
+      "difficulty": "core",
+      "interaction_type": "memory-grid",
+      "instructions_nl": "Koppel elk zinsbegin aan het einde dat erbij past. Let op de werkwoordsvorm.",
+      "stimulus": {
+        "type": "table",
+        "content": "Zinsbegin:\n1. Our science teacher is\n2. Our science teacher\n3. The freshmen are\n4. The freshmen"
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Wat past bij 'Our science teacher is'?",
+          "response_mode": "matching",
+          "options": [
+            "writing on the board right now.",
+            "writes on the board every lesson.",
+            "stand in the corridor at eight.",
+            "standing in the corridor now."
+          ],
+          "canonical_answers": [
+            "writing on the board right now."
+          ],
+          "evidence_ref": "Our science teacher is",
+          "hints": [
+            "Na 'is' volgt een vorm op -ing."
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "Wat past bij 'Our science teacher'?",
+          "response_mode": "matching",
+          "options": [
+            "writes on the board every lesson.",
+            "writing on the board right now.",
+            "standing in the corridor now.",
+            "stand in the corridor at eight."
+          ],
+          "canonical_answers": [
+            "writes on the board every lesson."
+          ],
+          "evidence_ref": "Our science teacher",
+          "hints": [
+            "Zonder hulpwerkwoord heb je een vorm nodig die zelf de persoon draagt."
+          ]
+        },
+        {
+          "id": "p3",
+          "prompt": "Wat past bij 'The freshmen are'?",
+          "response_mode": "matching",
+          "options": [
+            "standing in the corridor now.",
+            "stand in the corridor at eight.",
+            "writes on the board every lesson.",
+            "writing on the board right now."
+          ],
+          "canonical_answers": [
+            "standing in the corridor now."
+          ]
+        },
+        {
+          "id": "p4",
+          "prompt": "Wat past bij 'The freshmen'?",
+          "response_mode": "matching",
+          "options": [
+            "stand in the corridor at eight.",
+            "standing in the corridor now.",
+            "writing on the board right now.",
+            "writes on the board every lesson."
+          ],
+          "canonical_answers": [
+            "stand in the corridor at eight."
+          ],
+          "hints": [
+            "Bij een meervoudig onderwerp komt er geen -s bij."
+          ]
+        }
+      ],
+      "content_hash": "75159cefa6a1326289a7e7e1fc9de12ac841960577d56c181812d79cd37c1d68"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-05",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Bijna hetzelfde, toch anders",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik kies tussen twee bijna gelijke zinnen die van betekenis verschillen."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 5,
+      "stage": 1,
+      "difficulty": "core",
+      "interaction_type": "minimal-pair-choice",
+      "instructions_nl": "Lees de situatie en kies de zin die erbij past.",
+      "stimulus": {
+        "type": "dialogue",
+        "content": "Situatie 1: Je belt je vriendin. Je hoort veel lawaai en vraagt wat ze op dit ogenblik uitvoert.\nSituatie 2: Je ontmoet iemand op een feest en wil weten welk beroep die persoon heeft.\nSituatie 3: Je wijst naar het raam. Er valt op dit ogenblik regen.\nSituatie 4: Je vertelt dat het in november in België vaak regent."
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Situatie 1: welke vraag stel je?",
+          "response_mode": "multiple_choice",
+          "options": [
+            "What are you doing?",
+            "What do you do?"
+          ],
+          "canonical_answers": [
+            "What are you doing?"
+          ],
+          "evidence_ref": "Situatie 1",
+          "hints": [
+            "Je vraagt naar dit ogenblik, niet naar een beroep."
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "Situatie 2: welke vraag stel je?",
+          "response_mode": "multiple_choice",
+          "options": [
+            "What do you do?",
+            "What are you doing?"
+          ],
+          "canonical_answers": [
+            "What do you do?"
+          ],
+          "evidence_ref": "Situatie 2",
+          "error_feedback": [
+            {
+              "matches": "What are you doing?",
+              "feedback_nl": "Met die vraag vraag je wat iemand op dit moment aan het doen is, niet welk werk die persoon heeft."
+            }
+          ]
+        },
+        {
+          "id": "p3",
+          "prompt": "Situatie 3: wat zeg je?",
+          "response_mode": "multiple_choice",
+          "options": [
+            "Look, it's raining.",
+            "Look, it rains."
+          ],
+          "canonical_answers": [
+            "Look, it's raining."
+          ],
+          "evidence_ref": "Situatie 3",
+          "hints": [
+            "Je kunt het op dit ogenblik zien gebeuren."
+          ]
+        },
+        {
+          "id": "p4",
+          "prompt": "Situatie 4: wat zeg je?",
+          "response_mode": "multiple_choice",
+          "options": [
+            "It often rains in November.",
+            "It is often raining in November."
+          ],
+          "canonical_answers": [
+            "It often rains in November."
+          ],
+          "evidence_ref": "Situatie 4"
+        }
+      ],
+      "content_hash": "60db5e9f73a192f8be5eadce0fae8b3943c6c3511da7d5e17745bf570375daea"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-06",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Kies en verantwoord",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik kies de juiste vorm en zeg in één woord waarom."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 6,
+      "stage": 2,
+      "difficulty": "support",
+      "interaction_type": "choose-and-justify",
+      "instructions_nl": "Typ de juiste vorm. Typ er daarna één woord bij: 'nu', 'gewoonte' of 'toestand'.",
+      "stimulus": {
+        "type": "list",
+        "content": "1. Quiet please, the head (speak) on the intercom.\n2. Our school (start) at 8.25 every morning.\n3. I (not understand) this question.\n4. Look at Milo — he (wear) his brother's jumper today."
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Zin 1: vorm en reden.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "is speaking - nu"
+          ],
+          "accepted_variants": [
+            "is speaking, nu",
+            "is speaking nu"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_case"
+          ],
+          "evidence_ref": "the head (speak) on the intercom",
+          "hints": [
+            "'Quiet please' wijst erop dat het op dit ogenblik gebeurt."
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "Zin 2: vorm en reden.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "starts - gewoonte"
+          ],
+          "accepted_variants": [
+            "starts, gewoonte",
+            "starts gewoonte"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_case"
+          ],
+          "evidence_ref": "Our school (start) at 8.25 every morning.",
+          "error_feedback": [
+            {
+              "matches": "start",
+              "match_kind": "contains",
+              "feedback_nl": "De vorm klopt bijna. Het onderwerp is 'our school', dus denk aan de uitgang."
+            }
+          ]
+        },
+        {
+          "id": "p3",
+          "prompt": "Zin 3: vorm en reden.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "don't understand - toestand"
+          ],
+          "accepted_variants": [
+            "do not understand - toestand",
+            "don't understand, toestand"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_case"
+          ],
+          "evidence_ref": "I (not understand) this question.",
+          "hints": [
+            "Dit werkwoord beschrijft geen handeling maar hoe iets ervoor staat."
+          ]
+        },
+        {
+          "id": "p4",
+          "prompt": "Zin 4: vorm en reden.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "is wearing - nu"
+          ],
+          "accepted_variants": [
+            "is wearing, nu",
+            "is wearing nu"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_case"
+          ],
+          "evidence_ref": "he (wear) his brother's jumper today"
+        }
+      ],
+      "content_hash": "8e2977d9e9a2fd094c668db6f1911edcc5d2e1ce26b6231b9314302e63846e4f"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-07",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Informatiekloof: twee roosters",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik stel en beantwoord vragen om ontbrekende roosterinformatie aan te vullen."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 7,
+      "stage": 2,
+      "difficulty": "core",
+      "interaction_type": "information-gap",
+      "instructions_nl": "Jij ziet de helft van Yusuf zijn week. De rest lees je uit zijn berichtjes. Vul aan.",
+      "stimulus": {
+        "type": "text",
+        "content": "Rooster (jouw helft): Monday — geography. Wednesday — ? . Friday — Physical Education.\n\nBerichten van Yusuf:\n09:10 'I'm sitting in the computer room. We have ICT here every Wednesday.'\n12:40 'I'm eating in the canteen right now, like every day.'\n15:00 'I'm walking home. On Fridays I never take the bus, because PE finishes early.'"
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Welk vak heeft Yusuf op woensdag? Antwoord met één woord.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "ICT"
+          ],
+          "accepted_variants": [
+            "Information and Communication Technology"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "We have ICT here every Wednesday.",
+          "hints": [
+            "Kijk naar het bericht van 09:10."
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "Waar is Yusuf om 12:40, en is dat gewoonte of uitzondering? Antwoord in één zin.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "In the canteen, and it is a habit."
+          ],
+          "accepted_variants": [
+            "In the canteen, it's a habit.",
+            "In de kantine, en het is een gewoonte."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_case",
+            "ignore_terminal_punctuation"
+          ],
+          "evidence_ref": "I'm eating in the canteen right now, like every day.",
+          "hints": [
+            "Twee tijdsaanduidingen in één bericht: eentje voor nu, eentje voor altijd."
+          ]
+        },
+        {
+          "id": "p3",
+          "prompt": "Hoe gaat Yusuf op vrijdag naar huis? Antwoord met een volledige zin in de present simple.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "He walks home."
+          ],
+          "accepted_variants": [
+            "He walks.",
+            "He walks home on Fridays."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "On Fridays I never take the bus",
+          "error_feedback": [
+            {
+              "matches": "He is walking home.",
+              "feedback_nl": "Die vorm beschrijft dit moment. De vraag gaat over wat elke vrijdag gebeurt."
+            }
+          ]
+        }
+      ],
+      "content_hash": "5cca8a87e6e0ad55467311f50a730c139ce7ce57596ca6555ed3a299551741a1"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-08",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Sorteer op gebruik",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik deel zinnen in naar wat ze betekenen, niet naar hoe ze eruitzien."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 8,
+      "stage": 2,
+      "difficulty": "core",
+      "interaction_type": "categorise-by-use",
+      "instructions_nl": "Sleep elke zin naar het vak dat past: 'nu bezig', 'gewoonte' of 'tijdelijk'.",
+      "stimulus": {
+        "type": "list",
+        "content": "A. The caretaker is cleaning the science lab.\nB. We wear a uniform at this school.\nC. This term I am sitting next to Amira.\nD. Mrs Hall teaches two classes at once."
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Zin A hoort bij:",
+          "response_mode": "drag_to_zone",
+          "options": [
+            "nu bezig",
+            "gewoonte",
+            "tijdelijk"
+          ],
+          "canonical_answers": [
+            "nu bezig"
+          ],
+          "evidence_ref": "The caretaker is cleaning the science lab."
+        },
+        {
+          "id": "p2",
+          "prompt": "Zin B hoort bij:",
+          "response_mode": "drag_to_zone",
+          "options": [
+            "gewoonte",
+            "nu bezig",
+            "tijdelijk"
+          ],
+          "canonical_answers": [
+            "gewoonte"
+          ],
+          "evidence_ref": "We wear a uniform at this school."
+        },
+        {
+          "id": "p3",
+          "prompt": "Zin C hoort bij:",
+          "response_mode": "drag_to_zone",
+          "options": [
+            "tijdelijk",
+            "nu bezig",
+            "gewoonte"
+          ],
+          "canonical_answers": [
+            "tijdelijk"
+          ],
+          "evidence_ref": "This term I am sitting next to Amira.",
+          "hints": [
+            "'This term' duurt even, maar niet voor altijd."
+          ]
+        },
+        {
+          "id": "p4",
+          "prompt": "Zin D hoort bij:",
+          "response_mode": "drag_to_zone",
+          "options": [
+            "gewoonte",
+            "tijdelijk",
+            "nu bezig"
+          ],
+          "canonical_answers": [
+            "gewoonte"
+          ]
+        }
+      ],
+      "content_hash": "a032bf5bbac3b374538299e10797466ee65c9d027c9a4fac3c27df9d509be287"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-09",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Zet de woorden op volgorde",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik bouw correcte zinnen met de juiste plaats voor het hulpwerkwoord."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 9,
+      "stage": 2,
+      "difficulty": "core",
+      "interaction_type": "movable-word-tiles",
+      "instructions_nl": "Sleep de woorden in de juiste volgorde.",
+      "stimulus": {
+        "type": "list",
+        "content": "Bouw drie zinnen. Elk woord wordt precies één keer gebruikt."
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Zin 1: not / is / the printer / working",
+          "response_mode": "ordering",
+          "options": [
+            "the printer",
+            "is",
+            "not",
+            "working"
+          ],
+          "canonical_answers": [
+            "the printer is not working"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_case"
+          ],
+          "hints": [
+            "Het woordje 'not' hangt aan het hulpwerkwoord."
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "Zin 2: your locker / where / is",
+          "response_mode": "ordering",
+          "options": [
+            "where",
+            "is",
+            "your locker"
+          ],
+          "canonical_answers": [
+            "where is your locker"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_case"
+          ]
+        },
+        {
+          "id": "p3",
+          "prompt": "Zin 3: on Fridays / finish / early / we",
+          "response_mode": "ordering",
+          "options": [
+            "we",
+            "finish",
+            "early",
+            "on Fridays"
+          ],
+          "canonical_answers": [
+            "we finish early on Fridays"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_case"
+          ],
+          "hints": [
+            "De tijdsaanduiding staat hier achteraan."
+          ]
+        }
+      ],
+      "content_hash": "6af1ace5c39476b681415c6006eca14d8115b8c0e6b5cdbb35e37239699f8c54"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-10",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Handeling of toestand?",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik herken werkwoorden die zelden in de -ing-vorm staan."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 10,
+      "stage": 2,
+      "difficulty": "core",
+      "interaction_type": "sorting-under-pressure",
+      "instructions_nl": "Sorteer elk werkwoord: kan het gewoon in de -ing-vorm, of beschrijft het een toestand en dus zelden?",
+      "stimulus": {
+        "type": "list",
+        "content": "Werkwoorden: know · run · believe · carry · understand · shout"
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "know",
+          "response_mode": "drag_to_zone",
+          "options": [
+            "toestand, zelden -ing",
+            "handeling, gewoon -ing"
+          ],
+          "canonical_answers": [
+            "toestand, zelden -ing"
+          ],
+          "hints": [
+            "Kun je iemand zien 'knowen'?"
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "run",
+          "response_mode": "drag_to_zone",
+          "options": [
+            "handeling, gewoon -ing",
+            "toestand, zelden -ing"
+          ],
+          "canonical_answers": [
+            "handeling, gewoon -ing"
+          ]
+        },
+        {
+          "id": "p3",
+          "prompt": "believe",
+          "response_mode": "drag_to_zone",
+          "options": [
+            "toestand, zelden -ing",
+            "handeling, gewoon -ing"
+          ],
+          "canonical_answers": [
+            "toestand, zelden -ing"
+          ]
+        },
+        {
+          "id": "p4",
+          "prompt": "carry",
+          "response_mode": "drag_to_zone",
+          "options": [
+            "handeling, gewoon -ing",
+            "toestand, zelden -ing"
+          ],
+          "canonical_answers": [
+            "handeling, gewoon -ing"
+          ]
+        },
+        {
+          "id": "p5",
+          "prompt": "understand",
+          "response_mode": "drag_to_zone",
+          "options": [
+            "toestand, zelden -ing",
+            "handeling, gewoon -ing"
+          ],
+          "canonical_answers": [
+            "toestand, zelden -ing"
+          ]
+        }
+      ],
+      "content_hash": "27ebb6b98e32ba187c91428fd291cf4f7f56b6d7b28735f7c63701d1cb32807f"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-11",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Chatreparatie",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik verbeter foute werkwoordsvormen in een informeel gesprek."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 11,
+      "stage": 3,
+      "difficulty": "core",
+      "interaction_type": "chat-repair",
+      "instructions_nl": "In elk bericht staat één foute werkwoordsvorm. Typ het verbeterde bericht volledig over.",
+      "stimulus": {
+        "type": "dialogue",
+        "content": "Lotte: where are you\nSam: I stand in front of the library\nLotte: ok! I come now\nSam: hurry, the doors close at four every day"
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Verbeter: 'I stand in front of the library'",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "I am standing in front of the library"
+          ],
+          "accepted_variants": [
+            "I'm standing in front of the library"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_terminal_punctuation"
+          ],
+          "evidence_ref": "I stand in front of the library",
+          "hints": [
+            "Sam beschrijft waar hij op dit ogenblik staat."
+          ],
+          "error_feedback": [
+            {
+              "matches": "I stands in front of the library",
+              "feedback_nl": "De uitgang -s hoort bij he, she of it, niet bij I. En hier is een andere vorm nodig."
+            }
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "Verbeter: 'I come now'",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "I am coming now"
+          ],
+          "accepted_variants": [
+            "I'm coming now"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_terminal_punctuation"
+          ],
+          "evidence_ref": "I come now",
+          "hints": [
+            "'Now' verwijst naar dit ogenblik."
+          ]
+        },
+        {
+          "id": "p3",
+          "prompt": "In het laatste bericht staat 'the doors close at four every day'. Is dat fout? Leg uit in één zin.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "Nee, dat klopt, want het gebeurt elke dag."
+          ],
+          "accepted_variants": [
+            "Nee, het is correct omdat het een gewoonte is.",
+            "Dat is juist, want het is elke dag zo."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_terminal_punctuation"
+          ],
+          "evidence_ref": "the doors close at four every day",
+          "hints": [
+            "Niet elk bericht bevat een fout."
+          ]
+        }
+      ],
+      "content_hash": "609c82ce7ff6e4e405335eea22d706728f5b32c5c9af5e0052fdb1f1289c8997"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-12",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Foutendetective",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik vind de fout in een zin en schrijf de correcte versie."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 12,
+      "stage": 3,
+      "difficulty": "core",
+      "interaction_type": "error-detective",
+      "instructions_nl": "Elke zin bevat precies één fout. Typ de verbeterde zin.",
+      "stimulus": {
+        "type": "list",
+        "content": "1. He work in the school canteen on Fridays.\n2. Look! The bus comes.\n3. I am knowing the answer.\n4. She is runing to the sports hall."
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Verbeter zin 1.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "He works in the school canteen on Fridays."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "He work in the school canteen on Fridays.",
+          "hints": [
+            "Kijk naar het onderwerp en naar de uitgang van het werkwoord."
+          ],
+          "error_feedback": [
+            {
+              "matches": "He is working in the school canteen on Fridays.",
+              "feedback_nl": "Die vorm bestaat, maar hij past hier niet: 'on Fridays' zegt dat het zich elke week herhaalt."
+            }
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "Verbeter zin 2.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "Look! The bus is coming."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "Look! The bus comes.",
+          "hints": [
+            "'Look!' betekent dat je het op dit ogenblik ziet gebeuren."
+          ]
+        },
+        {
+          "id": "p3",
+          "prompt": "Verbeter zin 3.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "I know the answer."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "I am knowing the answer.",
+          "hints": [
+            "Dit werkwoord beschrijft geen handeling die je kunt zien."
+          ]
+        },
+        {
+          "id": "p4",
+          "prompt": "Verbeter zin 4.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "She is running to the sports hall."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "She is runing to the sports hall.",
+          "hints": [
+            "Hier gaat het niet om de keuze van de tijd, maar om de spelling."
+          ]
+        }
+      ],
+      "content_hash": "42260ce61a37ea67c71561ba382924fff7e9e33620bfcf194fadf0fada05e6de"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-13",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Van gewoonte naar dit moment",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik zet een zin om van de ene tijd naar de andere."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 13,
+      "stage": 3,
+      "difficulty": "core",
+      "interaction_type": "before-after-transformation",
+      "instructions_nl": "Zet elke zin om naar dit moment. Vervang de tijdsaanduiding door 'right now'.",
+      "stimulus": {
+        "type": "list",
+        "content": "1. Nora walks to school every day.\n2. The freshmen practise in the sports hall on Mondays.\n3. Mr Dale fixes the computer every term.\n4. We tidy our lockers once a month."
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Zet zin 1 om.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "Nora is walking to school right now."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "Nora walks to school every day.",
+          "hints": [
+            "Er komt een hulpwerkwoord bij dat bij 'Nora' past."
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "Zet zin 2 om.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "The freshmen are practising in the sports hall right now."
+          ],
+          "accepted_variants": [
+            "The freshmen are practicing in the sports hall right now."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "The freshmen practise in the sports hall on Mondays.",
+          "hints": [
+            "Het onderwerp is meervoud."
+          ]
+        },
+        {
+          "id": "p3",
+          "prompt": "Zet zin 3 om.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "Mr Dale is fixing the computer right now."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "Mr Dale fixes the computer every term.",
+          "hints": [
+            "Let op: de x aan het eind verdubbelt niet."
+          ]
+        },
+        {
+          "id": "p4",
+          "prompt": "Zet zin 4 om.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "We are tidying our lockers right now."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "We tidy our lockers once a month."
+        }
+      ],
+      "content_hash": "6fd26e16a746e73a66865a7171415d1ad0a422694c740fcb09944f25d1aca9f4"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-14",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Zinschirurgie",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik maak van een mededeling een ontkenning of een vraag."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 14,
+      "stage": 3,
+      "difficulty": "core",
+      "interaction_type": "sentence-surgery",
+      "instructions_nl": "Voer de ingreep uit die tussen haakjes staat. Verander verder niets aan de zin.",
+      "stimulus": {
+        "type": "list",
+        "content": "1. The guidance counsellor is waiting in her office. (maak ontkennend)\n2. Amira takes the school bus. (maak er een vraag van)\n3. They are eating in the canteen. (maak er een vraag van met 'where')\n4. Our teacher speaks three languages. (maak ontkennend)"
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Ingreep bij zin 1.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "The guidance counsellor is not waiting in her office."
+          ],
+          "accepted_variants": [
+            "The guidance counsellor isn't waiting in her office."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "The guidance counsellor is waiting in her office.",
+          "hints": [
+            "Je ontkent op het hulpwerkwoord."
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "Ingreep bij zin 2.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "Does Amira take the school bus?"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "Amira takes the school bus.",
+          "hints": [
+            "Er komt een hulpwerkwoord vooraan; het hoofdwerkwoord verliest dan zijn uitgang."
+          ],
+          "error_feedback": [
+            {
+              "matches": "Does Amira takes the school bus?",
+              "feedback_nl": "De -s staat nu twee keer: in 'does' én in 'takes'. Eén keer volstaat."
+            }
+          ]
+        },
+        {
+          "id": "p3",
+          "prompt": "Ingreep bij zin 3.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "Where are they eating?"
+          ],
+          "accepted_variants": [
+            "Where are they eating in the canteen?"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "They are eating in the canteen."
+        },
+        {
+          "id": "p4",
+          "prompt": "Ingreep bij zin 4.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "Our teacher does not speak three languages."
+          ],
+          "accepted_variants": [
+            "Our teacher doesn't speak three languages."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "Our teacher speaks three languages."
+        }
+      ],
+      "content_hash": "746a311d5c0d60343a3f0f1c315ea14fdcb15628ea45002fda864bd14e1ea25d"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-15",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Spelling van de -ing-vorm",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik spel de -ing-vorm correct, ook wanneer het woord verandert."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 15,
+      "stage": 3,
+      "difficulty": "challenge",
+      "interaction_type": "form-production",
+      "instructions_nl": "Typ de -ing-vorm. Let goed op de spelling.",
+      "stimulus": {
+        "type": "list",
+        "content": "Gebruik de regels uit de module: wegvallende -e, -ie dat -y wordt, verdubbelde medeklinker, en de uitzonderingen."
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "lie",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "lying"
+          ],
+          "normalization_rules": [
+            "trim",
+            "ignore_case"
+          ],
+          "hints": [
+            "Twee klinkers aan het eind veranderen samen in één letter plus -ing."
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "travel",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "travelling"
+          ],
+          "accepted_variants": [
+            "traveling"
+          ],
+          "normalization_rules": [
+            "trim",
+            "ignore_case"
+          ],
+          "hints": [
+            "In Brits Engels gedraagt de slotletter zich anders dan je zou verwachten."
+          ]
+        },
+        {
+          "id": "p3",
+          "prompt": "begin",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "beginning"
+          ],
+          "normalization_rules": [
+            "trim",
+            "ignore_case"
+          ],
+          "hints": [
+            "Waar ligt de klemtoon?"
+          ]
+        },
+        {
+          "id": "p4",
+          "prompt": "fix",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "fixing"
+          ],
+          "normalization_rules": [
+            "trim",
+            "ignore_case"
+          ],
+          "error_feedback": [
+            {
+              "matches": "fixxing",
+              "feedback_nl": "Een slot-x verdubbelt nooit."
+            }
+          ]
+        },
+        {
+          "id": "p5",
+          "prompt": "leave",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "leaving"
+          ],
+          "normalization_rules": [
+            "trim",
+            "ignore_case"
+          ]
+        }
+      ],
+      "content_hash": "a64224e6fddb18fca1e6c83a8f5c9ba98ff53c073d7fe34faf33cef3eb01345c"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-16",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Onderschriften herschrijven",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik schrijf een volledig onderschrift bij een beeld in de juiste tijd."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 16,
+      "stage": 4,
+      "difficulty": "core",
+      "interaction_type": "caption-rewrite",
+      "instructions_nl": "Bij elke foto staat een telegramonderschrift. Schrijf er een volledige zin van die beschrijft wat op de foto gebeurt.",
+      "stimulus": {
+        "type": "image_description",
+        "content": "Foto 1: een leerling met een stapel mappen, halverwege de gang. Onderschrift: 'boy — carry — five binders'.\nFoto 2: twee meisjes aan een tafel in de kantine, allebei lachend. Onderschrift: 'two girls — laugh — canteen'.\nFoto 3: een lerares die op het bord schrijft, klas kijkt toe. Onderschrift: 'teacher — write — on the board'."
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Schrijf het onderschrift bij foto 1.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "A boy is carrying five binders."
+          ],
+          "accepted_variants": [
+            "The boy is carrying five binders."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "boy — carry — five binders",
+          "hints": [
+            "Een foto laat zien wat op dat ogenblik gebeurt."
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "Schrijf het onderschrift bij foto 2.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "Two girls are laughing in the canteen."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "two girls — laugh — canteen"
+        },
+        {
+          "id": "p3",
+          "prompt": "Schrijf het onderschrift bij foto 3.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "The teacher is writing on the board."
+          ],
+          "accepted_variants": [
+            "A teacher is writing on the board."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "teacher — write — on the board",
+          "hints": [
+            "Let op de spelling van de -ing-vorm van dit werkwoord."
+          ]
+        }
+      ],
+      "content_hash": "cff1d4a7dda566b1d0b2ae85b4a09454c9cd9be9941059008fb893e8b73c53f9"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-17",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Eerste dag: het gesprek gaat verder",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik reageer in een gesprek met een correcte vorm die bij de situatie past."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 17,
+      "stage": 4,
+      "difficulty": "core",
+      "interaction_type": "branching-dialogue",
+      "instructions_nl": "Je bent nieuw op school. Reageer telkens met een volledige zin. Wat je antwoordt, bepaalt hoe het gesprek verdergaat.",
+      "stimulus": {
+        "type": "dialogue",
+        "content": "Ravi: Hi! You look lost. What are you looking for?\n(jij antwoordt)\nRavi: Ah, the science lab is upstairs. Do you have Mr Dale?\n(jij antwoordt)\nRavi: Same here. What do you usually do at lunchtime?\n(jij antwoordt)"
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Antwoord op de eerste vraag. Vertel wat je op dit ogenblik zoekt.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "I am looking for the science lab."
+          ],
+          "accepted_variants": [
+            "I'm looking for the science lab.",
+            "I am looking for my classroom.",
+            "I'm looking for my classroom."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "What are you looking for?",
+          "hints": [
+            "Ravi vraagt naar dit ogenblik, dus je antwoordt in dezelfde tijd."
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "Antwoord op de tweede vraag met een korte volledige zin.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "Yes, I have Mr Dale."
+          ],
+          "accepted_variants": [
+            "No, I don't have Mr Dale.",
+            "Yes, I do.",
+            "No, I don't."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "Do you have Mr Dale?"
+        },
+        {
+          "id": "p3",
+          "prompt": "Antwoord op de derde vraag. Let op: die gaat over je gewoonte.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "I usually eat in the canteen."
+          ],
+          "accepted_variants": [
+            "I usually go to the library.",
+            "I usually have lunch with my friends.",
+            "I usually stay in the playground."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "What do you usually do at lunchtime?",
+          "error_feedback": [
+            {
+              "matches": "I am eating in the canteen.",
+              "feedback_nl": "Ravi vraagt wat je gewóónlijk doet, niet wat je nu doet."
+            }
+          ]
+        }
+      ],
+      "content_hash": "0237a138dad236d1892f817545a472e63cfd9dac2742bbed55fbb7d5196ca4d1"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-18",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Invullen met een beperking",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik vul een zin aan binnen een opgelegde eis."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 18,
+      "stage": 4,
+      "difficulty": "core",
+      "interaction_type": "gap-with-constraint",
+      "instructions_nl": "Vul aan. De eis tussen haakjes moet je respecteren.",
+      "stimulus": {
+        "type": "text",
+        "content": "Uit een schoolkrantje:\n'It is quarter past twelve. In the canteen, three hundred students ___ (1). Outside, the caretaker ___ (2). Nothing unusual: this ___ (3) here.'"
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Vul (1) aan met een werkwoord in de continuous, meervoud. Twee tot vier woorden.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "are having lunch"
+          ],
+          "accepted_variants": [
+            "are eating lunch",
+            "are queueing for food",
+            "are waiting in line"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_case"
+          ],
+          "evidence_ref": "three hundred students ___ (1)",
+          "hints": [
+            "Bij een meervoudig onderwerp hoort 'are'."
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "Vul (2) aan met een werkwoord in de continuous, enkelvoud. Twee tot vier woorden.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "is cleaning the playground"
+          ],
+          "accepted_variants": [
+            "is sweeping the playground",
+            "is fixing a door",
+            "is waiting outside"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_case"
+          ],
+          "evidence_ref": "the caretaker ___ (2)"
+        },
+        {
+          "id": "p3",
+          "prompt": "Vul (3) aan zodat de zin een gewoonte beschrijft. Twee tot vier woorden.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "happens every day"
+          ],
+          "accepted_variants": [
+            "happens every lunchtime",
+            "occurs every day"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_case"
+          ],
+          "evidence_ref": "this ___ (3) here",
+          "hints": [
+            "De zin ervoor zegt dat er niets ongewoons aan is."
+          ]
+        }
+      ],
+      "content_hash": "fdc3f720f47f870dc363e5cf5026d5e586d11ef255ed6218ae00f398ae638fcb"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-19",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Notities aanvullen",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik vul beknopte notities aan tot correcte volledige vormen."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 19,
+      "stage": 4,
+      "difficulty": "challenge",
+      "interaction_type": "guided-note-completion",
+      "instructions_nl": "Een leerling maakte notities tijdens een rondleiding. Vul de ontbrekende werkwoordsvormen in.",
+      "stimulus": {
+        "type": "text",
+        "content": "Notities — rondleiding nieuwe leerlingen\n• school ___ (open) at 8.15 every day\n• right now the head ___ (show) us the library\n• the sports hall ___ (not / be) ready this term\n• most freshmen ___ (take) the bus"
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Vul in bij het eerste punt.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "opens"
+          ],
+          "normalization_rules": [
+            "trim",
+            "ignore_case"
+          ],
+          "evidence_ref": "school ___ (open) at 8.15 every day",
+          "hints": [
+            "'Every day' maakt er een gewoonte van."
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "Vul in bij het tweede punt.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "is showing"
+          ],
+          "normalization_rules": [
+            "trim",
+            "ignore_case"
+          ],
+          "evidence_ref": "right now the head ___ (show) us the library"
+        },
+        {
+          "id": "p3",
+          "prompt": "Vul in bij het derde punt.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "is not"
+          ],
+          "accepted_variants": [
+            "isn't"
+          ],
+          "normalization_rules": [
+            "trim",
+            "ignore_case"
+          ],
+          "evidence_ref": "the sports hall ___ (not / be) ready this term",
+          "hints": [
+            "'To be' heeft geen hulpwerkwoord nodig om te ontkennen."
+          ]
+        },
+        {
+          "id": "p4",
+          "prompt": "Vul in bij het vierde punt.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "take"
+          ],
+          "normalization_rules": [
+            "trim",
+            "ignore_case"
+          ],
+          "evidence_ref": "most freshmen ___ (take) the bus",
+          "error_feedback": [
+            {
+              "matches": "takes",
+              "feedback_nl": "'Most freshmen' is meervoud, dus het werkwoord krijgt geen -s."
+            }
+          ]
+        }
+      ],
+      "content_hash": "134d797a21f1b99eaf50680ca78725e3869b24b2644e8d51c3e29e7a9c751ffe"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-20",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Van kop naar zin",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik werk een telegramkop uit tot een volledige, correcte zin."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 20,
+      "stage": 4,
+      "difficulty": "challenge",
+      "interaction_type": "headline-expansion",
+      "instructions_nl": "Dit zijn koppen uit de schoolkrant. Schrijf van elke kop een volledige zin. De aanwijzing tussen haakjes zegt welke tijd erbij hoort.",
+      "stimulus": {
+        "type": "list",
+        "content": "1. NEW LOCKERS ARRIVE THIS WEEK (tijdelijk, deze week bezig)\n2. CANTEEN SERVES SOUP ON MONDAYS (vaste gewoonte)\n3. FRESHMEN LEARN THE RULES (nu bezig, deze les)"
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Werk kop 1 uit.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "New lockers are arriving this week."
+          ],
+          "accepted_variants": [
+            "The new lockers are arriving this week."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "NEW LOCKERS ARRIVE THIS WEEK",
+          "hints": [
+            "Iets dat deze week loopt maar niet altijd, is tijdelijk."
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "Werk kop 2 uit.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "The canteen serves soup on Mondays."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "CANTEEN SERVES SOUP ON MONDAYS"
+        },
+        {
+          "id": "p3",
+          "prompt": "Werk kop 3 uit.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "The freshmen are learning the rules."
+          ],
+          "accepted_variants": [
+            "Freshmen are learning the rules."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "FRESHMEN LEARN THE RULES"
+        }
+      ],
+      "content_hash": "666f3be63d074c252a855167e38025d2f70de1c4eff963f3eeb35630758e153a"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-21",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Revisieronde",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik herzie een tekst systematisch aan de hand van een checklist."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 21,
+      "stage": 5,
+      "difficulty": "core",
+      "interaction_type": "revision-pass",
+      "instructions_nl": "Hieronder staat het tekstje van een medeleerling. Er zitten vijf fouten in tegen de present simple of continuous. Herschrijf de hele tekst correct.",
+      "stimulus": {
+        "type": "text",
+        "content": "My first day\n\nI stand at the gate and I am not knowing anybody. Everyone walk past me very fast. A girl come to me and she ask my name. Now we are friends. Every morning we are meeting at the same place."
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Herschrijf de volledige tekst met alle vijf verbeteringen.",
+          "response_mode": "typed_paragraph",
+          "manual_review_rubric": {
+            "criteria": [
+              {
+                "label_nl": "Vormkeuze",
+                "descriptor_nl": "De vijf foute vormen zijn vervangen door een vorm die bij de betekenis past.",
+                "weight": 0.4
+              },
+              {
+                "label_nl": "Uitgangen",
+                "descriptor_nl": "Werkwoorden bij he, she en it dragen de juiste uitgang.",
+                "weight": 0.3
+              },
+              {
+                "label_nl": "Volledigheid",
+                "descriptor_nl": "De tekst is volledig overgeschreven, niet alleen de losse zinnen met fouten.",
+                "weight": 0.3
+              }
+            ],
+            "model_response": "I am standing at the gate and I don't know anybody. Everyone walks past me very fast. A girl comes to me and she asks my name. Now we are friends. Every morning we meet at the same place."
+          }
+        },
+        {
+          "id": "p2",
+          "prompt": "Welke van de vijf fouten vond je het lastigst? Typ het foute woord.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "am not knowing"
+          ],
+          "accepted_variants": [
+            "walk",
+            "come",
+            "ask",
+            "are meeting",
+            "knowing"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_case"
+          ],
+          "hints": [
+            "Elk van de vijf is een geldig antwoord; kies er eerlijk een."
+          ]
+        },
+        {
+          "id": "p3",
+          "prompt": "Leg in één zin uit waarom 'Every morning we are meeting' fout is.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "Every morning beschrijft een gewoonte, dus je gebruikt de present simple."
+          ],
+          "accepted_variants": [
+            "Omdat het een gewoonte is en geen actie van dit moment.",
+            "Every morning maakt het een gewoonte, dus geen continuous."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_terminal_punctuation"
+          ],
+          "evidence_ref": "Every morning we are meeting at the same place."
+        }
+      ],
+      "content_hash": "3989e8746239a5dd8eddc46aaf2957e65610627453ceb929498d03899cebdea2"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-22",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Twee versies vergelijken",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik beoordeel welke versie van een tekst beter past bij de situatie en verantwoord dat."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 22,
+      "stage": 5,
+      "difficulty": "core",
+      "interaction_type": "compare-two-versions",
+      "instructions_nl": "Twee leerlingen sturen een bericht vanuit de gang naar hun ouders. Lees beide versies en beantwoord de vragen.",
+      "stimulus": {
+        "type": "text",
+        "content": "Versie A: 'Hi mum, I wait for the bus. It rains. I come home late.'\n\nVersie B: 'Hi mum, I'm waiting for the bus. It's raining. I'll be home late.'"
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Schrijf vier tot zes zinnen: welke versie past bij de situatie, en waarom? Verwijs naar minstens twee werkwoordsvormen.",
+          "response_mode": "typed_paragraph",
+          "manual_review_rubric": {
+            "criteria": [
+              {
+                "label_nl": "Keuze en verantwoording",
+                "descriptor_nl": "Versie B wordt gekozen, met een reden die naar het moment van spreken verwijst.",
+                "weight": 0.4
+              },
+              {
+                "label_nl": "Concreet bewijs",
+                "descriptor_nl": "Er wordt naar minstens twee concrete werkwoordsvormen uit de tekst verwezen.",
+                "weight": 0.4
+              },
+              {
+                "label_nl": "Taalgebruik",
+                "descriptor_nl": "De eigen zinnen zijn begrijpelijk en de gebruikte vormen kloppen.",
+                "weight": 0.2
+              }
+            ],
+            "model_response": "Version B fits better. The writer is standing at the bus stop while she writes, so 'I'm waiting' and 'It's raining' describe this moment. In version A, 'I wait' and 'It rains' sound like habits, as if she waits for the bus every day and it rains here all the time."
+          }
+        },
+        {
+          "id": "p2",
+          "prompt": "In welke situatie zou 'It rains' uit versie A wél kloppen? Antwoord in één zin.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "Als je vertelt dat het hier vaak regent."
+          ],
+          "accepted_variants": [
+            "Wanneer je over het klimaat spreekt.",
+            "Als het een algemene waarheid is over het weer.",
+            "Als je zegt dat het er meestal regent."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_terminal_punctuation"
+          ],
+          "hints": [
+            "Denk aan een zin over een land of een seizoen in plaats van over dit ogenblik."
+          ]
+        },
+        {
+          "id": "p3",
+          "prompt": "Herschrijf versie A zodat ze klopt, in maximaal twaalf woorden.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "I'm waiting for the bus and it's raining."
+          ],
+          "accepted_variants": [
+            "I am waiting for the bus and it is raining."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace"
+          ],
+          "evidence_ref": "I wait for the bus. It rains."
+        }
+      ],
+      "content_hash": "91fbcefa7d9741aff68fa1dd06af923981b2a57a38e931d52651d0636987a399"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-23",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Schrijven met beperking: het raam",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik schrijf een korte tekst waarin beide tijden bewust naast elkaar staan."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 23,
+      "stage": 5,
+      "difficulty": "challenge",
+      "interaction_type": "constrained-writing",
+      "instructions_nl": "Kijk uit het raam van je klaslokaal, of stel je het voor. Schrijf zes tot acht zinnen volgens de eisen hieronder.",
+      "stimulus": {
+        "type": "text",
+        "content": "Eisen:\n• minstens drie zinnen over wat er op dit ogenblik gebeurt;\n• minstens drie zinnen over wat er elke dag gebeurt;\n• minstens één ontkennende zin;\n• minstens één werkwoord waarvan de -ing-vorm van spelling verandert;\n• geen enkel non-action verb in de -ing-vorm."
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Schrijf je tekst.",
+          "response_mode": "typed_paragraph",
+          "manual_review_rubric": {
+            "criteria": [
+              {
+                "label_nl": "Beide tijden aanwezig",
+                "descriptor_nl": "Er staan minstens drie correcte continuous-zinnen en drie correcte simple-zinnen in.",
+                "weight": 0.35
+              },
+              {
+                "label_nl": "Ontkenning",
+                "descriptor_nl": "Minstens één zin ontkent correct, op het hulpwerkwoord.",
+                "weight": 0.2
+              },
+              {
+                "label_nl": "Spelling",
+                "descriptor_nl": "Minstens één -ing-vorm met spellingverandering, correct gespeld.",
+                "weight": 0.25
+              },
+              {
+                "label_nl": "Non-action verbs",
+                "descriptor_nl": "Werkwoorden als know, like of understand staan niet in de -ing-vorm.",
+                "weight": 0.2
+              }
+            ],
+            "model_response": "Right now two boys are running across the playground. A teacher is standing at the door and she is watching them. The caretaker isn't working outside today. Every morning the same bus stops in front of the gate. Students walk in through the side entrance. The bell rings at half past eight. I don't like the noise, but I understand why everybody is in a hurry."
+          }
+        },
+        {
+          "id": "p2",
+          "prompt": "Noteer welk werkwoord je gebruikte met een spellingverandering, en de -ing-vorm ervan.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "run - running"
+          ],
+          "accepted_variants": [
+            "sit - sitting",
+            "take - taking",
+            "write - writing",
+            "lie - lying",
+            "begin - beginning"
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_case"
+          ],
+          "hints": [
+            "Denk aan een verdubbelde medeklinker of een weggevallen -e."
+          ]
+        },
+        {
+          "id": "p3",
+          "prompt": "Welk non-action verb heb je bewust in de simple gezet? Typ het werkwoord.",
+          "response_mode": "typed_short",
+          "canonical_answers": [
+            "understand"
+          ],
+          "accepted_variants": [
+            "know",
+            "like",
+            "believe",
+            "want",
+            "need",
+            "see",
+            "hear"
+          ],
+          "normalization_rules": [
+            "trim",
+            "ignore_case"
+          ]
+        }
+      ],
+      "content_hash": "130ea095bc6485c661ffe4c32cd6f913d7e271e19e6ab24fefcf8a703824340a"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-24",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Leg het uit aan een medeleerling",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik formuleer de regel in eigen woorden met een zelfbedacht voorbeeld."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 24,
+      "stage": 5,
+      "difficulty": "challenge",
+      "interaction_type": "explain-to-a-peer",
+      "instructions_nl": "Een klasgenoot was ziek en heeft deze les gemist. Leg uit hoe je kiest tussen de twee vormen.",
+      "stimulus": {
+        "type": "text",
+        "content": "Je klasgenoot schrijft: 'Ik snap het niet. Waarom is het één keer \"she walks\" en één keer \"she is walking\"? In het Nederlands zeg je toch gewoon \"ze wandelt\"?'"
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Schrijf je uitleg in vijf tot acht zinnen. Gebruik minstens twee eigen voorbeelden die niet uit deze les komen.",
+          "response_mode": "typed_paragraph",
+          "manual_review_rubric": {
+            "criteria": [
+              {
+                "label_nl": "Kern van de regel",
+                "descriptor_nl": "Het onderscheid tussen dit moment en een gewoonte wordt duidelijk benoemd.",
+                "weight": 0.35
+              },
+              {
+                "label_nl": "Eigen voorbeelden",
+                "descriptor_nl": "Er staan minstens twee zelfbedachte correcte voorbeelden in, niet overgenomen uit de les.",
+                "weight": 0.35
+              },
+              {
+                "label_nl": "Aansluiting bij de vraag",
+                "descriptor_nl": "De uitleg gaat expliciet in op het verschil met het Nederlands.",
+                "weight": 0.3
+              }
+            ],
+            "model_response": "In het Nederlands zeg je inderdaad allebei 'ze wandelt'. Het Engels maakt wel een verschil. Gebruik 'she is walking' als het op dit ogenblik bezig is: je kunt haar aanwijzen. Gebruik 'she walks' als het een gewoonte is, iets dat zich herhaalt. Bijvoorbeeld: 'My brother is playing football right now' tegenover 'My brother plays football on Saturdays'. Let er ook op dat er bij she, he en it een -s bij komt in de tweede vorm."
+          }
+        },
+        {
+          "id": "p2",
+          "prompt": "Geef één zin die je klasgenoot als geheugensteun kan gebruiken.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "Kun je het nu aanwijzen? Dan gebruik je am, is of are plus -ing."
+          ],
+          "accepted_variants": [
+            "Als het nu bezig is, gebruik je de -ing-vorm.",
+            "Gebeurt het op dit moment, dan continuous; herhaalt het zich, dan simple."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_terminal_punctuation"
+          ]
+        },
+        {
+          "id": "p3",
+          "prompt": "Welke fout zou je klasgenoot volgens jou het snelst maken? Antwoord in één zin.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "De -s vergeten bij he, she en it."
+          ],
+          "accepted_variants": [
+            "De continuous gebruiken bij een gewoonte.",
+            "Een non-action verb in de -ing-vorm zetten.",
+            "De simple gebruiken voor iets dat nu gebeurt."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_terminal_punctuation"
+          ]
+        }
+      ],
+      "content_hash": "bf626bbb1a5ca0001e99ce112858f3f3f6728b436ac148fff6fce063b7ba352e"
+    },
+    {
+      "id": "ace3-u1-gr-present-simple-and-continuous-act-25",
+      "book_id": "ace3",
+      "theme_id": "ace3-u1",
+      "kind": "exercise_activity",
+      "title": "Minimysterie: wie zit er in het labo?",
+      "cefr": "A2+",
+      "learning_objectives": [
+        "Ik gebruik informatie over gewoonten en over dit moment om een conclusie te trekken."
+      ],
+      "source_page_refs": [],
+      "provenance": "original_companion",
+      "rights_status": "original_only",
+      "review_status": "draft",
+      "target_id": "ace3-u1-gr-present-simple-and-continuous",
+      "target_kind": "grammar_topic",
+      "sequence": 25,
+      "stage": 5,
+      "difficulty": "challenge",
+      "interaction_type": "mini-mystery",
+      "instructions_nl": "Om kwart over vier brandt er nog licht in het science lab. Vier mensen komen in aanmerking. Gebruik de aanwijzingen en beantwoord de vragen met volledige zinnen.",
+      "stimulus": {
+        "type": "text",
+        "content": "Aanwijzingen:\n1. Mr Dale always leaves at four o'clock.\n2. The caretaker is cleaning the gym at the moment.\n3. Amira has hockey practice every Tuesday afternoon, and today is Tuesday.\n4. Nora is waiting for her brother, and she never waits outside.\n5. Somebody is writing on the board in the science lab."
+      },
+      "prompts": [
+        {
+          "id": "p1",
+          "prompt": "Wie is er in het labo? Antwoord met een volledige zin en noem de aanwijzing.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "Nora is in the science lab, because she is waiting inside for her brother."
+          ],
+          "accepted_variants": [
+            "Nora is in the science lab.",
+            "It is Nora, because she never waits outside."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_terminal_punctuation"
+          ],
+          "evidence_ref": "Nora is waiting for her brother, and she never waits outside.",
+          "hints": [
+            "Streep eerst de mensen weg die er op dit ogenblik niet kunnen zijn."
+          ]
+        },
+        {
+          "id": "p2",
+          "prompt": "Waarom kan het Mr Dale niet zijn? Antwoord in één zin.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "He always leaves at four, so he is not at school at a quarter past four."
+          ],
+          "accepted_variants": [
+            "Because he always leaves at four o'clock.",
+            "Hij vertrekt altijd om vier uur."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_terminal_punctuation"
+          ],
+          "evidence_ref": "Mr Dale always leaves at four o'clock."
+        },
+        {
+          "id": "p3",
+          "prompt": "Aanwijzing 1 en aanwijzing 2 staan in een verschillende tijd. Leg in één zin uit waarom.",
+          "response_mode": "typed_sentence",
+          "canonical_answers": [
+            "Aanwijzing 1 beschrijft een gewoonte, aanwijzing 2 iets dat op dit ogenblik bezig is."
+          ],
+          "accepted_variants": [
+            "De eerste is een gewoonte, de tweede gebeurt nu.",
+            "Nummer 1 herhaalt zich elke dag, nummer 2 is nu aan de gang."
+          ],
+          "normalization_rules": [
+            "trim",
+            "collapse_whitespace",
+            "ignore_terminal_punctuation"
+          ],
+          "hints": [
+            "Kijk naar 'always' tegenover 'at the moment'."
+          ]
+        }
+      ],
+      "content_hash": "e40d87ebf38c52fb755d4f1b7f0356c82f8723f94ddbf4f667cb539ea99ce547"
+    }
+  ]
+}

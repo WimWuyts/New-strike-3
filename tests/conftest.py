@@ -76,7 +76,12 @@ def make_prompt(sequence: int, index: int, mode: str) -> dict[str, Any]:
         }
     ]
 
-    if mode in CHOICE_MODES:
+    if mode == "ordering":
+        # Bij ordenen is het antwoord de volgorde van alle tegels samen.
+        tiles = [f"tile-a-{tag}", f"tile-b-{tag}", f"tile-c-{tag}"]
+        prompt["options"] = tiles
+        prompt["canonical_answers"] = [" ".join(tiles)]
+    elif mode in CHOICE_MODES:
         prompt["options"] = [answer, f"distractor-a-{tag}", f"distractor-b-{tag}"]
 
     return prompt
@@ -124,7 +129,7 @@ def make_activity(slot: blueprint_lib.Slot, theme_id: str, book_id: str) -> dict
 
 
 def build_activity_set(
-    target_kind: str, config: Config, theme_id: str = "ace3-u1", book_id: str = "ace3"
+    target_kind: str, config: Config, theme_id: str = "ace3-u2", book_id: str = "ace3"
 ) -> list[dict[str, Any]]:
     """Genereert een volledige, quotaconforme reeks van 25 activiteiten."""
     quotas = config.exercises["quotas"][target_kind]

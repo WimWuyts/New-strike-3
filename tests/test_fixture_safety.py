@@ -59,16 +59,16 @@ def test_the_real_map_still_carries_its_content_after_a_fixture_run():
 def test_fixture_writes_its_answer_key_to_a_separate_theme():
     """De sleutel-fixture mag niet op het pilootthema landen."""
     source = FIXTURE_SCRIPT.read_text(encoding="utf-8")
+    assert 'THEME_ID = "ace3-u2"' in source
     assert 'ANSWERS_THEME_ID = "ace3-u2"' in source
-    assert 'THEME_ID = "ace3-u1"' in source
 
 
 def test_fixture_artifacts_are_gitignored():
     """Testmateriaal mag niet per ongeluk als echte inhoud gecommit worden."""
     ignored = (ROOT / ".gitignore").read_text(encoding="utf-8")
     for path in (
-        "data/content/ace3-u1/grammar/ace3-u1-gr-test.json",
-        "data/content/ace3-u1/activities/ace3-u1-gr-test.json",
+        "data/content/ace3-u2/",
+        "data/catalog/ace3-u2.json",
         "data/answers/ace3-u2.json",
     ):
         assert path in ignored, f"{path} staat niet in .gitignore"

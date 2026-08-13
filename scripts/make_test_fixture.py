@@ -21,15 +21,15 @@ sys.path.insert(0, str(ROOT / "tests"))
 from conftest import build_activity_set  # noqa: E402
 from lib.project import Config, content_hash, ensure_dirs, write_json_atomic  # noqa: E402
 
-THEME_ID = "ace3-u1"
+THEME_ID = "ace3-u2"
 BOOK_ID = "ace3"
 TARGET_ID = f"{THEME_ID}-gr-test"
 
 CONTENT_DIR = ROOT / "data" / "content" / THEME_ID
 CATALOG_DIR = ROOT / "data" / "catalog"
 
-# De antwoordsleutel-fixture staat bewust op een ander thema, zodat ze nooit
-# botst met een echte sleutel voor het pilootthema.
+# Alle fixtures staan op ace3-u2: dat thema draagt geen echte inhoud, dus
+# testmateriaal kan er nooit botsen met het pilootthema.
 ANSWERS_DIR = ROOT / "data" / "answers"
 ANSWERS_THEME_ID = "ace3-u2"
 
@@ -184,7 +184,7 @@ def main() -> int:
             {
                 "id": THEME_ID,
                 "book_id": BOOK_ID,
-                "unit": 1,
+                "unit": 2,
                 "title": "Testthema (fixture)",
                 "cefr": "A2+",
             },

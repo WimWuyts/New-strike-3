@@ -53,11 +53,18 @@
         },
         "part_of_speech": {
           "type": "string",
+          "description": "Gangbare Engelse term.",
           "enum": [
             "noun", "verb", "adjective", "adverb", "preposition",
             "conjunction", "pronoun", "determiner", "interjection",
             "phrasal_verb", "collocation", "chunk", "idiom"
           ]
+        },
+        "part_of_speech_source": {
+          "type": "string",
+          "enum": ["source", "derived"],
+          "default": "derived",
+          "description": "New Ace 3 vermeldt de woordsoort nergens, dus die is doorgaans afgeleid uit de vorm en niet uit de bron overgenomen. Alleen 'source' als het boek het expliciet zegt."
         },
         "ipa": { "type": "string" },
         "stress_pattern": { "type": "string" },

@@ -4,47 +4,98 @@
   "title": "ReadingModule",
   "type": "object",
   "unevaluatedProperties": false,
-  "allOf": [{ "$ref": "common.json#/$defs/entityBase" }],
-  "required": ["variant", "text_type", "text", "tasks", "answer_model"],
+  "allOf": [
+    {
+      "$ref": "common.json#/$defs/entityBase"
+    }
+  ],
+  "required": [
+    "variant",
+    "text_type",
+    "text",
+    "tasks",
+    "answer_model",
+    "topic_id"
+  ],
   "properties": {
-    "kind": { "const": "reading" },
-    "provenance": { "const": "original_companion" },
-
-    "variant": { "type": "string", "enum": ["core", "challenge"] },
+    "kind": {
+      "const": "reading"
+    },
+    "provenance": {
+      "const": "original_companion"
+    },
+    "topic_id": {
+      "$ref": "common.json#/$defs/slug",
+      "description": "Koppelt de twee niveauvarianten van hetzelfde onderwerp aan elkaar, zodat de leerkracht ze naast elkaar kan inzetten."
+    },
+    "variant": {
+      "type": "string",
+      "enum": [
+        "core",
+        "challenge"
+      ]
+    },
     "text_type": {
       "type": "string",
       "enum": [
-        "article", "blog", "interview", "review", "message",
-        "advertisement", "instructions", "short_story", "email", "report"
+        "article",
+        "blog",
+        "interview",
+        "review",
+        "message",
+        "advertisement",
+        "instructions",
+        "short_story",
+        "email",
+        "report"
       ]
     },
-    "word_count": { "type": "integer", "minimum": 80 },
-
+    "word_count": {
+      "type": "integer",
+      "minimum": 80
+    },
     "text": {
       "type": "object",
       "unevaluatedProperties": false,
-      "required": ["title_en", "paragraphs"],
+      "required": [
+        "title_en",
+        "paragraphs"
+      ],
       "properties": {
-        "title_en": { "$ref": "common.json#/$defs/nonEmptyText" },
+        "title_en": {
+          "$ref": "common.json#/$defs/nonEmptyText"
+        },
         "paragraphs": {
           "type": "array",
           "minItems": 2,
           "items": {
             "type": "object",
             "unevaluatedProperties": false,
-            "required": ["id", "sentences"],
+            "required": [
+              "id",
+              "sentences"
+            ],
             "properties": {
-              "id": { "$ref": "common.json#/$defs/slug" },
+              "id": {
+                "$ref": "common.json#/$defs/slug"
+              },
               "sentences": {
                 "type": "array",
                 "minItems": 1,
                 "items": {
                   "type": "object",
                   "unevaluatedProperties": false,
-                  "required": ["id", "text_en"],
+                  "required": [
+                    "id",
+                    "text_en"
+                  ],
                   "properties": {
-                    "id": { "$ref": "common.json#/$defs/slug" },
-                    "text_en": { "$ref": "common.json#/$defs/nonEmptyText" }
+                    "id": {
+                      "$ref": "common.json#/$defs/slug"
+                    },
+                    "text_en": {
+                      "$ref": "common.json#/$defs/nonEmptyText"
+                    }
                   }
                 }
               }
@@ -53,34 +104,64 @@
         }
       }
     },
-
     "tasks": {
       "type": "object",
       "unevaluatedProperties": false,
-      "required": ["gist", "detail", "inference", "vocabulary_in_context", "post_reading"],
+      "required": [
+        "gist",
+        "detail",
+        "inference",
+        "vocabulary_in_context",
+        "post_reading"
+      ],
       "properties": {
-        "pre_reading": { "$ref": "#/$defs/taskGroup" },
-        "gist": { "$ref": "#/$defs/taskGroup" },
-        "detail": { "$ref": "#/$defs/taskGroup" },
-        "inference": { "$ref": "#/$defs/taskGroup" },
-        "vocabulary_in_context": { "$ref": "#/$defs/taskGroup" },
+        "pre_reading": {
+          "$ref": "#/$defs/taskGroup"
+        },
+        "gist": {
+          "$ref": "#/$defs/taskGroup"
+        },
+        "detail": {
+          "$ref": "#/$defs/taskGroup"
+        },
+        "inference": {
+          "$ref": "#/$defs/taskGroup"
+        },
+        "vocabulary_in_context": {
+          "$ref": "#/$defs/taskGroup"
+        },
         "post_reading": {
           "type": "object",
           "unevaluatedProperties": false,
-          "required": ["prompt_nl", "rubric"],
+          "required": [
+            "prompt_nl",
+            "rubric"
+          ],
           "description": "Eén transfertaak.",
           "properties": {
-            "prompt_nl": { "type": "string", "minLength": 20 },
+            "prompt_nl": {
+              "type": "string",
+              "minLength": 20
+            },
             "rubric": {
               "type": "array",
               "minItems": 2,
               "items": {
                 "type": "object",
                 "unevaluatedProperties": false,
-                "required": ["label_nl", "descriptor_nl"],
+                "required": [
+                  "label_nl",
+                  "descriptor_nl"
+                ],
                 "properties": {
-                  "label_nl": { "type": "string", "minLength": 2 },
-                  "descriptor_nl": { "type": "string", "minLength": 10 }
+                  "label_nl": {
+                    "type": "string",
+                    "minLength": 2
+                  },
+                  "descriptor_nl": {
+                    "type": "string",
+                    "minLength": 10
+                  }
                 }
               }
             }
@@ -88,77 +169,128 @@
         }
       }
     },
-
-    "answer_model": { "type": "string", "minLength": 20 },
-
+    "answer_model": {
+      "type": "string",
+      "minLength": 20
+    },
     "differentiation": {
       "type": "object",
       "unevaluatedProperties": false,
       "properties": {
-        "support_nl": { "type": "string", "minLength": 10 },
-        "challenge_nl": { "type": "string", "minLength": 10 }
+        "support_nl": {
+          "type": "string",
+          "minLength": 10
+        },
+        "challenge_nl": {
+          "type": "string",
+          "minLength": 10
+        }
       }
     },
-
     "images": {
       "type": "array",
       "items": {
         "type": "object",
         "unevaluatedProperties": false,
-        "required": ["path", "alt_nl", "rights"],
+        "required": [
+          "path",
+          "alt_nl",
+          "rights"
+        ],
         "properties": {
-          "path": { "type": "string", "minLength": 1 },
-          "alt_nl": { "type": "string", "minLength": 5 },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "alt_nl": {
+            "type": "string",
+            "minLength": 5
+          },
           "rights": {
             "type": "string",
-            "enum": ["self_made", "public_domain", "cc0", "licensed"]
+            "enum": [
+              "self_made",
+              "public_domain",
+              "cc0",
+              "licensed"
+            ]
           }
         }
       }
     }
   },
-
   "$defs": {
     "taskGroup": {
       "type": "object",
       "unevaluatedProperties": false,
-      "required": ["questions"],
+      "required": [
+        "questions"
+      ],
       "properties": {
-        "instructions_nl": { "type": "string", "minLength": 10 },
+        "instructions_nl": {
+          "type": "string",
+          "minLength": 10
+        },
         "questions": {
           "type": "array",
           "minItems": 1,
           "items": {
             "type": "object",
             "unevaluatedProperties": false,
-            "required": ["id", "question", "response_mode", "canonical_answers", "evidence_ref"],
+            "required": [
+              "id",
+              "question",
+              "response_mode",
+              "canonical_answers",
+              "evidence_ref"
+            ],
             "properties": {
-              "id": { "$ref": "common.json#/$defs/slug" },
-              "question": { "$ref": "common.json#/$defs/nonEmptyText" },
+              "id": {
+                "$ref": "common.json#/$defs/slug"
+              },
+              "question": {
+                "$ref": "common.json#/$defs/nonEmptyText"
+              },
               "response_mode": {
                 "type": "string",
-                "enum": ["typed_short", "typed_sentence", "multiple_choice", "true_false", "matching", "ordering"]
+                "enum": [
+                  "typed_short",
+                  "typed_sentence",
+                  "multiple_choice",
+                  "true_false",
+                  "matching",
+                  "ordering"
+                ]
               },
               "options": {
                 "type": "array",
                 "minItems": 2,
-                "items": { "$ref": "common.json#/$defs/nonEmptyText" }
+                "items": {
+                  "$ref": "common.json#/$defs/nonEmptyText"
+                }
               },
               "canonical_answers": {
                 "type": "array",
                 "minItems": 1,
-                "items": { "$ref": "common.json#/$defs/nonEmptyText" }
+                "items": {
+                  "$ref": "common.json#/$defs/nonEmptyText"
+                }
               },
               "accepted_variants": {
                 "type": "array",
-                "items": { "$ref": "common.json#/$defs/nonEmptyText" }
+                "items": {
+                  "$ref": "common.json#/$defs/nonEmptyText"
+                }
               },
               "evidence_ref": {
                 "type": "string",
                 "minLength": 1,
                 "description": "ID van de zin of alinea die het antwoord bewijst."
               },
-              "feedback_nl": { "type": "string", "minLength": 10 }
+              "feedback_nl": {
+                "type": "string",
+                "minLength": 10
+              }
             }
           }
         }

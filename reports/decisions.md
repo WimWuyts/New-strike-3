@@ -60,6 +60,38 @@ interactievormen terugkomt. Verwachte omvang: ± 1 875 activiteiten.
 opdrachtsturing verschillen per boek. Dit wordt afgedwongen in de
 niveaucontrole van `scripts/validate.py`.
 
+### D6. Woordsoorten: Engelse termen, gemarkeerd als afgeleid
+
+**Bevestigd door gebruiker.** New Ace 3 vermeldt de woordsoort nergens, dus
+elke woordsoort in de woordenschatbank is een afleiding uit de vorm, geen
+brongegeven.
+
+**Gevolg:** `Lexeme.part_of_speech` gebruikt de gangbare Engelse termen —
+`noun`, `verb`, `adjective`, `adverb`, `preposition` enzovoort. Elk lexeme
+draagt daarnaast `part_of_speech_source`, standaard `derived`. Alleen wanneer
+het boek de woordsoort expliciet noemt, staat daar `source`.
+
+Daarmee is openstaand punt uit de reviewwachtrij afgehandeld: de woordsoorten
+komen in de bank, maar nooit vermomd als broninhoud.
+
+### D7. Vier readings en vier listenings per thema
+
+**Bevestigd door gebruiker.** Twee onderwerpen, elk op twee niveaus, in plaats
+van twee losse teksten op één niveau.
+
+**Onderbouwing:** differentiatie werkt pas wanneer dezelfde inhoud in twee
+moeilijkheidsgraden naast elkaar ligt. Twee teksten over verschillende
+onderwerpen op verschillende niveaus geven dat niet.
+
+**Gevolg:**
+- `modules.topics_per_theme: 2`, `readings_per_theme: 4`,
+  `listenings_per_theme: 4`;
+- reading- en listeningmodules dragen een `topic_id` dat de twee
+  niveauvarianten aan elkaar koppelt;
+- `scripts/validate.py` weigert een onderwerp waarvan één variant ontbreekt —
+  een losse `challenge` zonder `core` is geen differentiatie maar een gat;
+- ongeveer het dubbele werk per thema voor deze onderdelen.
+
 ### D5. New Strike 3 telt acht units, unit 8 heeft lage prioriteit
 
 **Bevestigd door gebruiker.** Het boek heeft een unit 8, maar de leerkracht
@@ -86,8 +118,8 @@ Conform sectie 3 van de masterprompt vastgelegd zonder aparte vraag.
 
 | # | Onderwerp | Toegepaste standaard |
 |---|---|---|
-| S1 | Readings per thema | 2, elk met kern- en uitdagingsvariant |
-| S2 | Listenings per thema | 2, elk met kern- en uitdagingsvariant |
+| S1 | Readings per thema | ~~2~~ → 4, twee onderwerpen op twee niveaus. Herzien, zie D7 |
+| S2 | Listenings per thema | ~~2~~ → 4, twee onderwerpen op twee niveaus. Herzien, zie D7 |
 | S3 | Audio | Alleen scripts en SSML; browser-spraaksynthese als fallback. Geen TTS-provider geconfigureerd, dus audio krijgt status `not_built` — nooit `voltooid`. |
 | S4 | Leerling- en leerkrachtversie | Beide, voor web en voor PPTX |
 | S5 | Pilootthema | New Ace 3 UNIT 1 (`ace3-u1`) — bevestigd, zie O3 |
@@ -104,7 +136,7 @@ Conform sectie 3 van de masterprompt vastgelegd zonder aparte vraag.
 | T2 | Gepersonaliseerd watermerk `Wim Wuyts` op elke pagina | Watermerkfilter in de OCR-pijplijn; extra reden om rasterreproductie te vermijden |
 | T3 | Geen font-, kleur- of bounding-box-metadata beschikbaar | Designtokens worden afgeleid uit beeldanalyse, met lagere zekerheid en een grotere manual review queue |
 | T4 | English Grammar in Use niet aanwezig | Fase D gaat door zonder deze private referentielaag. Geen invloed op leerlingmateriaal, want overname was sowieso verboden |
-| T5 | New Strike 3 UNIT 8 niet aangeleverd | Openstaande vraag: telt het boek 7 units of ontbreekt er een? |
+| T5 | New Strike 3 UNIT 8 niet aangeleverd | Beantwoord: het boek telt 8 units, unit 8 ontbreekt. Zie D5 |
 | T6 | Toolchain volledig installeerbaar | Python 3.11, Node 22, LibreOffice 24.2 aanwezig; pymupdf, tesseract, poppler, ffmpeg en pptxgenjs installeerbaar |
 
 ---

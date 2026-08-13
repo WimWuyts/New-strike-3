@@ -6,12 +6,30 @@ import { expect, test, type Page } from '@playwright/test';
 const require = createRequire(import.meta.url);
 const AXE_SOURCE = readFileSync(require.resolve('axe-core/axe.min.js'), 'utf-8');
 
-async function openFirstSet(page: Page): Promise<void> {
+/**
+ * Opent de testfixture, niet de eerste reeks in de lijst. Deze tests gaan over
+ * de app en niet over de leerinhoud: ze moeten hetzelfde blijven doen wanneer
+ * er een thema bijkomt of een titel verandert.
+ */
+async function openFixtureSet(page: Page): Promise<void> {
   await page.goto('/');
-  const navItem = page.locator('.nav-item').first();
+  await expandFixtureTheme(page);
+  const navItem = page.locator('.nav-item', { hasText: FIXTURE_SET }).first();
   await expect(navItem).toBeVisible();
   await navItem.click();
 }
+
+/** Alleen het eerste thema staat open; de fixture zit in een dichtgeklapt thema. */
+async function expandFixtureTheme(page: Page): Promise<void> {
+  const theme = page.locator('.nav-theme', { hasText: FIXTURE_THEME });
+  if (!(await theme.first().evaluate((node) => (node as HTMLDetailsElement).open))) {
+    await theme.locator('.nav-theme__summary').first().click();
+  }
+}
+
+/** Namen uit scripts/make_test_fixture.py. */
+const FIXTURE_SET = 'Present perfect';
+const FIXTURE_THEME = 'Testthema (fixture)';
 
 test('de app laadt en toont de navigatie', async ({ page }) => {
   await page.goto('/');
@@ -20,7 +38,7 @@ test('de app laadt en toont de navigatie', async ({ page }) => {
 });
 
 test('een correct antwoord wordt goedgekeurd', async ({ page }) => {
-  await openFirstSet(page);
+  await openFixtureSet(page);
 
   const firstActivity = page.locator('.activity').first();
   const input = firstActivity.locator('.prompt__input').first();
@@ -34,7 +52,7 @@ test('een correct antwoord wordt goedgekeurd', async ({ page }) => {
 });
 
 test('een fout antwoord krijgt gerichte feedback zonder het antwoord te tonen', async ({ page }) => {
-  await openFirstSet(page);
+  await openFixtureSet(page);
 
   const firstActivity = page.locator('.activity').first();
   const input = firstActivity.locator('.prompt__input').first();
@@ -47,7 +65,7 @@ test('een fout antwoord krijgt gerichte feedback zonder het antwoord te tonen', 
 });
 
 test('het modelantwoord verschijnt pas na het maximum aantal pogingen', async ({ page }) => {
-  await openFirstSet(page);
+  await openFixtureSet(page);
 
   const firstActivity = page.locator('.activity').first();
   const input = firstActivity.locator('.prompt__input').first();
@@ -66,7 +84,7 @@ test('het modelantwoord verschijnt pas na het maximum aantal pogingen', async ({
 });
 
 test('leerlingmodus verbergt de antwoorden, leerkrachtmodus toont ze', async ({ page }) => {
-  await openFirstSet(page);
+  await openFixtureSet(page);
 
   const answerBox = page.locator('.prompt__answer').first();
   await expect(answerBox).toBeHidden();
@@ -76,7 +94,7 @@ test('leerlingmodus verbergt de antwoorden, leerkrachtmodus toont ze', async ({ 
 });
 
 test('hints zijn progressief en verklappen het antwoord niet', async ({ page }) => {
-  await openFirstSet(page);
+  await openFixtureSet(page);
 
   const firstActivity = page.locator('.activity').first();
   const hintButton = firstActivity.getByRole('button', { name: 'Hint' }).first();
@@ -92,7 +110,7 @@ test('hints zijn progressief en verklappen het antwoord niet', async ({ page }) 
 });
 
 test('voortgang blijft bewaard na herladen', async ({ page }) => {
-  await openFirstSet(page);
+  await openFixtureSet(page);
 
   const firstActivity = page.locator('.activity').first();
   await firstActivity.locator('.prompt__input').first().fill('answer-a01p1');
@@ -100,14 +118,15 @@ test('voortgang blijft bewaard na herladen', async ({ page }) => {
   await expect(firstActivity.locator('.prompt__feedback').first()).toHaveClass(/is-correct/);
 
   await page.reload();
-  await page.locator('.nav-item').first().click();
+  await expandFixtureTheme(page);
+  await page.locator('.nav-item', { hasText: FIXTURE_SET }).first().click();
   await expect(page.locator('.activity').first().locator('.prompt__feedback').first()).toHaveClass(
     /is-correct/,
   );
 });
 
 test('de oefening is met het toetsenbord te bedienen', async ({ page }) => {
-  await openFirstSet(page);
+  await openFixtureSet(page);
 
   const input = page.locator('.activity').first().locator('.prompt__input').first();
   await input.focus();
@@ -122,7 +141,7 @@ test('de oefening is met het toetsenbord te bedienen', async ({ page }) => {
 });
 
 test('axe-core vindt geen toegankelijkheidsschendingen', async ({ page }) => {
-  await openFirstSet(page);
+  await openFixtureSet(page);
   await page.addScriptTag({ content: AXE_SOURCE });
 
   const results = await page.evaluate(async () => {

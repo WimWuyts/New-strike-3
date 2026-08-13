@@ -47,13 +47,13 @@ def make_prompt(sequence: int, index: int, mode: str) -> dict[str, Any]:
         prompt["manual_review_rubric"] = {
             "criteria": [
                 {
-                    "label_nl": "Correctheid",
-                    "descriptor_nl": "De doelvorm wordt correct gespeld en vervoegd.",
+                    "label": "Correctheid",
+                    "descriptor": "De doelvorm wordt correct gespeld en vervoegd.",
                     "weight": 0.6,
                 },
                 {
-                    "label_nl": "Inhoud",
-                    "descriptor_nl": "De inhoud beantwoordt de opdracht volledig.",
+                    "label": "Inhoud",
+                    "descriptor": "De inhoud beantwoordt de opdracht volledig.",
                     "weight": 0.4,
                 },
             ],
@@ -72,7 +72,7 @@ def make_prompt(sequence: int, index: int, mode: str) -> dict[str, Any]:
         {
             "matches": f"wrong-{tag}",
             "match_kind": "exact",
-            "feedback_nl": "Dat is de verkeerde vorm. Kijk opnieuw naar het onderwerp.",
+            "feedback": "Dat is de verkeerde vorm. Kijk opnieuw naar het onderwerp.",
         }
     ]
 
@@ -112,7 +112,7 @@ def make_activity(slot: blueprint_lib.Slot, theme_id: str, book_id: str) -> dict
         "stage": slot.stage,
         "difficulty": slot.difficulty,
         "interaction_type": slot.interaction_type,
-        "instructions_nl": (
+        "instructions": (
             f"Lees de zinnen en werk activiteit {slot.sequence} af volgens het voorbeeld."
         ),
         "stimulus": {

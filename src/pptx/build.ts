@@ -178,11 +178,11 @@ function addGrammarSlides(
     pptx,
     bookId,
     `${topic.title} — betekenis en gebruik`,
-    topic.meaning_and_use.summary_nl,
+    topic.meaning_and_use.summary,
   );
   meaning.addText(
     topic.meaning_and_use.use_cases.map((useCase) => ({
-      text: `${useCase.label_nl}: ${useCase.example_en}`,
+      text: `${useCase.label}: ${useCase.example_en}`,
       options: { bullet: true },
     })),
     {
@@ -201,7 +201,7 @@ function addGrammarSlides(
     bookId,
     `${topic.title} — veelgemaakte fouten`,
     audience === 'teacher'
-      ? topic.typical_errors_nl.map((e) => `${e.wrong} → ${e.right}: ${e.why_nl}`).join('\n')
+      ? topic.typical_errors.map((e) => `${e.wrong} → ${e.right}: ${e.why}`).join('\n')
       : '',
   );
   errors.addTable(
@@ -210,7 +210,7 @@ function addGrammarSlides(
         { text: 'Fout', options: { bold: true, color: book.accentText, fill: { color: book.accent } } },
         { text: 'Correct', options: { bold: true, color: book.accentText, fill: { color: book.accent } } },
       ],
-      ...topic.typical_errors_nl.map((entry) => [
+      ...topic.typical_errors.map((entry) => [
         { text: entry.wrong },
         { text: entry.right },
       ]),
@@ -240,7 +240,7 @@ function addVisualModelSlides(pptx: PptxGenJS, model: VisualGrammarModel, bookId
       pptx,
       bookId,
       model.title,
-      `Stap ${step.index}: ${step.change_description_nl}`,
+      `Stap ${step.index}: ${step.change_description}`,
     );
 
     const visible = step.elements.filter((element) => element.state !== 'removed');
@@ -291,7 +291,7 @@ function addVisualModelSlides(pptx: PptxGenJS, model: VisualGrammarModel, bookId
       });
     });
 
-    slide.addText(step.caption_nl, {
+    slide.addText(step.caption, {
       x: SLIDE.marginInch,
       y: 4.4,
       w: SLIDE.widthInch - SLIDE.marginInch * 2,
@@ -306,7 +306,7 @@ function addVisualModelSlides(pptx: PptxGenJS, model: VisualGrammarModel, bookId
     pptx,
     bookId,
     `${model.title} — legende`,
-    model.accessibility.static_alternative_nl,
+    model.accessibility.static_alternative,
   );
   legend.addText(
     model.accessibility.role_legend.map((entry) => ({
@@ -344,7 +344,7 @@ function addActivitySlides(
     `Stage ${activity.stage} — ${activity.difficulty}. ${activity.learning_objectives[0] ?? ''}`,
   );
 
-  slide.addText(activity.instructions_nl, {
+  slide.addText(activity.instructions, {
     x: SLIDE.marginInch,
     y: 1.4,
     w: SLIDE.widthInch - SLIDE.marginInch * 2,
@@ -464,7 +464,7 @@ function studentVisibleText(theme: ThemeContent): string[] {
   const chunks: string[] = [];
   for (const set of theme.activitySets) {
     for (const activity of set.activities) {
-      chunks.push(activity.title, activity.instructions_nl, activity.stimulus.content);
+      chunks.push(activity.title, activity.instructions, activity.stimulus.content);
       chunks.push(...activity.prompts.map((prompt) => prompt.prompt));
     }
   }

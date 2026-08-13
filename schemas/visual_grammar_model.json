@@ -25,11 +25,11 @@
       "items": {
         "type": "object",
         "unevaluatedProperties": false,
-        "required": ["index", "caption_nl", "change_description_nl", "elements"],
+        "required": ["index", "caption", "change_description", "elements"],
         "properties": {
           "index": { "type": "integer", "minimum": 1, "maximum": 8 },
-          "caption_nl": { "type": "string", "minLength": 10 },
-          "change_description_nl": {
+          "caption": { "type": "string", "minLength": 10 },
+          "change_description": {
             "type": "string",
             "minLength": 10,
             "description": "De ene betekenisvolle verandering die deze stap toont."
@@ -71,9 +71,9 @@
     "accessibility": {
       "type": "object",
       "unevaluatedProperties": false,
-      "required": ["static_alternative_nl", "role_legend"],
+      "required": ["static_alternative", "role_legend"],
       "properties": {
-        "static_alternative_nl": {
+        "static_alternative": {
           "type": "string",
           "minLength": 30,
           "description": "Volwaardig tekstalternatief voor wie de animatie niet ziet of uitzet."

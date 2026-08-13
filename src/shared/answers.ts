@@ -68,7 +68,7 @@ export function checkAnswer(
     return {
       verdict: 'needs_review',
       feedback:
-        'Deze opdracht wordt niet automatisch nagekeken. Vergelijk je antwoord met de criteria.',
+        'This task is not marked automatically. Compare your answer with the criteria.',
       revealAnswer: true,
     };
   }
@@ -77,7 +77,7 @@ export function checkAnswer(
   if (given.length === 0) {
     return {
       verdict: 'incorrect',
-      feedback: 'Er is nog niets ingevuld.',
+      feedback: 'You have not written anything yet.',
       revealAnswer: reveal,
     };
   }
@@ -112,14 +112,14 @@ function matchErrorFeedback(
   for (const entry of prompt.error_feedback ?? []) {
     const kind = entry.match_kind ?? 'exact';
     if (kind === 'exact' && normalise(entry.matches, rules) === normalised) {
-      return entry.feedback_nl;
+      return entry.feedback;
     }
     if (kind === 'contains' && normalised.includes(normalise(entry.matches, rules))) {
-      return entry.feedback_nl;
+      return entry.feedback;
     }
     if (kind === 'regex') {
       try {
-        if (new RegExp(entry.matches, 'u').test(raw)) return entry.feedback_nl;
+        if (new RegExp(entry.matches, 'u').test(raw)) return entry.feedback;
       } catch {
         // Een onbruikbare regex mag de oefening niet laten crashen.
         continue;
@@ -133,21 +133,21 @@ function matchErrorFeedback(
  * Feedback die richting geeft zonder het antwoord te verklappen.
  */
 function nearMissFeedback(given: string, accepted: string[]): string {
-  if (accepted.length === 0) return 'Dat klopt nog niet.';
+  if (accepted.length === 0) return 'Not quite yet.';
 
   const closest = accepted.reduce((best, candidate) =>
     editDistance(given, candidate) < editDistance(given, best) ? candidate : best,
   );
   const distance = editDistance(given, closest);
 
-  if (distance === 0) return 'Dat klopt nog niet.';
+  if (distance === 0) return 'Not quite yet.';
   if (distance <= 2 && given.length > 3) {
-    return 'Je zit er dicht bij. Kijk goed naar de spelling van je antwoord.';
+    return 'You are very close. Check the spelling of your answer.';
   }
   if (closest.split(' ').length !== given.split(' ').length) {
-    return 'Je antwoord heeft niet het juiste aantal woorden. Lees de opdracht opnieuw.';
+    return 'Your answer does not have the right number of words. Read the task again.';
   }
-  return 'Dat klopt nog niet. Gebruik een hint als je vastzit.';
+  return 'Not quite yet. Use a hint if you are stuck.';
 }
 
 function editDistance(a: string, b: string): number {

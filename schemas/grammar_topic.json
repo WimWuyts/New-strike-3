@@ -9,7 +9,7 @@
     "can_do_statements",
     "meaning_and_use",
     "form",
-    "typical_errors_nl",
+    "typical_errors",
     "contrast_with",
     "examples",
     "recap",
@@ -30,10 +30,10 @@
     "meaning_and_use": {
       "type": "object",
       "unevaluatedProperties": false,
-      "required": ["summary_nl", "use_cases"],
+      "required": ["summary", "use_cases"],
       "description": "Betekenis en gebruik komen vóór de vorm.",
       "properties": {
-        "summary_nl": {
+        "summary": {
           "allOf": [{ "$ref": "common.json#/$defs/nonEmptyText" }],
           "minLength": 30
         },
@@ -43,10 +43,10 @@
           "items": {
             "type": "object",
             "unevaluatedProperties": false,
-            "required": ["label_nl", "explanation_nl", "example_en"],
+            "required": ["label", "explanation", "example_en"],
             "properties": {
-              "label_nl": { "type": "string", "minLength": 3 },
-              "explanation_nl": { "type": "string", "minLength": 15 },
+              "label": { "type": "string", "minLength": 3 },
+              "explanation": { "type": "string", "minLength": 15 },
               "example_en": { "type": "string", "minLength": 8 }
             }
           }
@@ -68,9 +68,9 @@
           "items": {
             "type": "object",
             "unevaluatedProperties": false,
-            "required": ["rule_nl", "examples"],
+            "required": ["rule", "examples"],
             "properties": {
-              "rule_nl": { "type": "string", "minLength": 10 },
+              "rule": { "type": "string", "minLength": 10 },
               "examples": {
                 "type": "array",
                 "minItems": 1,
@@ -87,20 +87,20 @@
       "items": { "type": "string", "minLength": 2 },
       "description": "Presenteer nooit als onfeilbare truc."
     },
-    "signal_words_caveat_nl": { "type": "string", "minLength": 20 },
+    "signal_words_caveat": { "type": "string", "minLength": 20 },
 
-    "typical_errors_nl": {
+    "typical_errors": {
       "type": "array",
       "minItems": 1,
       "description": "Fouten die Nederlandstalige leerders typisch maken.",
       "items": {
         "type": "object",
         "unevaluatedProperties": false,
-        "required": ["wrong", "right", "why_nl"],
+        "required": ["wrong", "right", "why"],
         "properties": {
           "wrong": { "type": "string", "minLength": 3 },
           "right": { "type": "string", "minLength": 3 },
-          "why_nl": { "type": "string", "minLength": 15 }
+          "why": { "type": "string", "minLength": 15 }
         }
       }
     },
@@ -111,10 +111,10 @@
       "items": {
         "type": "object",
         "unevaluatedProperties": false,
-        "required": ["other_topic", "difference_nl", "minimal_pair"],
+        "required": ["other_topic", "difference", "minimal_pair"],
         "properties": {
           "other_topic": { "type": "string", "minLength": 2 },
-          "difference_nl": { "type": "string", "minLength": 20 },
+          "difference": { "type": "string", "minLength": 20 },
           "minimal_pair": {
             "type": "array",
             "minItems": 2,
@@ -132,10 +132,10 @@
       "items": {
         "type": "object",
         "unevaluatedProperties": false,
-        "required": ["sentence_en", "context_nl"],
+        "required": ["sentence_en", "context"],
         "properties": {
           "sentence_en": { "type": "string", "minLength": 10 },
-          "context_nl": { "type": "string", "minLength": 10 },
+          "context": { "type": "string", "minLength": 10 },
           "highlights": {
             "type": "array",
             "items": {
@@ -164,10 +164,10 @@
     "exit_ticket": {
       "type": "object",
       "unevaluatedProperties": false,
-      "required": ["prompt_nl", "expected_evidence_nl"],
+      "required": ["prompt", "expected_evidence"],
       "properties": {
-        "prompt_nl": { "type": "string", "minLength": 15 },
-        "expected_evidence_nl": { "type": "string", "minLength": 15 }
+        "prompt": { "type": "string", "minLength": 15 },
+        "expected_evidence": { "type": "string", "minLength": 15 }
       }
     },
 

@@ -88,7 +88,7 @@
               "fast"
             ]
           },
-          "note_nl": {
+          "note": {
             "type": "string"
           }
         }
@@ -163,7 +163,7 @@
             "null"
           ]
         },
-        "note_nl": {
+        "note": {
           "type": "string"
         }
       },
@@ -223,11 +223,11 @@
           "type": "object",
           "unevaluatedProperties": false,
           "required": [
-            "prompt_nl",
+            "prompt",
             "rubric"
           ],
           "properties": {
-            "prompt_nl": {
+            "prompt": {
               "type": "string",
               "minLength": 20
             },
@@ -238,15 +238,15 @@
                 "type": "object",
                 "unevaluatedProperties": false,
                 "required": [
-                  "label_nl",
-                  "descriptor_nl"
+                  "label",
+                  "descriptor"
                 ],
                 "properties": {
-                  "label_nl": {
+                  "label": {
                     "type": "string",
                     "minLength": 2
                   },
-                  "descriptor_nl": {
+                  "descriptor": {
                     "type": "string",
                     "minLength": 10
                   }
@@ -257,10 +257,10 @@
         }
       }
     },
-    "student_version_note_nl": {
+    "student_version_note": {
       "type": "string"
     },
-    "teacher_version_note_nl": {
+    "teacher_version_note": {
       "type": "string"
     }
   },
@@ -272,7 +272,7 @@
         "questions"
       ],
       "properties": {
-        "instructions_nl": {
+        "instructions": {
           "type": "string",
           "minLength": 10
         },
@@ -333,7 +333,7 @@
                 "minLength": 1,
                 "description": "ID van het transcriptsegment of een timestamp."
               },
-              "feedback_nl": {
+              "feedback": {
                 "type": "string",
                 "minLength": 10
               }

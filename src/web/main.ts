@@ -75,9 +75,9 @@ function titleFor(theme: LoadedTheme, set: ActivitySet): string {
 }
 
 const STATUS_LABEL: Record<string, string> = {
-  todo: 'Nog te doen',
-  started: 'Bezig',
-  done: 'Afgewerkt',
+  todo: 'To do',
+  started: 'In progress',
+  done: 'Done',
 };
 
 // ---------------------------------------------------------------------------
@@ -131,7 +131,7 @@ function renderNav(): void {
         const button = el('button', 'nav-item');
         button.type = 'button';
 
-        const kindLabel = set.target_kind === 'grammar_topic' ? 'Grammatica' : 'Woordenschat';
+        const kindLabel = set.target_kind === 'grammar_topic' ? 'Grammar' : 'Vocabulary';
         button.appendChild(el('span', 'nav-item__kind', kindLabel));
         button.appendChild(el('span', 'nav-item__name', titleFor(theme, set)));
 
@@ -166,8 +166,8 @@ function renderNav(): void {
         'p',
         'empty-note',
         books.length === 0
-          ? 'Er is nog geen content gebouwd. Draai eerst de pipeline.'
-          : 'Geen onderdelen die aan deze filters voldoen.',
+          ? 'No content has been built yet.'
+          : 'No topics match these filters.',
       ),
     );
   }
@@ -197,12 +197,12 @@ function renderView(): void {
   const found = findSelection();
   if (!found) {
     const intro = el('div', 'intro');
-    intro.appendChild(el('h2', undefined, 'Kies een onderdeel'));
+    intro.appendChild(el('h2', undefined, 'Choose a topic'));
     intro.appendChild(
       el(
         'p',
         undefined,
-        'Selecteer links een grammaticaonderwerp of woordenschatset om te beginnen.',
+        'Select a grammar topic or vocabulary set on the left to begin.',
       ),
     );
     view.appendChild(intro);
@@ -218,8 +218,8 @@ function renderView(): void {
     el(
       'p',
       'view-header__meta',
-      `${set.activities.length} activiteiten — ${
-        set.target_kind === 'grammar_topic' ? 'grammatica' : 'woordenschat'
+      `${set.activities.length} activities — ${
+        set.target_kind === 'grammar_topic' ? 'grammar' : 'vocabulary'
       }`,
     ),
   );
@@ -244,12 +244,12 @@ function renderActivity(activity: Activity): HTMLElement {
   head.appendChild(el('h3', 'activity__title', activity.title));
   article.appendChild(head);
 
-  article.appendChild(el('p', 'activity__instructions', activity.instructions_nl));
+  article.appendChild(el('p', 'activity__instructions', activity.instructions));
 
   const stimulus = el('div', 'activity__stimulus');
   stimulus.appendChild(el('p', undefined, activity.stimulus.content));
-  if (activity.stimulus.context_note_nl) {
-    stimulus.appendChild(el('p', 'activity__context', activity.stimulus.context_note_nl));
+  if (activity.stimulus.context_note) {
+    stimulus.appendChild(el('p', 'activity__context', activity.stimulus.context_note));
   }
   article.appendChild(stimulus);
 
@@ -324,7 +324,7 @@ function renderPrompt(activity: Activity, prompt: Prompt, index: number): HTMLEl
 
   const actions = el('div', 'prompt__actions');
 
-  const checkButton = el('button', 'btn btn--primary', 'Nakijken');
+  const checkButton = el('button', 'btn btn--primary', 'Check');
   checkButton.type = 'button';
   actions.appendChild(checkButton);
 
@@ -345,17 +345,17 @@ function renderPrompt(activity: Activity, prompt: Prompt, index: number): HTMLEl
   const answerBox = el('div', 'prompt__answer');
   answerBox.hidden = mode !== 'teacher';
   if (prompt.manual_review_rubric) {
-    answerBox.appendChild(el('strong', undefined, 'Beoordelingscriteria'));
+    answerBox.appendChild(el('strong', undefined, 'Marking criteria'));
     const criteria = el('ul');
     for (const criterion of prompt.manual_review_rubric.criteria) {
       criteria.appendChild(
-        el('li', undefined, `${criterion.label_nl}: ${criterion.descriptor_nl}`),
+        el('li', undefined, `${criterion.label}: ${criterion.descriptor}`),
       );
     }
     answerBox.appendChild(criteria);
   } else {
     answerBox.appendChild(
-      el('span', undefined, `Antwoord: ${(prompt.canonical_answers ?? []).join(' / ')}`),
+      el('span', undefined, `Answer: ${(prompt.canonical_answers ?? []).join(' / ')}`),
     );
   }
   item.appendChild(answerBox);
@@ -369,7 +369,7 @@ function renderPrompt(activity: Activity, prompt: Prompt, index: number): HTMLEl
 
   hintButton.addEventListener('click', () => {
     if (hintIndex >= hints.length) {
-      hintBox.textContent = 'Er zijn geen extra hints meer.';
+      hintBox.textContent = 'There are no more hints.';
       hintBox.hidden = false;
       return;
     }
@@ -377,7 +377,7 @@ function renderPrompt(activity: Activity, prompt: Prompt, index: number): HTMLEl
     hintBox.hidden = false;
     hintIndex += 1;
     progress.update(activity.id, prompt.id, { hintsUsed: hintIndex });
-    announce('Hint getoond.');
+    announce('Hint shown.');
   });
 
   checkButton.addEventListener('click', () => {
@@ -401,9 +401,9 @@ function renderPrompt(activity: Activity, prompt: Prompt, index: number): HTMLEl
     } else {
       const suffix =
         result.revealAnswer && !prompt.manual_review_rubric
-          ? ` Modelantwoord: ${(prompt.canonical_answers ?? []).join(' / ')}`
-          : ` Poging ${attempt} van ${MAX_ATTEMPTS}.`;
-      feedback.textContent = `${result.feedback ?? 'Dat klopt nog niet.'}${suffix}`;
+          ? ` Model answer: ${(prompt.canonical_answers ?? []).join(' / ')}`
+          : ` Attempt ${attempt} of ${MAX_ATTEMPTS}.`;
+      feedback.textContent = `${result.feedback ?? 'Not quite yet.'}${suffix}`;
       feedback.className = 'prompt__feedback is-incorrect';
     }
 
@@ -439,7 +439,7 @@ function bindControls(): void {
       });
       document.body.dataset.mode = mode;
       render();
-      announce(mode === 'teacher' ? 'Leerkrachtmodus aan.' : 'Leerlingmodus aan.');
+      announce(mode === 'teacher' ? 'Teacher mode on.' : 'Student mode on.');
     });
   });
 
@@ -457,10 +457,10 @@ function bindControls(): void {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'voortgang.json';
+    link.download = 'progress.json';
     link.click();
     URL.revokeObjectURL(url);
-    announce('Voortgang geëxporteerd.');
+    announce('Progress exported.');
   });
 
   document.getElementById('import-progress')?.addEventListener('change', (event) => {
@@ -468,16 +468,16 @@ function bindControls(): void {
     if (!file) return;
     void file.text().then((text) => {
       const ok = progress.import(text);
-      announce(ok ? 'Voortgang geïmporteerd.' : 'Dit bestand kon niet gelezen worden.');
+      announce(ok ? 'Progress imported.' : 'This file could not be read.');
       if (ok) render();
     });
   });
 
   document.getElementById('reset-progress')?.addEventListener('click', () => {
-    if (!window.confirm('Alle voortgang wissen? Dit kan niet ongedaan gemaakt worden.')) return;
+    if (!window.confirm('Erase all progress? This cannot be undone.')) return;
     progress.reset();
     render();
-    announce('Voortgang gewist.');
+    announce('Progress erased.');
   });
 }
 

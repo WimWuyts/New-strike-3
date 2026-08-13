@@ -55,14 +55,14 @@ def grammar_topic() -> dict:
             "Ik kan vertellen wat ik al gedaan heb zonder een tijdstip te noemen."
         ],
         "meaning_and_use": {
-            "summary_nl": (
+            "summary": (
                 "De present perfect verbindt het verleden met nu. Je noemt geen "
                 "afgesloten tijdstip; het gaat om het resultaat of de ervaring."
             ),
             "use_cases": [
                 {
-                    "label_nl": "Ervaring",
-                    "explanation_nl": "Iets dat ooit gebeurd is; wanneer doet er niet toe.",
+                    "label": "Ervaring",
+                    "explanation": "Iets dat ooit gebeurd is; wanneer doet er niet toe.",
                     "example_en": "I have visited Rome twice.",
                 }
             ],
@@ -73,17 +73,17 @@ def grammar_topic() -> dict:
                 "examples": ["She has finished her homework."],
             }
         },
-        "typical_errors_nl": [
+        "typical_errors": [
             {
                 "wrong": "I have seen him yesterday.",
                 "right": "I saw him yesterday.",
-                "why_nl": "Bij een afgesloten tijdstip gebruik je de past simple.",
+                "why": "Bij een afgesloten tijdstip gebruik je de past simple.",
             }
         ],
         "contrast_with": [
             {
                 "other_topic": "past simple",
-                "difference_nl": (
+                "difference": (
                     "De past simple noemt wel een afgesloten tijdstip, de present "
                     "perfect niet."
                 ),
@@ -93,14 +93,14 @@ def grammar_topic() -> dict:
         "examples": [
             {
                 "sentence_en": f"Testvoorbeeld {index} met de doelvorm in context.",
-                "context_nl": f"Context bij testvoorbeeld {index}.",
+                "context": f"Context bij testvoorbeeld {index}.",
             }
             for index in range(1, 7)
         ],
         "recap": ["Noem twee situaties waarin je de present perfect gebruikt."],
         "exit_ticket": {
-            "prompt_nl": "Schrijf één zin over iets dat je ooit gedaan hebt.",
-            "expected_evidence_nl": "Correcte vorm van have/has plus voltooid deelwoord.",
+            "prompt": "Schrijf één zin over iets dat je ooit gedaan hebt.",
+            "expected_evidence": "Correcte vorm van have/has plus voltooid deelwoord.",
         },
     }
     topic["content_hash"] = content_hash(topic)

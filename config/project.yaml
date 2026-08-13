@@ -5,7 +5,11 @@
 project:
   name: "New Ace 3 / New Strike 3 leermiddelen"
   schema_version: "v1"
-  interface_language: "nl"          # instructies, feedback, UI
+  interface_language: "en"          # instructies, feedback en hints in de doeltaal
+  interface_language_note: >
+    Bewuste keuze van de leerkracht: alle leerlingtekst staat in het Engels,
+    ook opdrachten, hints en feedback. Leerkrachtmateriaal over het handboek
+    (de antwoordsleutel) blijft Nederlands.
   target_language: "en"
   english_variant: "en-GB"          # bevestigd door de gebruiker, geldt voor beide boeken
   english_variant_confirmed: true

@@ -3,12 +3,12 @@
   "book_id": "ace3",
   "theme_id": "ace3-u1",
   "kind": "grammar_topic",
-  "title": "Present simple en present continuous",
+  "title": "Present simple and present continuous",
   "cefr": "A2+",
   "learning_objectives": [
-    "Ik kan vertellen wat er op dit moment gebeurt en wat elke dag gebeurt, en ik kies zelf de juiste vorm.",
-    "Ik kan de -ing-vorm correct spellen, ook bij werkwoorden die van vorm veranderen.",
-    "Ik kan uitleggen waarom sommige werkwoorden zelden in de -ing-vorm staan."
+    "I can say what is happening now and what happens every day, and I choose the right form myself.",
+    "I can spell the -ing form correctly, including verbs whose spelling changes.",
+    "I can explain why some verbs are almost never used in the -ing form."
   ],
   "source_page_refs": [
     {
@@ -36,43 +36,43 @@
   "rights_status": "original_only",
   "review_status": "draft",
   "can_do_statements": [
-    "Ik kan beschrijven wat er nu op de speelplaats gebeurt.",
-    "Ik kan vertellen hoe mijn schooldag er elke week uitziet.",
-    "Ik kan kiezen tussen beide vormen en uitleggen waarom ik die keuze maak."
+    "I can describe what is happening in the playground at this moment.",
+    "I can say what my school week normally looks like.",
+    "I can choose between the two forms and explain why I chose it."
   ],
   "meaning_and_use": {
-    "summary_nl": "Het Engels maakt een verschil dat het Nederlands niet maakt. Gaat iets nú bezig, dan gebruik je de present continuous: am, is of are plus de -ing-vorm. Gebeurt iets elke keer opnieuw, of is het gewoon altijd zo, dan gebruik je de present simple. In het Nederlands zeg je in beide gevallen hetzelfde, en juist daar gaat het mis.",
+    "summary": "English makes a difference that Dutch does not make. If something is going on at this moment, use the present continuous: am, is or are plus the -ing form. If something happens again and again, or is simply always true, use the present simple. In Dutch you say the same thing in both cases, and that is exactly where it goes wrong.",
     "use_cases": [
       {
-        "label_nl": "Op dit moment bezig",
-        "explanation_nl": "Iets is aan de gang terwijl je erover spreekt. Je kunt het aanwijzen.",
+        "label": "Happening right now",
+        "explanation": "It is going on while you are speaking. You could point at it.",
         "example_en": "Look, the school bus is leaving without her."
       },
       {
-        "label_nl": "Tijdelijke situatie",
-        "explanation_nl": "Iets duurt even, maar niet voor altijd. Deze week, deze maand, dit schooljaar.",
+        "label": "Temporary situation",
+        "explanation": "It lasts for a while, but not forever. This week, this month, this school year.",
         "example_en": "She is staying with her grandmother while her parents are abroad."
       },
       {
-        "label_nl": "Gewoonte of rooster",
-        "explanation_nl": "Iets herhaalt zich. Elke dag, op vrijdag, twee keer per week.",
+        "label": "Habit or timetable",
+        "explanation": "It repeats. Every day, on Fridays, twice a week.",
         "example_en": "We have Physical Education on Tuesday and Thursday."
       },
       {
-        "label_nl": "Wat altijd waar is",
-        "explanation_nl": "Feiten en toestanden die niet veranderen zolang je erover praat.",
+        "label": "Always true",
+        "explanation": "Facts and states that do not change while you talk about them.",
         "example_en": "The library closes at four."
       },
       {
-        "label_nl": "Reeks handelingen na elkaar",
-        "explanation_nl": "Je vertelt iets als een aaneenschakeling, bijvoorbeeld bij een verhaal of een stripverhaal.",
+        "label": "Actions one after another",
+        "explanation": "You tell something as a chain of events, for example in a story or a comic.",
         "example_en": "Nora opens her locker, grabs her binder and runs to class."
       }
     ]
   },
   "form": {
     "affirmative": {
-      "pattern": "SUBJECT + am/is/are + VERB-ing   ·   SUBJECT + VERB(+s bij he/she/it)",
+      "pattern": "SUBJECT + am/is/are + VERB-ing   ·   SUBJECT + VERB (+s after he/she/it)",
       "examples": [
         "I am waiting at the school gate.",
         "He is looking for the science lab.",
@@ -81,14 +81,14 @@
       ]
     },
     "negative": {
-      "pattern": "SUBJECT + am/is/are + not + VERB-ing   ·   SUBJECT + do/does + not + VERB(base)",
+      "pattern": "SUBJECT + am/is/are + not + VERB-ing   ·   SUBJECT + do/does + not + VERB (base form)",
       "examples": [
         "We aren't sitting in our usual seats today.",
         "He doesn't take the bus on Fridays."
       ]
     },
     "interrogative": {
-      "pattern": "(question word) + am/is/are + SUBJECT + VERB-ing   ·   (question word) + do/does + SUBJECT + VERB(base)",
+      "pattern": "(question word) + am/is/are + SUBJECT + VERB-ing   ·   (question word) + do/does + SUBJECT + VERB (base form)",
       "examples": [
         "Why are you standing in the corridor?",
         "Where does your sister have lunch?"
@@ -103,7 +103,7 @@
     },
     "spelling_rules": [
       {
-        "rule_nl": "Eindigt het werkwoord op -e, dan valt die -e weg voor -ing.",
+        "rule": "If the verb ends in -e, drop that -e before -ing.",
         "examples": [
           "take → taking",
           "write → writing",
@@ -111,7 +111,7 @@
         ]
       },
       {
-        "rule_nl": "Eindigt het werkwoord op -ie, dan wordt dat -y voor -ing.",
+        "rule": "If the verb ends in -ie, change it to -y before -ing.",
         "examples": [
           "lie → lying",
           "die → dying",
@@ -119,7 +119,7 @@
         ]
       },
       {
-        "rule_nl": "Eén beklemtoonde klinker plus één medeklinker: die medeklinker verdubbelt.",
+        "rule": "One stressed vowel plus one consonant: double that consonant.",
         "examples": [
           "run → running",
           "sit → sitting",
@@ -127,21 +127,21 @@
         ]
       },
       {
-        "rule_nl": "In Brits Engels verdubbelt een slot-l altijd, ook als de klinker ervoor geen klemtoon draagt.",
+        "rule": "In British English a final -l always doubles, even when the vowel before it is not stressed.",
         "examples": [
           "travel → travelling",
           "cancel → cancelling"
         ]
       },
       {
-        "rule_nl": "Een slot-x of slot-w verdubbelt nooit.",
+        "rule": "A final -x or -w never doubles.",
         "examples": [
           "fix → fixing",
           "show → showing"
         ]
       },
       {
-        "rule_nl": "Bij he, she en it krijgt de present simple een -s. Na een sisklank wordt dat -es.",
+        "rule": "After he, she and it the present simple takes -s. After a hissing sound it becomes -es, and a consonant plus -y becomes -ies.",
         "examples": [
           "walk → walks",
           "watch → watches",
@@ -165,43 +165,43 @@
     "never",
     "twice a week"
   ],
-  "signal_words_caveat_nl": "Signaalwoorden helpen, maar ze beslissen niet. 'Today' staat vaak bij een continuous, maar 'Today we have four lessons' is gewoon een rooster. En 'always' hoort bij de simple, behalve als je je ergert: 'He is always losing his keys.' Kijk dus eerst naar de betekenis, pas daarna naar het woordje.",
-  "typical_errors_nl": [
+  "signal_words_caveat": "Signal words help, but they do not decide. 'Today' often goes with a continuous, yet 'Today we have four lessons' is simply a timetable. And 'always' goes with the simple, unless you are annoyed: 'He is always losing his keys.' So look at the meaning first and at the little word second.",
+  "typical_errors": [
     {
       "wrong": "Look! The bus comes.",
       "right": "Look! The bus is coming.",
-      "why_nl": "Het Nederlands zegt hier gewoon 'de bus komt'. Het Engels vraagt de continuous, want het gebeurt op dit moment."
+      "why": "Dutch simply says 'de bus komt' here. English wants the continuous, because it is happening at this moment."
     },
     {
       "wrong": "He work in the school canteen.",
       "right": "He works in the school canteen.",
-      "why_nl": "Bij he, she en it krijgt het werkwoord een -s. Het Nederlands kent die uitgang niet, dus hij wordt makkelijk vergeten."
+      "why": "After he, she and it the verb takes -s. Dutch has no such ending, so it is easy to forget."
     },
     {
       "wrong": "I am knowing the answer.",
       "right": "I know the answer.",
-      "why_nl": "Know is een non-action verb: het beschrijft een toestand, geen handeling. Zulke werkwoorden staan normaal niet in de -ing-vorm."
+      "why": "Know is a non-action verb: it describes a state, not an action. Verbs like that are normally not used in the -ing form."
     },
     {
       "wrong": "What do you do? I write an email.",
       "right": "What are you doing? I'm writing an email.",
-      "why_nl": "Vraag je wat iemand nú doet, dan staan vraag én antwoord in de continuous. 'What do you do?' vraagt naar iemands beroep."
+      "why": "If you ask what somebody is doing right now, both the question and the answer use the continuous. 'What do you do?' asks about somebody's job."
     },
     {
       "wrong": "She is runing to class.",
       "right": "She is running to class.",
-      "why_nl": "Eén beklemtoonde klinker plus één medeklinker: de medeklinker verdubbelt voor -ing."
+      "why": "One stressed vowel plus one consonant means the consonant doubles before -ing."
     },
     {
       "wrong": "They are going every Friday to the sports hall.",
       "right": "They go to the sports hall every Friday.",
-      "why_nl": "'Every Friday' maakt er een gewoonte van, en dan hoort de present simple erbij."
+      "why": "'Every Friday' turns it into a habit, and habits take the present simple."
     }
   ],
   "contrast_with": [
     {
       "other_topic": "past simple",
-      "difference_nl": "De present simple gaat over wat nu geldt of zich herhaalt; de past simple over iets dat afgesloten is. Een tijdstip in het verleden dwingt de past simple af.",
+      "difference": "The present simple is about what is true now or repeats; the past simple is about something finished. A moment in the past forces the past simple.",
       "minimal_pair": [
         "She walks to school every day.",
         "She walked to school yesterday."
@@ -209,7 +209,7 @@
     },
     {
       "other_topic": "non-action verbs",
-      "difference_nl": "Werkwoorden als know, like, understand en believe beschrijven een toestand en staan zelden in de -ing-vorm. Sommige veranderen van betekenis als ze het toch doen: 'I think it's fine' is een mening, 'I'm thinking about it' is bezig zijn.",
+      "difference": "Verbs such as know, like, understand and believe describe a state and are rarely used in the -ing form. Some change meaning when they are: 'I think it's fine' is an opinion, 'I'm thinking about it' is an activity.",
       "minimal_pair": [
         "I think this classroom is too small.",
         "I'm thinking about my first day."
@@ -219,7 +219,7 @@
   "examples": [
     {
       "sentence_en": "Nora is standing next to her locker because she can't find the science lab.",
-      "context_nl": "Iets dat op dit moment gebeurt; je kunt het aanwijzen.",
+      "context": "Something happening at this moment; you could point at it.",
       "highlights": [
         {
           "text": "Nora",
@@ -237,7 +237,7 @@
     },
     {
       "sentence_en": "Every morning the corridors fill up ten minutes before the bell.",
-      "context_nl": "Een gewoonte: het gebeurt elke ochtend opnieuw.",
+      "context": "A habit: it happens again every morning.",
       "highlights": [
         {
           "text": "Every morning",
@@ -255,7 +255,7 @@
     },
     {
       "sentence_en": "This week our class is having lunch in the sports hall.",
-      "context_nl": "Een tijdelijke situatie: deze week wel, anders niet.",
+      "context": "A temporary situation: this week yes, normally not.",
       "highlights": [
         {
           "text": "This week",
@@ -273,7 +273,7 @@
     },
     {
       "sentence_en": "The guidance counsellor doesn't work on Wednesday afternoons.",
-      "context_nl": "Ontkennende present simple bij een vast rooster.",
+      "context": "A negative present simple about a fixed timetable.",
       "highlights": [
         {
           "text": "doesn't",
@@ -287,7 +287,7 @@
     },
     {
       "sentence_en": "Why are you carrying three binders?",
-      "context_nl": "Vraag in de continuous, want het gebeurt nu.",
+      "context": "A question in the continuous, because it is happening now.",
       "highlights": [
         {
           "text": "are",
@@ -305,7 +305,7 @@
     },
     {
       "sentence_en": "He opens his backpack, takes out his timetable and sighs.",
-      "context_nl": "Een reeks handelingen na elkaar, verteld in de present simple.",
+      "context": "A chain of actions, told in the present simple.",
       "highlights": [
         {
           "text": "He",
@@ -319,7 +319,7 @@
     },
     {
       "sentence_en": "I don't understand this exercise, but I'm trying.",
-      "context_nl": "Non-action verb in de simple, actie in de continuous, in één zin.",
+      "context": "A non-action verb in the simple and an action in the continuous, in one sentence.",
       "highlights": [
         {
           "text": "don't",
@@ -334,19 +334,19 @@
   ],
   "visual_model_id": "ace3-u1-vis-present-simple-and-continuous",
   "recap": [
-    "Noem twee situaties waarin je de present continuous gebruikt.",
-    "Wat gebeurt er met het werkwoord bij he, she of it in de present simple?",
-    "Waarom zeg je niet 'I am knowing the answer'?",
-    "Hoe spel je de -ing-vorm van run, take en lie?"
+    "Name two situations in which you use the present continuous.",
+    "What happens to the verb after he, she or it in the present simple?",
+    "Why can you not say 'I am knowing the answer'?",
+    "How do you spell the -ing form of run, take and lie?"
   ],
   "exit_ticket": {
-    "prompt_nl": "Schrijf twee zinnen over dit moment in de klas: één over wat er nu gebeurt, één over wat er elke les gebeurt.",
-    "expected_evidence_nl": "Eén correcte continuous met am, is of are plus -ing, en één correcte simple met de juiste uitgang bij he, she of it."
+    "prompt": "Write two sentences about this moment in class: one about what is happening now, and one about what happens in every lesson.",
+    "expected_evidence": "One correct continuous with am, is or are plus -ing, and one correct simple with the right ending after he, she or it."
   },
   "reference_informed_points": [
-    "Volgorde: eerst betekenis en gebruik, dan pas de vormregels.",
-    "Het contrast met non-action verbs pas invoeren nadat beide vormen los beheerst worden.",
-    "Spelling van de -ing-vorm apart oefenen van de keuze tussen de tijden, omdat het twee verschillende soorten fouten zijn."
+    "Sequence: meaning and use first, form rules second.",
+    "Introduce the contrast with non-action verbs only once both forms are handled separately.",
+    "Practise -ing spelling apart from the choice between the tenses, because they are two different kinds of mistake."
   ],
-  "content_hash": "34fbbdf3090b28661ea5e634282a8a842a7122df080795a9f5a6260125bf051c"
+  "content_hash": "322f2700a2a997d95355738d411b0ac3cbb1b20492405cf86aecc129465b9217"
 }

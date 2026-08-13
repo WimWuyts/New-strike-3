@@ -3,10 +3,10 @@
   "book_id": "ace3",
   "theme_id": "ace3-u1",
   "kind": "visual_grammar_model",
-  "title": "Van gewoonte naar dit moment",
+  "title": "From habit to this moment",
   "cefr": "A2+",
   "learning_objectives": [
-    "Ik zie welke twee bouwstenen erbij komen wanneer een zin van gewoonte naar dit moment schuift."
+    "I can see which two building blocks appear when a sentence moves from a habit to this moment."
   ],
   "source_page_refs": [
     {
@@ -24,8 +24,6 @@
   "steps": [
     {
       "index": 1,
-      "caption_nl": "We beginnen bij een gewoonte: dit gebeurt elke dag opnieuw.",
-      "change_description_nl": "De uitgangszin verschijnt in de present simple.",
       "elements": [
         {
           "id": "s1-subj",
@@ -63,12 +61,12 @@
             "order": 3
           }
         }
-      ]
+      ],
+      "caption": "We start with a habit: this happens again every day.",
+      "change_description": "The starting sentence appears in the present simple."
     },
     {
       "index": 2,
-      "caption_nl": "Let op de -s. Die hoort bij he, she en it, en verdwijnt zo weer.",
-      "change_description_nl": "De uitgang -s op het werkwoord licht op.",
       "elements": [
         {
           "id": "s1-subj",
@@ -106,12 +104,12 @@
             "order": 3
           }
         }
-      ]
+      ],
+      "caption": "Notice the -s. It belongs after he, she and it, and it will disappear again.",
+      "change_description": "The -s ending on the verb lights up."
     },
     {
       "index": 3,
-      "caption_nl": "Nu verandert de tijd: niet elke dag meer, maar op dit moment.",
-      "change_description_nl": "De tijdstegel wisselt van 'every day' naar 'right now'.",
       "elements": [
         {
           "id": "s1-subj",
@@ -149,12 +147,12 @@
             "order": 3
           }
         }
-      ]
+      ],
+      "caption": "Now the time changes: not every day any more, but at this moment.",
+      "change_description": "The time tile changes from 'every day' to 'right now'."
     },
     {
       "index": 4,
-      "caption_nl": "Er komt een hulpwerkwoord bij dat bij het onderwerp past: am, is of are.",
-      "change_description_nl": "De AUX-tegel 'is' schuift tussen onderwerp en werkwoord.",
       "elements": [
         {
           "id": "s1-subj",
@@ -201,12 +199,12 @@
             "order": 4
           }
         }
-      ]
+      ],
+      "caption": "An auxiliary appears that matches the subject: am, is or are.",
+      "change_description": "The AUX tile 'is' slides in between subject and verb."
     },
     {
       "index": 5,
-      "caption_nl": "De -s verdwijnt en het werkwoord krijgt -ing. Het hulpwerkwoord draagt nu de persoon.",
-      "change_description_nl": "'walks' wordt 'walking'.",
       "elements": [
         {
           "id": "s1-subj",
@@ -253,12 +251,12 @@
             "order": 4
           }
         }
-      ]
+      ],
+      "caption": "The -s disappears and the verb takes -ing. The auxiliary now carries the person.",
+      "change_description": "'walks' becomes 'walking'."
     },
     {
       "index": 6,
-      "caption_nl": "Ontkennen doe je op het hulpwerkwoord, niet op het hoofdwerkwoord.",
-      "change_description_nl": "'not' verschijnt achter het hulpwerkwoord.",
       "elements": [
         {
           "id": "s1-subj",
@@ -314,49 +312,51 @@
             "order": 5
           }
         }
-      ]
+      ],
+      "caption": "You make it negative on the auxiliary, not on the main verb.",
+      "change_description": "'not' appears after the auxiliary."
     }
   ],
   "accessibility": {
-    "static_alternative_nl": "De zin 'Nora walks to school every day' verandert stap voor stap in 'Nora is not walking to school right now'. Eerst licht de uitgang -s op, want die hoort bij de present simple. Daarna wisselt de tijdsaanduiding van 'every day' naar 'right now'. Dan schuift het hulpwerkwoord 'is' tussen het onderwerp en het werkwoord. Vervolgens verliest het werkwoord zijn -s en krijgt het -ing: de persoon zit voortaan in het hulpwerkwoord. Tot slot komt 'not' achter dat hulpwerkwoord te staan, want in het Engels ontken je op het hulpwerkwoord.",
     "role_legend": [
       {
         "role": "subject",
         "label": "SUBJECT",
         "shape": "rounded_rect",
-        "pattern": "effen"
+        "pattern": "solid"
       },
       {
         "role": "aux",
         "label": "AUX",
         "shape": "pill",
-        "pattern": "schuine strepen"
+        "pattern": "diagonal stripes"
       },
       {
         "role": "verb",
         "label": "VERB",
         "shape": "rect",
-        "pattern": "effen"
+        "pattern": "solid"
       },
       {
         "role": "time",
         "label": "TIME",
         "shape": "clock",
-        "pattern": "stippen"
+        "pattern": "dots"
       },
       {
         "role": "negation",
         "label": "NOT",
         "shape": "strikethrough_badge",
-        "pattern": "kruisarcering"
+        "pattern": "cross-hatching"
       },
       {
         "role": "object",
         "label": "OBJECT",
         "shape": "hexagon",
-        "pattern": "effen"
+        "pattern": "solid"
       }
-    ]
+    ],
+    "static_alternative": "The sentence 'Nora walks to school every day' changes step by step into 'Nora is not walking to school right now'. First the -s ending lights up, because it belongs to the present simple. Then the time expression changes from 'every day' to 'right now'. Next the auxiliary 'is' slides in between the subject and the verb. The verb then loses its -s and takes -ing: from now on the person is carried by the auxiliary. Finally 'not' is placed after that auxiliary, because English makes a sentence negative on the auxiliary."
   },
   "embedded_motion": {
     "status": "not_built",
@@ -364,5 +364,5 @@
     "path": null,
     "loops_correctly": null
   },
-  "content_hash": "9916c2a3a6bc850900e334914017582ae091e10d63070a20bdab80c78e4011bc"
+  "content_hash": "3d16827e653bcf47cbf30c0db4794a557bb2ee27280c9008755d97cc50d29b1e"
 }

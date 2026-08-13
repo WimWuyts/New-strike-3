@@ -25,8 +25,8 @@ export type NormalizationRule =
   | 'ignore_terminal_punctuation';
 
 export interface RubricCriterion {
-  label_nl: string;
-  descriptor_nl: string;
+  label: string;
+  descriptor: string;
   weight?: number;
 }
 
@@ -38,7 +38,7 @@ export interface ManualReviewRubric {
 export interface ErrorFeedback {
   matches: string;
   match_kind?: 'exact' | 'regex' | 'contains';
-  feedback_nl: string;
+  feedback: string;
 }
 
 export interface Prompt {
@@ -58,7 +58,7 @@ export interface Prompt {
 export interface Stimulus {
   type: 'text' | 'dialogue' | 'list' | 'image_description' | 'table' | 'audio_script';
   content: string;
-  context_note_nl?: string;
+  context_note?: string;
 }
 
 export interface Activity {
@@ -75,7 +75,7 @@ export interface Activity {
   stage: 1 | 2 | 3 | 4 | 5;
   difficulty: 'support' | 'core' | 'challenge';
   interaction_type: string;
-  instructions_nl: string;
+  instructions: string;
   stimulus: Stimulus;
   prompts: Prompt[];
   provenance: Provenance;
@@ -97,22 +97,22 @@ export interface GrammarTopic {
   cefr: string;
   can_do_statements: string[];
   meaning_and_use: {
-    summary_nl: string;
-    use_cases: { label_nl: string; explanation_nl: string; example_en: string }[];
+    summary: string;
+    use_cases: { label: string; explanation: string; example_en: string }[];
   };
   form: Record<string, { pattern: string; examples: string[] } | unknown>;
   signal_words?: string[];
-  signal_words_caveat_nl?: string;
-  typical_errors_nl: { wrong: string; right: string; why_nl: string }[];
-  contrast_with: { other_topic: string; difference_nl: string; minimal_pair: string[] }[];
+  signal_words_caveat?: string;
+  typical_errors: { wrong: string; right: string; why: string }[];
+  contrast_with: { other_topic: string; difference: string; minimal_pair: string[] }[];
   examples: {
     sentence_en: string;
-    context_nl: string;
+    context: string;
     highlights?: { text: string; role: string }[];
   }[];
   visual_model_id?: string;
   recap: string[];
-  exit_ticket: { prompt_nl: string; expected_evidence_nl: string };
+  exit_ticket: { prompt: string; expected_evidence: string };
   source_page_refs: { page: number; source_file: string }[];
 }
 
@@ -148,8 +148,8 @@ export interface VisualGrammarModel {
   model_type: string;
   steps: {
     index: number;
-    caption_nl: string;
-    change_description_nl: string;
+    caption: string;
+    change_description: string;
     elements: {
       id: string;
       text: string;
@@ -159,7 +159,7 @@ export interface VisualGrammarModel {
     }[];
   }[];
   accessibility: {
-    static_alternative_nl: string;
+    static_alternative: string;
     role_legend: { role: string; label: string; shape: string }[];
   };
   pptx_progressive_slides?: number;

@@ -53,10 +53,13 @@ def _theme_of(target_id: str) -> str:
     return "-".join(parts[:2])
 
 
-def _prompt_id(raw: str, index: int) -> str:
-    """Prompt-ID's moeten slugs zijn; schrijvers leveren van alles aan."""
-    candidate = re.sub(r"[^a-z0-9]+", "-", str(raw).lower()).strip("-")
-    return candidate if candidate and SLUG.match(candidate) else f"p{index}"
+def _prompt_id(index: int) -> str:
+    """Prompt-ID's zijn positioneel.
+
+    Wat een schrijver aanlevert draagt vaak een half onthouden doelnaam mee;
+    die zou hier gaan afwijken van het echte ID zonder dat iets dat merkt.
+    """
+    return f"p{index}"
 
 
 def assemble(
@@ -89,7 +92,7 @@ def assemble(
         prompts = []
         for index, prompt in enumerate(item["prompts"], start=1):
             entry = {k: v for k, v in prompt.items() if v not in (None, [], {})}
-            entry["id"] = _prompt_id(prompt.get("id", ""), index)
+            entry["id"] = _prompt_id(index)
             prompts.append(entry)
 
         activity = {

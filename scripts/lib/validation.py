@@ -399,11 +399,14 @@ def _check_answerability(activities: list[dict[str, Any]], report: Report) -> No
                     if len(options) < 2:
                         report.error("too-few-options", "Minstens twee opties vereist.", ploc)
 
+            # Het bewijs staat in de stimulus, of — bij oefeningen waar elke
+            # vraag haar eigen situatie of zin meebrengt — in de vraag zelf.
             evidence = prompt.get("evidence_ref")
-            if evidence and stimulus and evidence not in stimulus:
+            visible = f"{stimulus}\n{prompt.get('prompt', '')}"
+            if evidence and evidence not in visible:
                 report.warn(
                     "evidence-not-found",
-                    f"evidence_ref {evidence!r} is niet letterlijk in de stimulus terug te vinden.",
+                    f"evidence_ref {evidence!r} staat niet letterlijk in de stimulus of de vraag.",
                     ploc,
                 )
 
@@ -439,13 +442,24 @@ _ENGLISH_MARKERS = frozenset(
 )
 
 
+def _bare_words(text: str) -> set[str]:
+    """Woorden buiten aanhalingstekens.
+
+    Een Nederlandse hint citeert vaak het Engelse doelwoord — 'at the moment'
+    betekent nu. Dat citaat hoort er juist te staan en mag de taalbepaling
+    niet omgooien.
+    """
+    outside = re.sub(r"[\"'‘’“”][^\"'‘’“”]{2,}[\"'‘’“”]", " ", text)
+    return set(re.findall(r"[a-zà-ÿ']+", outside.lower()))
+
+
 def _looks_dutch(text: str) -> bool:
-    words = set(re.findall(r"[a-zà-ÿ']+", text.lower()))
+    words = _bare_words(text)
     return len(words & _DUTCH_MARKERS) > len(words & _ENGLISH_MARKERS)
 
 
 def _looks_english(text: str) -> bool:
-    words = set(re.findall(r"[a-zà-ÿ']+", text.lower()))
+    words = _bare_words(text)
     return len(words & _ENGLISH_MARKERS) > len(words & _DUTCH_MARKERS)
 
 

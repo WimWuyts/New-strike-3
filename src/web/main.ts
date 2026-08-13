@@ -345,7 +345,7 @@ function renderPrompt(activity: Activity, prompt: Prompt, index: number): HTMLEl
   const answerBox = el('div', 'prompt__answer');
   answerBox.hidden = mode !== 'teacher';
   if (prompt.manual_review_rubric) {
-    answerBox.appendChild(el('strong', undefined, 'Marking criteria'));
+    answerBox.appendChild(el('strong', undefined, 'Beoordelingscriteria'));
     const criteria = el('ul');
     for (const criterion of prompt.manual_review_rubric.criteria) {
       criteria.appendChild(
@@ -355,13 +355,13 @@ function renderPrompt(activity: Activity, prompt: Prompt, index: number): HTMLEl
     answerBox.appendChild(criteria);
   } else {
     answerBox.appendChild(
-      el('span', undefined, `Answer: ${(prompt.canonical_answers ?? []).join(' / ')}`),
+      el('span', undefined, `Antwoord: ${(prompt.canonical_answers ?? []).join(' / ')}`),
     );
   }
   item.appendChild(answerBox);
 
   if (stored.solved) {
-    feedback.textContent = 'Correct.';
+    feedback.textContent = 'Juist.';
     feedback.className = 'prompt__feedback is-correct';
   }
 
@@ -369,7 +369,7 @@ function renderPrompt(activity: Activity, prompt: Prompt, index: number): HTMLEl
 
   hintButton.addEventListener('click', () => {
     if (hintIndex >= hints.length) {
-      hintBox.textContent = 'There are no more hints.';
+      hintBox.textContent = 'Er zijn geen extra hints meer.';
       hintBox.hidden = false;
       return;
     }
@@ -377,7 +377,7 @@ function renderPrompt(activity: Activity, prompt: Prompt, index: number): HTMLEl
     hintBox.hidden = false;
     hintIndex += 1;
     progress.update(activity.id, prompt.id, { hintsUsed: hintIndex });
-    announce('Hint shown.');
+    announce('Hint getoond.');
   });
 
   checkButton.addEventListener('click', () => {
@@ -393,7 +393,7 @@ function renderPrompt(activity: Activity, prompt: Prompt, index: number): HTMLEl
     });
 
     if (result.verdict === 'correct') {
-      feedback.textContent = 'Correct.';
+      feedback.textContent = 'Juist.';
       feedback.className = 'prompt__feedback is-correct';
     } else if (result.verdict === 'needs_review') {
       feedback.textContent = result.feedback ?? '';
@@ -401,9 +401,9 @@ function renderPrompt(activity: Activity, prompt: Prompt, index: number): HTMLEl
     } else {
       const suffix =
         result.revealAnswer && !prompt.manual_review_rubric
-          ? ` Model answer: ${(prompt.canonical_answers ?? []).join(' / ')}`
-          : ` Attempt ${attempt} of ${MAX_ATTEMPTS}.`;
-      feedback.textContent = `${result.feedback ?? 'Not quite yet.'}${suffix}`;
+          ? ` Modelantwoord: ${(prompt.canonical_answers ?? []).join(' / ')}`
+          : ` Poging ${attempt} van ${MAX_ATTEMPTS}.`;
+      feedback.textContent = `${result.feedback ?? 'Dat klopt nog niet.'}${suffix}`;
       feedback.className = 'prompt__feedback is-incorrect';
     }
 

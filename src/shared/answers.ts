@@ -43,7 +43,7 @@ export type Verdict = 'correct' | 'incorrect' | 'needs_review';
 
 export interface CheckResult {
   verdict: Verdict;
-  /** Nederlandstalige feedback, gericht op de gemaakte fout. */
+  /** Nederlandstalige feedback: de leerling moet de uitleg kunnen begrijpen. */
   feedback?: string;
   /** True zodra de leerling het modelantwoord mag zien. */
   revealAnswer: boolean;
@@ -68,7 +68,7 @@ export function checkAnswer(
     return {
       verdict: 'needs_review',
       feedback:
-        'This task is not marked automatically. Compare your answer with the criteria.',
+        'Deze opdracht wordt niet automatisch nagekeken. Vergelijk je antwoord met de criteria.',
       revealAnswer: true,
     };
   }
@@ -77,7 +77,7 @@ export function checkAnswer(
   if (given.length === 0) {
     return {
       verdict: 'incorrect',
-      feedback: 'You have not written anything yet.',
+      feedback: 'Er staat nog niets ingevuld.',
       revealAnswer: reveal,
     };
   }
@@ -133,21 +133,21 @@ function matchErrorFeedback(
  * Feedback die richting geeft zonder het antwoord te verklappen.
  */
 function nearMissFeedback(given: string, accepted: string[]): string {
-  if (accepted.length === 0) return 'Not quite yet.';
+  if (accepted.length === 0) return 'Dat klopt nog niet.';
 
   const closest = accepted.reduce((best, candidate) =>
     editDistance(given, candidate) < editDistance(given, best) ? candidate : best,
   );
   const distance = editDistance(given, closest);
 
-  if (distance === 0) return 'Not quite yet.';
+  if (distance === 0) return 'Dat klopt nog niet.';
   if (distance <= 2 && given.length > 3) {
-    return 'You are very close. Check the spelling of your answer.';
+    return 'Je zit er dicht bij. Kijk nog eens naar de spelling.';
   }
   if (closest.split(' ').length !== given.split(' ').length) {
-    return 'Your answer does not have the right number of words. Read the task again.';
+    return 'Je antwoord heeft niet het juiste aantal woorden. Lees de opdracht opnieuw.';
   }
-  return 'Not quite yet. Use a hint if you are stuck.';
+  return 'Dat klopt nog niet. Gebruik een hint als je vastzit.';
 }
 
 function editDistance(a: string, b: string): number {

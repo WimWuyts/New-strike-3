@@ -20,9 +20,10 @@ alleen regels die altijd gelden. Procedures staan in `docs/`, beslissingen in
 7. **Geen secrets in het project.** Alleen environment variables.
 8. **Idempotent werken.** Een onderbroken run is veilig hervatbaar via
    `state/progress.json` en `state/content-hashes.json`.
-9. **Engels** voor alle leerlingtekst: opdrachten, instructies, hints en
-   feedback. Variant: `en-GB`. Nederlands blijft alleen in leerkrachtmateriaal
-   over het handboek, zoals de antwoordsleutel.
+9. **Engels** voor alles wat de leerling moet lezen en doen: opdrachten,
+   instructies, stimulus, vragen en modelantwoorden. Variant: `en-GB`.
+   **Nederlands** voor hints en foutfeedback — die moet de leerling begrijpen
+   om ervan te leren — en voor leerkrachtmateriaal over het handboek.
 
 ## Scope van de oefeningen
 

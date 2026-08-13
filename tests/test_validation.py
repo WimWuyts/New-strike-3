@@ -48,6 +48,10 @@ def _codes(report) -> set[str]:
     return {f.code for f in report.errors}
 
 
+def _warnings(report) -> set[str]:
+    return {f.code for f in report.warnings}
+
+
 def test_rejects_wrong_activity_count(config):
     activities = build_activity_set("grammar_topic", config)[:24]
     report = validate_activity_set(activities, "ace3-u2-gr-test", "grammar_topic", config)
@@ -152,6 +156,47 @@ def test_open_production_without_rubric_is_rejected(config):
                 assert "open-without-rubric" in _codes(report)
                 return
     pytest.fail("Geen enkele activiteit gebruikte open productie.")
+
+
+# ---------------------------------------------------------------------------
+# Gesplitst taalbeleid: opdracht in het Engels, hulp in het Nederlands
+# ---------------------------------------------------------------------------
+
+
+def test_dutch_instruction_is_flagged(config):
+    activities = build_activity_set("grammar_topic", config)
+    activities[0]["instructions"] = (
+        "Lees de zin en kies het juiste antwoord. Let goed op welke vorm er nodig is."
+    )
+    report = validate_activity_set(activities, "ace3-u2-gr-test", "grammar_topic", config)
+    assert "language-task" in _warnings(report)
+
+
+def test_english_hint_is_flagged(config):
+    activities = build_activity_set("grammar_topic", config)
+    for activity in activities:
+        for prompt in activity["prompts"]:
+            if prompt.get("hints"):
+                prompt["hints"] = [
+                    "Look at the sentence and think about which form you need here."
+                ]
+                report = validate_activity_set(
+                    activities, "ace3-u2-gr-test", "grammar_topic", config
+                )
+                assert "language-support" in _warnings(report)
+                return
+    pytest.fail("Geen enkele prompt had een hint.")
+
+
+def test_language_split_stays_silent_when_both_languages_match(config):
+    """Zonder splitsing hoort de controle niets te zeggen."""
+    activities = build_activity_set("grammar_topic", config)
+    activities[0]["instructions"] = "Lees de zin en kies het juiste antwoord voor deze oefening."
+    raw = copy.deepcopy(config._raw)
+    raw["project"]["support_language"] = raw["project"]["task_language"]
+    same = type(config)(raw)
+    report = validate_activity_set(activities, "ace3-u2-gr-test", "grammar_topic", same)
+    assert "language-task" not in _warnings(report)
 
 
 # ---------------------------------------------------------------------------

@@ -150,6 +150,7 @@ def validate_activity_set(
     _check_interaction_diversity(activities, config, target_kind, report, loc)
     _check_quotas(activities, config, target_kind, report, loc)
     _check_answerability(activities, report)
+    _check_language_split(activities, config, report)
     _check_duplication(activities, report, loc)
     _check_difficulty_progression(activities, report, loc)
     return report
@@ -424,6 +425,91 @@ def _check_answerability(activities: list[dict[str, Any]], report: Report) -> No
                     "ignore_case staat aan bij een volledige zin; daar hoort een hoofdletter bij.",
                     ploc,
                 )
+
+
+# Functiewoorden die vrijwel nooit in de andere taal voorkomen. Bewust klein
+# gehouden: dit moet grove vergissingen vangen, niet taal detecteren.
+_DUTCH_MARKERS = frozenset(
+    {"de", "het", "een", "je", "jij", "niet", "wordt", "geen", "voor", "van",
+     "met", "deze", "dit", "welke", "waarom", "zin", "antwoord", "juiste"}
+)
+_ENGLISH_MARKERS = frozenset(
+    {"the", "you", "your", "and", "with", "that", "this", "which", "write",
+     "sentence", "answer", "type", "correct", "does", "what"}
+)
+
+
+def _looks_dutch(text: str) -> bool:
+    words = set(re.findall(r"[a-zà-ÿ']+", text.lower()))
+    return len(words & _DUTCH_MARKERS) > len(words & _ENGLISH_MARKERS)
+
+
+def _looks_english(text: str) -> bool:
+    words = set(re.findall(r"[a-zà-ÿ']+", text.lower()))
+    return len(words & _ENGLISH_MARKERS) > len(words & _DUTCH_MARKERS)
+
+
+def _check_language_split(activities: list[dict[str, Any]], config: Config, report: Report) -> None:
+    """Bewaakt het gesplitste taalbeleid.
+
+    De opdracht staat in de doeltaal; de hulp bij een fout in de moedertaal.
+    Dat onderscheid glipt er zonder controle na een paar eenheden weer uit.
+    """
+    task_language = config["project"].get("task_language", "en")
+    support_language = config["project"].get("support_language", "nl")
+    if task_language == support_language:
+        return
+
+    for activity in activities:
+        loc = activity.get("id", "<zonder id>")
+
+        # Opdrachttekst hoort in de doeltaal.
+        for field, text in (
+            ("instructions", activity.get("instructions", "")),
+            ("stimulus", (activity.get("stimulus") or {}).get("content", "")),
+        ):
+            if len(text) > 25 and _looks_dutch(text):
+                report.warn(
+                    "language-task",
+                    f"{field} lijkt Nederlands, maar opdrachttekst hoort in het {task_language}.",
+                    loc,
+                )
+
+        for prompt in activity.get("prompts", []):
+            ploc = f"{loc}/{prompt.get('id', '?')}"
+
+            if len(prompt.get("prompt", "")) > 25 and _looks_dutch(prompt["prompt"]):
+                report.warn(
+                    "language-task",
+                    f"De vraag lijkt Nederlands, maar hoort in het {task_language}.",
+                    ploc,
+                )
+
+            # Hulp bij een fout hoort in de moedertaal.
+            for hint in prompt.get("hints", []):
+                if len(hint) > 25 and _looks_english(hint):
+                    report.warn(
+                        "language-support",
+                        f"Een hint lijkt Engels, maar hints horen in het {support_language}.",
+                        ploc,
+                    )
+            for entry in prompt.get("error_feedback", []):
+                text = entry.get("feedback", "")
+                if len(text) > 25 and _looks_english(text):
+                    report.warn(
+                        "language-support",
+                        f"Feedback lijkt Engels, maar feedback hoort in het {support_language}.",
+                        ploc,
+                    )
+            rubric = prompt.get("manual_review_rubric") or {}
+            for criterion in rubric.get("criteria", []):
+                text = criterion.get("descriptor", "")
+                if len(text) > 25 and _looks_english(text):
+                    report.warn(
+                        "language-support",
+                        f"Een beoordelingscriterium lijkt Engels, maar hoort in het {support_language}.",
+                        ploc,
+                    )
 
 
 def _check_duplication(activities: list[dict[str, Any]], report: Report, loc: str) -> None:
